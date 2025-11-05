@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1216 832" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gradResidential" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b3a3f"/>
+      <stop offset="100%" stop-color="#4f7a6e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1216" height="832" fill="url(#gradResidential)"/>
+  <g fill="#eef7f3" font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="608" y="380" font-size="84" font-weight="600">Proyecto</text>
+    <text x="608" y="470" font-size="96" font-weight="700">Residencial</text>
+  </g>
+</svg>

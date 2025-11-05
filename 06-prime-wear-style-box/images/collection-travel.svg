@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gradTravel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c4c5b"/>
+      <stop offset="100%" stop-color="#3a8797"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#gradTravel)"/>
+  <g fill="#e9f7fb" font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="450" font-size="90" font-weight="700">Viajero</text>
+    <text x="600" y="540" font-size="70" font-weight="600">Premium</text>
+  </g>
+</svg>
