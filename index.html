@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выбор сайта</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(72, 187, 255, 0.2), rgba(0, 0, 0, 0));
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        border-radius: 16px;
+        padding: 48px 56px;
+        max-width: 640px;
+        width: calc(100% - 32px);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      p {
+        margin: 0 0 32px;
+        text-align: center;
+        color: #555;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 16px;
+      }
+
+      a.card {
+        display: block;
+        padding: 20px 24px;
+        background: #ffffff;
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      a.card:hover,
+      a.card:focus {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      small {
+        color: #777;
+      }
+
+      @media (max-width: 480px) {
+        main {
+          padding: 32px 24px;
+        }
+
+        h1 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Выберите сайт</h1>
+      <p>Оба проекта доступны на GitHub Pages. Выберите нужный, чтобы продолжить.</p>
+      <ul>
+        <li>
+          <a class="card" href="sites/ecowoodmaterialplus/">
+            <strong>EcoWood Material Plus</strong><br />
+            <small>sites/ecowoodmaterialplus/</small>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="sites/urbanstyleglamourgo/">
+            <strong>Urban Style Glamour Go</strong><br />
+            <small>sites/urbanstyleglamourgo/</small>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
