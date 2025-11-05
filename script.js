@@ -228,33 +228,59 @@ const app = {
     // ========================================================================
     
     setupFormValidation() {
-        const form = document.querySelector('.cta-form');
+        const form = document.querySelector('.contact-form');
         if (!form) return;
-        
+
         const nameInput = form.querySelector('input[name="name"]');
         const emailInput = form.querySelector('input[name="email"]');
+        const phoneInput = form.querySelector('input[name="phone"]');
+        const topicSelect = form.querySelector('select[name="topic"]');
+        const messageInput = form.querySelector('textarea[name="message"]');
         const consentCheckbox = form.querySelector('input[name="consent"]');
-        const submitBtn = form.querySelector('.cta-button');
-        
-        if (!nameInput || !emailInput || !consentCheckbox || !submitBtn) return;
-        
+
+        if (!nameInput || !emailInput || !messageInput || !consentCheckbox) return;
+
         // Real-time validation
         nameInput.addEventListener('blur', () => {
             this.validateName(nameInput);
         });
-        
+
         emailInput.addEventListener('blur', () => {
             this.validateEmail(emailInput);
         });
-        
+
+        if (phoneInput) {
+            phoneInput.addEventListener('blur', () => {
+                this.validatePhone(phoneInput);
+            });
+        }
+
+        if (topicSelect) {
+            topicSelect.addEventListener('change', () => {
+                this.validateTopic(topicSelect);
+            });
+        }
+
+        messageInput.addEventListener('blur', () => {
+            this.validateMessage(messageInput);
+        });
+
         consentCheckbox.addEventListener('change', () => {
             this.validateConsent(consentCheckbox);
         });
-        
+
         // Form submission
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            this.submitForm(form, nameInput, emailInput, consentCheckbox);
+            this.submitForm({
+                form,
+                nameInput,
+                emailInput,
+                phoneInput,
+                topicSelect,
+                messageInput,
+                consentCheckbox
+            });
         });
     },
     
@@ -277,7 +303,7 @@ const app = {
         const value = input.value.trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const errorEl = input.parentElement.querySelector('.form-error');
-        
+
         if (!value || !emailRegex.test(value)) {
             if (errorEl) {
                 errorEl.textContent = 'Por favor ingresa un correo válido';
@@ -291,10 +317,63 @@ const app = {
             return true;
         }
     },
-    
+
+    validatePhone(input) {
+        const value = input.value.trim();
+        const errorEl = input.parentElement.querySelector('.form-error');
+        const phoneRegex = /^$|^[+]?[(0-9)\s-]{7,}$/;
+
+        if (!phoneRegex.test(value)) {
+            if (errorEl) {
+                errorEl.textContent = 'Ingresa un teléfono válido';
+                errorEl.style.display = 'block';
+            }
+            input.style.borderColor = '#D32F2F';
+            return false;
+        }
+
+        if (errorEl) errorEl.style.display = 'none';
+        input.style.borderColor = '';
+        return true;
+    },
+
+    validateTopic(select) {
+        if (!select) return true;
+        const value = select.value;
+        const errorEl = select.parentElement.querySelector('.form-error');
+
+        if (!value) {
+            if (errorEl) errorEl.style.display = 'block';
+            select.style.borderColor = '#D32F2F';
+            return false;
+        }
+
+        if (errorEl) errorEl.style.display = 'none';
+        select.style.borderColor = '';
+        return true;
+    },
+
+    validateMessage(input) {
+        const value = input.value.trim();
+        const errorEl = input.parentElement.querySelector('.form-error');
+
+        if (value.length < 10) {
+            if (errorEl) {
+                errorEl.textContent = 'Cuéntanos un poco más';
+                errorEl.style.display = 'block';
+            }
+            input.style.borderColor = '#D32F2F';
+            return false;
+        }
+
+        if (errorEl) errorEl.style.display = 'none';
+        input.style.borderColor = '';
+        return true;
+    },
+
     validateConsent(input) {
         const errorEl = input.parentElement.querySelector('.form-error');
-        
+
         if (!input.checked) {
             if (errorEl) errorEl.style.display = 'block';
             return false;
@@ -303,17 +382,22 @@ const app = {
             return true;
         }
     },
-    
-    submitForm(form, nameInput, emailInput, consentCheckbox) {
+
+    submitForm({ form, nameInput, emailInput, phoneInput, topicSelect, messageInput, consentCheckbox }) {
         // Validate all fields
         const isNameValid = this.validateName(nameInput);
         const isEmailValid = this.validateEmail(emailInput);
+        const isPhoneValid = phoneInput ? this.validatePhone(phoneInput) : true;
+        const isTopicValid = this.validateTopic(topicSelect);
+        const isMessageValid = this.validateMessage(messageInput);
         const isConsentValid = this.validateConsent(consentCheckbox);
-        
-        if (!isNameValid || !isEmailValid || !isConsentValid) {
+
+        const validations = [isNameValid, isEmailValid, isPhoneValid, isTopicValid, isMessageValid, isConsentValid];
+
+        if (!validations.every(Boolean)) {
             return;
         }
-        
+
         // Prepare form data
         const formData = new FormData(form);
         
@@ -397,23 +481,75 @@ const app = {
             });
         }
         
-        // Search button
+        // Search button & modal
         const searchBtn = document.querySelector('.search-btn');
+        const searchModal = document.querySelector('.search-modal');
+        const searchInput = searchModal ? searchModal.querySelector('#search-modal-input') : null;
+        const searchForm = searchModal ? searchModal.querySelector('.search-modal__form') : null;
+        const searchCloseTriggers = searchModal ? searchModal.querySelectorAll('[data-close="search"]') : [];
+
+        const openSearchModal = () => {
+            if (!searchModal) return;
+            searchModal.classList.add('is-open');
+            searchModal.removeAttribute('hidden');
+            document.body.classList.add('no-scroll');
+
+            window.setTimeout(() => {
+                if (searchInput instanceof HTMLElement) {
+                    searchInput.focus();
+                }
+            }, 50);
+        };
+
+        const closeSearchModal = () => {
+            if (!searchModal) return;
+            searchModal.classList.remove('is-open');
+            searchModal.setAttribute('hidden', '');
+            document.body.classList.remove('no-scroll');
+
+            if (searchBtn instanceof HTMLElement) {
+                searchBtn.focus();
+            }
+        };
+
         if (searchBtn) {
             searchBtn.addEventListener('click', () => {
-                console.log('Search clicked');
-                // TODO: Implement search functionality
+                const isOpen = searchModal?.classList.contains('is-open');
+                if (isOpen) {
+                    closeSearchModal();
+                } else {
+                    openSearchModal();
+                }
             });
         }
-        
-        // Cart button
-        const cartBtn = document.querySelector('.cart-btn');
-        if (cartBtn) {
-            cartBtn.addEventListener('click', () => {
-                console.log('Cart clicked');
-                // TODO: Implement cart functionality
+
+        searchCloseTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                closeSearchModal();
+            });
+        });
+
+        if (searchModal) {
+            searchModal.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.dataset.close === 'search') {
+                    closeSearchModal();
+                }
             });
         }
+
+        if (searchForm) {
+            searchForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                closeSearchModal();
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+                closeSearchModal();
+            }
+        });
     }
 };
 
