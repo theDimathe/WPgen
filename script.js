@@ -359,7 +359,7 @@ const app = {
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         
         if ('IntersectionObserver' in window) {
-            const imageObserver = new Intersection Observer((entries, observer) => {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         entry.target.style.animation = `fadeInUp 0.6s ease-in-out ${index * 0.1}s forwards`;
@@ -372,24 +372,14 @@ const app = {
                 rootMargin: '0px 0px -50px 0px'
             });
             
-            galleryItems.forEach(item => {
-                imageObserver.observe(item);
-            });
-            
-            collectionCards.forEach(card => {
-                imageObserver.observe(card);
-            });
-            
-            whyUsCards.forEach(card => {
-                imageObserver.observe(card);
-            });
-            
-            galleryFigures.forEach(figure => {
-                imageObserver.observe(figure);
-            });
-            
-            testimonialCards.forEach(card => {
-                imageObserver.observe(card);
+            [
+                ...galleryItems,
+                ...collectionCards,
+                ...whyUsCards,
+                ...galleryFigures,
+                ...testimonialCards
+            ].forEach(element => {
+                imageObserver.observe(element);
             });
         }
     },
@@ -440,7 +430,9 @@ if (document.readyState === 'loading') {
     app.init();
 }
 
-function acceptCookies(){document.getElementById('cookie-banner').style.display='none';}
-document.querySelector('.menu-btn')?.addEventListener('click',()=>{
- document.querySelector('nav')?.classList.toggle('open');
-});
+function acceptCookies() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+        banner.style.display = 'none';
+    }
+}
