@@ -8,6 +8,7 @@ const App = {
         themeStorageKey: 'ecowoodmp-theme',
         mobileBreakpoint: 768,
         scrollBehavior: 'smooth',
+        cookieConsentKey: 'ecowoodmp-cookie-consent',
     },
 
     // State
@@ -24,6 +25,7 @@ const App = {
         this.setupScrollBehavior();
         this.setupIntersectionObserver();
         this.setupFormValidation();
+        this.setupCookieBanner();
     },
 
     // ========================================================================
@@ -235,6 +237,39 @@ const App = {
         const phoneInput = document.getElementById('quote-phone');
         if (phoneInput) {
             phoneInput.addEventListener('blur', () => this.validatePhone(phoneInput));
+        }
+    },
+
+    // ========================================================================
+    // COOKIE CONSENT
+    // ========================================================================
+
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        if (!banner) return;
+
+        const savedChoice = localStorage.getItem(this.config.cookieConsentKey);
+        if (savedChoice) {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        const acceptButton = banner.querySelector('[data-cookie-accept]');
+        const declineButton = banner.querySelector('[data-cookie-decline]');
+
+        banner.removeAttribute('hidden');
+
+        const handleChoice = (choice) => {
+            localStorage.setItem(this.config.cookieConsentKey, choice);
+            banner.setAttribute('hidden', '');
+        };
+
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => handleChoice('accepted'));
+        }
+
+        if (declineButton) {
+            declineButton.addEventListener('click', () => handleChoice('declined'));
         }
     },
 

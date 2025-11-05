@@ -13,6 +13,7 @@ const WearNexusApp = {
         themeStorageKey: 'wearnexus-theme',
         prefersDarkScheme: window.matchMedia('(prefers-color-scheme: dark)'),
         mobileBreakpoint: 768,
+        cookieConsentKey: 'wearnexushub-cookie-consent',
     },
 
     // State
@@ -37,6 +38,7 @@ const WearNexusApp = {
         this.setupCollectionsAnimations();
         this.setupImpactAnimations();
         this.setupHowItWorksAnimations();
+        this.setupCookieBanner();
         console.log('WearNexusApp initialized');
     },
 
@@ -501,6 +503,38 @@ const WearNexusApp = {
         stepItems.forEach((step) => {
             observer.observe(step);
         });
+    },
+
+    /**
+     * Setup cookie consent banner
+     */
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        if (!banner) return;
+
+        const savedChoice = localStorage.getItem(this.config.cookieConsentKey);
+        if (savedChoice) {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        const acceptButton = banner.querySelector('[data-cookie-accept]');
+        const declineButton = banner.querySelector('[data-cookie-decline]');
+
+        banner.removeAttribute('hidden');
+
+        const handleChoice = (choice) => {
+            localStorage.setItem(this.config.cookieConsentKey, choice);
+            banner.setAttribute('hidden', '');
+        };
+
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => handleChoice('accepted'));
+        }
+
+        if (declineButton) {
+            declineButton.addEventListener('click', () => handleChoice('declined'));
+        }
     },
 };
 
