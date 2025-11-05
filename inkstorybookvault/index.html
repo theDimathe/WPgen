@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="utf-8"/>
+    <title>InkStorybookVault | Libros Raros y Clásicos Exclusivos</title>
+    <meta name="description" content="Descubre nuestra colección premium de libros raros, clásicos y arte. Acceso exclusivo a volúmenes únicos para coleccionistas de México."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="keywords" content="libros raros, clásicos exclusivos, colección de arte, libros México, inversión en cultura"/>
+    <meta name="author" content="InkStorybookVault"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="language" content="Spanish"/>
+
+    <!-- OG Image Tag -->
+    <meta property="og:image" content="./images/3f9fb0c425d2c57e2d99317373027547.webp"/>
+    
+    <!-- Additional OG Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="InkStorybookVault | Libros Raros y Clásicos Exclusivos"/>
+    <meta property="og:description" content="Descubre nuestra colección premium de libros raros, clásicos y arte. Acceso exclusivo a volúmenes únicos para coleccionistas de México."/>
+    <meta property="og:url" content="https://inkstorybookvault.com"/>
+    <meta property="og:site_name" content="InkStorybookVault"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="InkStorybookVault | Libros Raros y Clásicos Exclusivos"/>
+    <meta name="twitter:description" content="Descubre nuestra colección premium de libros raros, clásicos y arte."/>
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#F5F1E8"/>
+    <meta name="msapplication-TileColor" content="#F5F1E8"/>
+    <style>
+        :root {
+            --color-beige: #F5F1E8;
+            --color-ink: #2B2B2B;
+            --color-gold: #D4A574;
+            --color-light-gray: #6B6B6B;
+            --color-border: #E8E4D8;
+            --color-white: #FFFFFF;
+            --color-dark-bg: #1A1A1A;
+            --color-dark-text: #E8E4D8;
+            --font-serif: 'Playfair Display', 'Georgia', serif;
+            --font-sans: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            --transition-smooth: 200ms ease;
+            --transition-standard: 300ms ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "InkStorybookVault",
+        "url": "https://inkstorybookvault.com",
+        "logo": "https://inkstorybookvault.com/logo.svg",
+        "description": "Plataforma de colecciones premium de libros raros, clásicos y arte para coleccionistas de México",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle de las Letras 214",
+            "addressLocality": "Ciudad de México",
+            "addressCountry": "MX"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "telephone": "+52-55-3124-8907",
+            "email": "contacto@inkstorybookvault.com"
+        },
+        "sameAs": [
+            "https://instagram.com/inkstorybookvault",
+            "https://pinterest.com/inkstorybookvault",
+            "https://linkedin.com/company/inkstorybookvault"
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- HEADER: inkstorybookvault -->
+    <header id="inkstorybookvault" role="banner" class="header" itemscope itemtype="https://schema.org/WPHeader">
+        <div class="header-container">
+            <!-- Logo/Brand -->
+            <div class="header-logo">
+                <a href="#inkstorybookvault" class="logo-link" title="InkStorybookVault - Libros Raros Online">
+                    <span class="logo-text">InkStorybookVault</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="header-nav desktop-nav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#colecciones-curadas-por-expertos" class="nav-link">Colecciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#por-que-elegir-inkstorybookvault" class="nav-link">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#garantia-de-autenticidad-y-certificacion" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Right Section: Theme Toggle + CTA + Mobile Menu -->
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar entre modo claro y oscuro">
+                    <svg class="theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V3M12 21V23M23 12H21M3 12H1M20.485 3.515L19.071 4.929M4.929 19.071L3.515 20.485M20.485 20.485L19.071 19.071M4.929 4.929L3.515 3.515" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                <!-- Primary CTA Button -->
+                <a href="#bienvenido-al-santuario-de-los-libros-exclusivos" class="btn btn-primary">
+                    Explorar Ahora
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú" aria-expanded="false" title="Menú de navegación">
+                    <span class="hamburger">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navegación móvil" aria-hidden="true">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="#colecciones-curadas-por-expertos" class="mobile-nav-link">Colecciones</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#por-que-elegir-inkstorybookvault" class="mobile-nav-link">Sobre Nosotros</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#garantia-de-autenticidad-y-certificacion" class="mobile-nav-link">Contacto</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#bienvenido-al-santuario-de-los-libros-exclusivos" class="mobile-nav-link mobile-nav-cta">Explorar Ahora</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION: bienvenido-al-santuario-de-los-libros-exclusivos -->
+    <section id="bienvenido-al-santuario-de-los-libros-exclusivos" class="hero-section" itemscope itemtype="https://schema.org/CreativeWork">
+        <div class="hero-background" style="background-image: url('./images/ebb86535332187cadb17aadd88b0f297.webp')"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" itemprop="headline">
+                    Bienvenido al Santuario de los Libros Exclusivos
+                </h1>
+                
+                <p class="hero-subtitle" itemprop="description">
+                    Descubre una colección curada de volúmenes raros y clásicos que trascienden el tiempo. En InkStorybookVault, cada libro cuenta una historia de autenticidad, rareza y exclusividad diseñada para coleccionistas de clase mundial.
+                </p>
+                
+                <p class="hero-value-proposition">
+                    Somos más que una plataforma de venta: somos guardianes de la cultura literaria mexicana y mundial. Nuestro equipo de expertos verifica cada pieza, garantizando autenticidad certificada y valor de inversión. Desde primeras ediciones de autores clásicos hasta manuscritos históricos, ofrecemos acceso exclusivo a obras que raramente salen al mercado. Para el empresario y coleccionista distinguido, InkStorybookVault representa la convergencia perfecta entre pasión literaria e inversión inteligente en activos culturales.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#colecciones-curadas-por-expertos" class="btn btn-primary btn-large">
+                        Acceder a la Colección
+                    </a>
+                    <a href="#colecciones-curadas-por-expertos" class="btn btn-secondary">
+                        Ver Catálogo Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECTION: por-que-elegir-inkstorybookvault -->
+    <section id="por-que-elegir-inkstorybookvault" class="benefits-section" itemscope itemtype="https://schema.org/WebPageElement">
+        <div class="benefits-container">
+            <div class="section-header">
+                <h2 class="section-title" itemprop="headline">Por Qué Elegir InkStorybookVault</h2>
+                <p class="section-subtitle">Descubre los atributos que nos distinguen como líderes en colecciones de libros raros y arte literario</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit Card 1: Autenticidad -->
+                <article class="benefit-card" itemscope itemtype="https://schema.org/Thing">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 2L30.5 16.5H46L34.25 25.5L40.75 40L24 31L7.25 40L13.75 25.5L2 16.5H17.5L24 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title" itemprop="name">Autenticidad Garantizada</h3>
+                    <p class="benefit-description" itemprop="description">
+                        Cada volumen en nuestra colección es verificado por expertos certificados. Garantizamos la autenticidad de cada pieza mediante documentación completa y certificados de procedencia. Nuestro riguroso proceso de evaluación asegura que solo obras genuinas lleguen a manos de coleccionistas distinguidos.
+                    </p>
+                </article>
+
+                <!-- Benefit Card 2: Rareza y Exclusividad -->
+                <article class="benefit-card" itemscope itemtype="https://schema.org/Thing">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6H40C42.2091 6 44 7.79086 44 10V38C44 40.2091 42.2091 42 40 42H8C5.79086 42 4 40.2091 4 38V10C4 7.79086 5.79086 6 8 6Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14H34M14 22H34M14 30H28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title" itemprop="name">Rareza y Exclusividad</h3>
+                    <p class="benefit-description" itemprop="description">
+                        Acceso a primeras ediciones, manuscritos históricos y volúmenes que raramente salen al mercado. Nuestra red internacional de proveedores nos permite ofrecer piezas únicas que no encontrarás en otras plataformas. Cada adquisición es cuidadosamente seleccionada para garantizar exclusividad y valor de inversión.
+                    </p>
+                </article>
+
+                <!-- Benefit Card 3: Inversión en Cultura -->
+                <article class="benefit-card" itemscope itemtype="https://schema.org/Thing">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4L30 18H45L33 26L39 40L24 32L9 40L15 26L3 18H18L24 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M24 10V28M16 18H32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title" itemprop="name">Inversión Segura en Activos Culturales</h3>
+                    <p class="benefit-description" itemprop="description">
+                        Los libros raros han demostrado ser activos valiosos con apreciación consistente. Invertir en literatura clásica y manuscritos históricos ofrece diversificación de portafolio y preservación de patrimonio cultural. Nuestros expertos te guían en decisiones de inversión fundamentadas en análisis de mercado y tendencias de coleccionismo.
+                    </p>
+                </article>
+
+                <!-- Benefit Card 4: Servicio Premium -->
+                <article class="benefit-card" itemscope itemtype="https://schema.org/Thing">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 14V24L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title" itemprop="name">Servicio Exclusivo y Personalizado</h3>
+                    <p class="benefit-description" itemprop="description">
+                        Atención dedicada de nuestro equipo de expertos disponible para consultas personalizadas. Ofrecemos sesiones privadas de asesoramiento, acceso anticipado a nuevas adquisiciones y servicios de logística especializada. Tu experiencia como coleccionista es nuestra prioridad máxima.
+                    </p>
+                </article>
+            </div>
+
+            <div class="benefits-cta">
+                <p>¿Listo para descubrir tu próxima pieza maestra?</p>
+                <a href="#colecciones-curadas-por-expertos" class="btn btn-primary btn-large">
+                    Explorar Colecciones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: colecciones-curadas-por-expertos -->
+    <section id="colecciones-curadas-por-expertos" class="collections-section" itemscope itemtype="https://schema.org/CollectionPage">
+        <div class="collections-container">
+            <div class="section-header">
+                <h2 class="section-title" itemprop="headline">Colecciones Curadas por Expertos</h2>
+                <p class="section-subtitle">Descubre nuestras colecciones temáticas seleccionadas por especialistas en literatura clásica y arte bibliográfico</p>
+            </div>
+
+            <div class="collections-grid">
+                <!-- Collection Card 1: Clásicos Literarios -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/6ae98de221938933f9db1e0eadec4138.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Clásicos Literarios</h3>
+                            <p class="collection-description" itemprop="description">
+                                Obras maestras de la literatura universal. Primeras ediciones de autores como Cervantes, Lope de Vega y otros clásicos españoles que han definido la literatura occidental. Cada volumen representa siglos de tradición literaria y valor histórico incalculable.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Collection Card 2: Arte Contemporáneo -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/229ef6a08ea77308008dabfabe239db1.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Arte Contemporáneo</h3>
+                            <p class="collection-description" itemprop="description">
+                                Libros de arte moderno y contemporáneo con ediciones limitadas. Catálogos de exposiciones, monografías de artistas y obras de referencia en diseño gráfico. Perfectos para coleccionistas interesados en la intersección entre literatura y artes visuales.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Collection Card 3: Primeras Ediciones -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/57b26ebd88ecffa60e2c49eaa48353a6.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Primeras Ediciones</h3>
+                            <p class="collection-description" itemprop="description">
+                                Primeras ediciones de obras icónicas de autores mexicanos e internacionales. Volúmenes con polvo original, encuadernaciones de época y máxima rareza. Inversiones seguras con apreciación histórica comprobada en el mercado de coleccionismo.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Collection Card 4: Manuscritos Históricos -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/37aff476f421b8a293b7be937d786d24.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Manuscritos Históricos</h3>
+                            <p class="collection-description" itemprop="description">
+                                Documentos manuscritos de valor histórico y literario. Cartas, diarios y textos originales de autores célebres. Piezas únicas que ofrecen acceso directo a la historia de la literatura y la cultura mexicana e hispanoamericana.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Collection Card 5: Literatura de Viajes -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/07a14beb106f4a7df480f4186ace4cd2.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Literatura de Viajes</h3>
+                            <p class="collection-description" itemprop="description">
+                                Narrativas de exploración y viajes de los siglos XVI al XIX. Relatos de descubrimientos, expediciones y encuentros culturales. Libros que documentan la historia de la exploración y ofrecen perspectivas únicas sobre el mundo antiguo.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Collection Card 6: Ediciones Limitadas Modernas -->
+                <article class="collection-card" itemscope itemtype="https://schema.org/Collection">
+                    <div class="collection-image" style="background-image: url('./images/01f9c913843f5b6709ca49ba8bb00a67.webp')">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-content">
+                            <h3 class="collection-title" itemprop="name">Ediciones Limitadas Modernas</h3>
+                            <p class="collection-description" itemprop="description">
+                                Ediciones limitadas y numeradas de autores contemporáneos. Libros de arte, poesía y narrativa con diseño de lujo. Colecciones que combinan la tradición del coleccionismo con la estética moderna y la calidad editorial de excelencia.
+                            </p>
+                            <a href="#" class="collection-cta">
+                                Ver Colección
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: testimonios-de-coleccionistas-distinguidos -->
+    <section id="testimonios-de-coleccionistas-distinguidos" class="testimonials-section" itemscope itemtype="https://schema.org/WebPageElement">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2 class="section-title" itemprop="headline">Testimonios de Coleccionistas Distinguidos</h2>
+                <p class="section-subtitle">Descubre las experiencias de nuestros clientes más exigentes y satisfechos</p>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="testimonials-carousel" id="testimonialsCarousel">
+                    <!-- Testimonial 1 -->
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote-mark">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-1.25 0-2 .75-2 2s.75 2 2 2c1.5 0 7 1.08 7 5v3c0 1-2 4-6 4s-4.003-3-4-3H3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text" itemprop="reviewBody">
+                            Después de 15 años coleccionando libros raros, finalmente encontré una plataforma que entiende la verda dera pasión por la literatura. La autenticidad garantizada y el servicio personalizado de InkStorybookVault han transformado mi experiencia como coleccionista. Cada pieza que he adquirido ha superado mis expectativas.
+                        </p>
+                        <div class="testimonial-rating">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">DR</div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name" itemprop="author">Dr. Roberto Mendoza</h4>
+                                <p class="testimonial-title">Coleccionista Privado, Ciudad de México</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 2 -->
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote-mark">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-1.25 0-2 .75-2 2s.75 2 2 2c1.5 0 7 1.08 7 5v3c0 1-2 4-6 4s-4.003-3-4-3H3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text" itemprop="reviewBody">
+                            Llegué justo cuando se liberó una colección limitada de primeras ediciones de Cervantes. El equipo de expertos me asesoró perfectamente sobre la inversión. No solo adquirí piezas extraordinarias, sino que también aprendí sobre el verdadero valor de estos activos culturales. Experiencia premium garantizada.
+                        </p>
+                        <div class="testimonial-rating">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">CF</div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name" itemprop="author">Catalina Fuentes</h4>
+                                <p class="testimonial-title">Empresaria e Inversora, Monterrey</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote-mark">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-1.25 0-2 .75-2 2s.75 2 2 2c1.5 0 7 1.08 7 5v3c0 1-2 4-6 4s-4.003-3-4-3H3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text" itemprop="reviewBody">
+                            Como abogado y coleccionista, valoro la transparencia y la autenticidad por encima de todo. InkStorybookVault ha demostrado ser impecable en ambos aspectos. La documentación completa, los certificados de procedencia y el servicio de logística especializada hacen que cada transacción sea segura y confiable. Altamente recomendado.
+                        </p>
+                        <div class="testimonial-rating">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JG</div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name" itemprop="author">Lic. Javier González</h4>
+                                <p class="testimonial-title">Abogado y Coleccionista, Guadalajara</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 4 -->
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote-mark">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-1.25 0-2 .75-2 2s.75 2 2 2c1.5 0 7 1.08 7 5v3c0 1-2 4-6 4s-4.003-3-4-3H3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text" itemprop="reviewBody">
+                            La diversificación de mi portafolio de inversiones incluye ahora activos culturales gracias a InkStorybookVault. Los libros raros que he adquirido no solo son hermosos, sino que representan una inversión sólida con apreciación histórica comprobada. El equipo de expertos me ha guiado magistralmente en cada decisión.
+                        </p>
+                        <div class="testimonial-rating">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MV</div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name" itemprop="author">Mariana Vázquez</h4>
+                                <p class="testimonial-title">Directora Ejecutiva, Querét aro</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 5 -->
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote-mark">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-1.25 0-2 .75-2 2s.75 2 2 2c1.5 0 7 1.08 7 5v3c0 1-2 4-6 4s-4.003-3-4-3H3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text" itemprop="reviewBody">
+                            Preservar el patrimonio cultural es una responsabilidad que comparto con InkStorybookVault. Cada libro que adquiero no es solo una posesión, sino una contribución a la conservación de la historia literaria. El compromiso de la plataforma con la autenticidad y la excelencia es incomparable en la industria.
+                        </p>
+                        <div class="testimonial-rating">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AR</div>
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name" itemprop="author">Arq. Alejandro Ruiz</h4>
+                                <p class="testimonial-title">Arquitecto y Filántropo, Cuernavaca</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="testimonials-controls">
+                    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Testimonial anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: proceso-de-acceso-exclusivo -->
+    <section id="proceso-de-acceso-exclusivo" class="process-section" itemscope itemtype="https://schema.org/WebPageElement">
+        <div class="process-container">
+            <div class="section-header">
+                <h2 class="section-title" itemprop="headline">Proceso de Acceso Exclusivo</h2>
+                <p class="section-subtitle">Descubre cómo acceder a nuestra colección premium en 5 pasos simples y transparentes</p>
+            </div>
+
+            <div class="process-timeline">
+                <!-- Step 1: Crear Cuenta -->
+                <div class="process-step" itemscope itemtype="https://schema.org/Thing">
+                    <div class="process-step-number">1</div>
+                    <div class="process-step-line"></div>
+                    <div class="process-step-content">
+                        <h3 class="process-step-title" itemprop="name">Crear Cuenta Verificada</h3>
+                        <p class="process-step-description" itemprop="description">
+                            Regístrate en InkStorybookVault con tu información personal verificada. Nuestro proceso de verificación garantiza la seguridad y confiabilidad de todos nuestros miembros. Completa tu perfil con detalles sobre tus intereses de coleccionismo.
+                        </p>
+                        <p class="process-step-benefit">Beneficio: Acceso inmediato a catálogo básico</p>
+                        <p class="process-step-time">⏱️ 5 minutos</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Acceso al Catálogo -->
+                <div class="process-step" itemscope itemtype="https://schema.org/Thing">
+                    <div class="process-step-number">2</div>
+                    <div class="process-step-line"></div>
+                    <div class="process-step-content">
+                        <h3 class="process-step-title" itemprop="name">Acceso al Catálogo Completo</h3>
+                        <p class="process-step-description" itemprop="description">
+                            Explora nuestra colección completa de libros raros, clásicos y manuscritos históricos. Accede a descripciones detalladas, imágenes de alta resolución, certificados de autenticidad y precios. Utiliza nuestros filtros avanzados para encontrar exactamente lo que buscas.
+                        </p>
+                        <p class="process-step-benefit">Beneficio: Búsqueda personalizada y recomendaciones</p>
+                        <p class="process-step-time">⏱️ Acceso inmediato</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Sesión con Experto -->
+                <div class="process-step" itemscope itemtype="https://schema.org/Thing">
+                    <div class="process-step-number">3</div>
+                    <div class="process-step-line"></div>
+                    <div class="process-step-content">
+                        <h3 class="process-step-title" itemprop="name">Sesión Privada con Experto</h3>
+                        <p class="process-step-description" itemprop="description">
+                            Agenda una consulta personalizada con uno de nuestros especialistas en libros raros. Discute tus objetivos de coleccionismo, presupuesto y preferencias. Recibe recomendaciones experto basadas en análisis de mercado y tendencias de inversión en activos culturales.
+                        </p>
+                        <p class="process-step-benefit">Beneficio: Asesoramiento personalizado y acceso VIP</p>
+                        <p class="process-step-time">⏱️ 30-60 minutos</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Compra Segura -->
+                <div class="process-step" itemscope itemtype="https://schema.org/Thing">
+                    <div class="process-step-number">4</div>
+                    <div class="process-step-line"></div>
+                    <div class="process-step-content">
+                        <h3 class="process-step-title" itemprop="name">Compra Segura y Verificada</h3>
+                        <p class="process-step-description" itemprop="description">
+                            Realiza tu compra a través de nuestro sistema de pago seguro y encriptado. Todos los libros son verificados nuevamente antes del envío. Recibirás documentación completa, certificados de autenticidad y garantía de satisfacción. Transparencia total en cada transacción.
+                        </p>
+                        <p class="process-step-benefit">Beneficio: Garantía de autenticidad y protección del comprador</p>
+                        <p class="process-step-time">⏱️ Procesamiento en 24 horas</p>
+                    </div>
+                </div>
+
+                <!-- Step 5: Entrega Certificada -->
+                <div class="process-step" itemscope itemtype="https://schema.org/Thing">
+                    <div class="process-step-number">5</div>
+                    <div class="process-step-content">
+                        <h3 class="process-step-title" itemprop="name">Entrega Certificada y Asegurada</h3>
+                        <p class="process-step-description" itemprop="description">
+                            Tu colección es embalada con cuidado profesional y enviada mediante servicio de entrega certificada con seguro completo. Rastreo en tiempo real de tu envío. Nuestro equipo de logística especializada garantiza que tus libros lleguen en perfecto estado. Soporte post-venta disponible.
+                        </p>
+                        <p class="process-step-benefit">Beneficio: Entrega segura y soporte continuo</p>
+                        <p class="process-step-time">⏱️ 3-7 días hábiles</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-cta">
+                <p>¿Listo para comenzar tu viaje como coleccionista premium?</p>
+                <a href="#" class="btn btn-primary btn-large">
+                    Iniciar Registro
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION_TAG: garantia-de-autenticidad-y-certificacion -->
+    <!-- SECTION_TAG: ofertas-limitadas-y-nuevas-adquisiciones -->
+    <!-- SECTION_TAG: invertir-en-cultura-por-que-los-libros-raros-son-activos-valiosos -->
+    <!-- FOOTER_TAG: inkstorybookvault-calle-de-las-letras-214-ciudad-de-mexico-todos-los-derechos-reservados-2025 --><!-- IMPORTANT: Remember to include En InkStorybookVault respetamos tu privacidad.<br>Recopilamos datos personales (nombre, correo, teléfono) únicamente para responder tus consultas y enviarte información sobre libros o productos editoriales.<br>Tus datos no se comparten con terceros sin tu consentimiento.<br>Para ejercer tus derechos de acceso, corrección o eliminación, escríbenos a privacidad@inkstorybookvault.com<br>.<br><br>Última actualización: noviembre 2025. tag somewhere in the footer for privacy policy content --><!-- IMPORTANT: Remember to include El uso del sitio www.inkstorybookvault.com<br> implica la aceptación de estos términos.<br>El contenido tiene fines informativos y culturales.<br>Todo el material (textos, imágenes, logotipos) pertenece a InkStorybookVault.<br>No está permitida su reproducción sin autorización escrita. tag somewhere in the footer for terms and conditions content --><!-- IMPORTANT: Remember to include Usamos cookies para analizar el tráfico y mejorar tu experiencia de lectura digital.<br>Puedes configurar tu navegador para rechazarlas o eliminarlas.<br>Al continuar navegando, aceptas su uso. tag in a VISIBLE cookie consent banner -->
+</body>
+</html>
