@@ -481,23 +481,75 @@ const app = {
             });
         }
         
-        // Search button
+        // Search button & modal
         const searchBtn = document.querySelector('.search-btn');
+        const searchModal = document.querySelector('.search-modal');
+        const searchInput = searchModal ? searchModal.querySelector('#search-modal-input') : null;
+        const searchForm = searchModal ? searchModal.querySelector('.search-modal__form') : null;
+        const searchCloseTriggers = searchModal ? searchModal.querySelectorAll('[data-close="search"]') : [];
+
+        const openSearchModal = () => {
+            if (!searchModal) return;
+            searchModal.classList.add('is-open');
+            searchModal.removeAttribute('hidden');
+            document.body.classList.add('no-scroll');
+
+            window.setTimeout(() => {
+                if (searchInput instanceof HTMLElement) {
+                    searchInput.focus();
+                }
+            }, 50);
+        };
+
+        const closeSearchModal = () => {
+            if (!searchModal) return;
+            searchModal.classList.remove('is-open');
+            searchModal.setAttribute('hidden', '');
+            document.body.classList.remove('no-scroll');
+
+            if (searchBtn instanceof HTMLElement) {
+                searchBtn.focus();
+            }
+        };
+
         if (searchBtn) {
             searchBtn.addEventListener('click', () => {
-                console.log('Search clicked');
-                // TODO: Implement search functionality
+                const isOpen = searchModal?.classList.contains('is-open');
+                if (isOpen) {
+                    closeSearchModal();
+                } else {
+                    openSearchModal();
+                }
             });
         }
-        
-        // Cart button
-        const cartBtn = document.querySelector('.cart-btn');
-        if (cartBtn) {
-            cartBtn.addEventListener('click', () => {
-                console.log('Cart clicked');
-                // TODO: Implement cart functionality
+
+        searchCloseTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                closeSearchModal();
+            });
+        });
+
+        if (searchModal) {
+            searchModal.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.dataset.close === 'search') {
+                    closeSearchModal();
+                }
             });
         }
+
+        if (searchForm) {
+            searchForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                closeSearchModal();
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+                closeSearchModal();
+            }
+        });
     }
 };
 
