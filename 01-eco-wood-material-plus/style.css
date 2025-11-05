@@ -1422,6 +1422,309 @@ html[data-theme="dark"] .quote-section {
 }
 
 /* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    margin-top: var(--spacing-3xl);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.footer-brand {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+}
+
+.footer-logo:hover,
+.footer-logo:focus {
+    color: var(--color-primary);
+}
+
+.footer-logo:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+}
+
+.footer-logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+.footer-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-relaxed);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer-heading {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.footer-list,
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-list a,
+.footer-links a,
+.footer-cta {
+    color: var(--color-text-medium);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-list a:hover,
+.footer-links a:hover,
+.footer-cta:hover,
+.footer-list a:focus,
+.footer-links a:focus,
+.footer-cta:focus {
+    color: var(--color-primary-dark);
+}
+
+.footer-cta {
+    font-weight: 600;
+}
+
+.footer-label {
+    font-weight: 600;
+    margin-right: var(--spacing-xs);
+}
+
+.footer-text {
+    color: var(--color-text-medium);
+    line-height: var(--line-height-relaxed);
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-form input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+}
+
+.footer-form button {
+    align-self: flex-start;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.footer-form button:hover,
+.footer-form button:focus {
+    background: var(--color-primary-dark);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.footer-legal {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+}
+
+.footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-legal-links a {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    text-decoration: none;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links a:focus {
+    color: var(--color-primary);
+}
+
+.footer-legal-text {
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-relaxed);
+}
+
+.footer-legal-text a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.footer-legal-text a:hover,
+.footer-legal-text a:focus {
+    text-decoration: underline;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Cookie banner */
+.cookie-banner {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+    z-index: 2000;
+    max-width: 460px;
+    margin: 0 auto;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.cookie-banner[hidden] {
+    display: none;
+}
+
+.cookie-banner__content h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cookie-banner__content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-relaxed);
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.cookie-button {
+    flex: 1 1 140px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.cookie-button--accept {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.cookie-button--accept:hover,
+.cookie-button--accept:focus {
+    background: var(--color-primary-dark);
+}
+
+.cookie-button--decline {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text-dark);
+}
+
+.cookie-button--decline:hover,
+.cookie-button--decline:focus {
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+}
+
+html[data-theme="dark"] .footer {
+    background: var(--color-bg-secondary);
+}
+
+html[data-theme="dark"] .cookie-banner {
+    background: var(--color-bg-secondary);
+}
+
+/* ============================================================================
    RESPONSIVE DESIGN - TABLET & DESKTOP
    ============================================================================ */
 
