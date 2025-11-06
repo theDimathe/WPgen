@@ -704,6 +704,7 @@ html[data-theme="dark"] .benefits-context {
     grid-template-columns: 1fr;
     gap: var(--spacing-3xl);
     overflow: hidden;
+    justify-items: center;
 }
 
 /* Designer Profile */
@@ -717,6 +718,8 @@ html[data-theme="dark"] .benefits-context {
     flex-direction: column;
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
+    width: 100%;
+    max-width: 360px;
 }
 
 .designer-profile:hover {

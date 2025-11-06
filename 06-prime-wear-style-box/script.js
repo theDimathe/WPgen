@@ -15,6 +15,7 @@ class PrimeWearApp {
         this.setupParallax();
         this.setupIntersectionObserver();
         this.setupTestimonialsCarousel();
+        this.setupCookieBanner();
     }
 
     // ========================================================================
@@ -254,6 +255,48 @@ class PrimeWearApp {
             touchEndX = e.changedTouches[0].screenX;
             this.handleSwipe(touchStartX, touchEndX, track, dots, cards);
         }, false);
+    }
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        if (!banner) return;
+
+        const acceptBtn = document.getElementById('cookieAccept');
+        const settingsBtn = document.getElementById('cookieSettings');
+        const note = document.getElementById('cookieNote');
+        const storageKey = 'primewear-cookie-consent';
+
+        const closeBanner = () => {
+            if (banner.classList.contains('is-closing')) return;
+            banner.classList.add('is-closing');
+            window.setTimeout(() => {
+                banner.setAttribute('hidden', '');
+            }, 300);
+        };
+
+        if (localStorage.getItem(storageKey) === 'accepted') {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        acceptBtn?.addEventListener('click', () => {
+            localStorage.setItem(storageKey, 'accepted');
+            closeBanner();
+        });
+
+        settingsBtn?.addEventListener('click', () => {
+            if (!note) return;
+            const isHidden = note.hasAttribute('hidden');
+            if (isHidden) {
+                note.removeAttribute('hidden');
+                settingsBtn.setAttribute('aria-expanded', 'true');
+                settingsBtn.textContent = 'Ocultar opciones';
+            } else {
+                note.setAttribute('hidden', '');
+                settingsBtn.setAttribute('aria-expanded', 'false');
+                settingsBtn.textContent = 'Configurar';
+            }
+        });
     }
 
     goToSlide(index, track, dots, cards) {
