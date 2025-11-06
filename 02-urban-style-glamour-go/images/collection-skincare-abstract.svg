@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Colección de cuidado de la piel sin rostros</title>
+  <desc id="desc">Frascos botánicos y gotas abstractas inspiradas en bienestar sin mostrar personas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bbf7d0"/>
+      <stop offset="100%" stop-color="#ecfeff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#6ee7b7" stroke-width="4" fill="none">
+    <circle cx="200" cy="220" r="150"/>
+    <circle cx="520" cy="220" r="150"/>
+    <circle cx="360" cy="520" r="220"/>
+  </g>
+  <g transform="translate(140 140)">
+    <rect x="80" y="260" width="360" height="180" rx="60" fill="#0f172a" opacity="0.35"/>
+    <rect x="120" y="200" width="120" height="240" rx="40" fill="url(#bottle)"/>
+    <rect x="300" y="160" width="140" height="280" rx="50" fill="#10b981"/>
+    <rect x="340" y="120" width="60" height="80" rx="20" fill="#5eead4"/>
+    <path d="M160 200C160 160 200 120 240 120C280 120 320 160 320 200" stroke="#a7f3d0" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M260 260C320 220 420 220 480 260" stroke="#99f6e4" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 18"/>
+    <g transform="translate(100 40)">
+      <path d="M120 0C200 80 200 160 120 240C40 160 40 80 120 0Z" fill="url(#drop)"/>
+      <path d="M120 40C160 90 160 150 120 200C80 150 80 90 120 40Z" fill="#d1fae5"/>
+    </g>
+    <g transform="translate(320 320)">
+      <path d="M120 0C200 60 220 140 160 200C100 260 40 220 0 160C40 80 60 20 120 0Z" fill="#bbf7d0" opacity="0.6"/>
+      <circle cx="120" cy="160" r="40" fill="#ecfeff"/>
+    </g>
+  </g>
+</svg>

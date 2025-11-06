@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Paisaje abstracto de moda urbana</title>
+  <desc id="desc">Composición generativa con siluetas de prendas flotantes y luces neón sin figuras humanas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121527"/>
+      <stop offset="50%" stop-color="#1d2b52"/>
+      <stop offset="100%" stop-color="#442153"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff5fa3" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ff5fa3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shapeA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fddb92"/>
+      <stop offset="100%" stop-color="#d1fdff"/>
+    </linearGradient>
+    <linearGradient id="shapeB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5b7cfb"/>
+      <stop offset="100%" stop-color="#9a5bfb"/>
+    </linearGradient>
+    <linearGradient id="shapeC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb5b8e"/>
+      <stop offset="100%" stop-color="#ffb3c1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#glow)"/>
+  <g fill="none" stroke="#7ad1ff" stroke-opacity="0.3">
+    <circle cx="200" cy="220" r="160"/>
+    <circle cx="1240" cy="140" r="180"/>
+    <circle cx="900" cy="680" r="220"/>
+  </g>
+  <g opacity="0.6">
+    <path d="M360 250C410 160 520 150 610 210C700 270 760 400 720 470C680 540 560 540 470 500C380 460 310 340 360 250Z" fill="url(#shapeA)"/>
+    <path d="M780 190C860 140 990 150 1070 230C1150 310 1180 450 1100 520C1020 590 890 560 820 480C750 400 700 240 780 190Z" fill="url(#shapeB)"/>
+    <path d="M520 600C580 520 700 490 810 540C920 590 990 710 940 790C890 870 750 860 660 810C570 760 460 680 520 600Z" fill="url(#shapeC)"/>
+  </g>
+  <g fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M410 280L520 260L600 360L560 480L430 450Z"/>
+    <path d="M930 240L1020 220L1120 340L1090 460L960 430Z"/>
+    <path d="M650 640L780 620L860 720L810 820L680 790Z"/>
+  </g>
+  <g fill="none" stroke="#1de5c2" stroke-opacity="0.6" stroke-width="3">
+    <path d="M420 310C470 340 480 410 440 450"/>
+    <path d="M980 280C1030 320 1040 390 1000 430"/>
+    <path d="M700 690C750 730 760 790 720 830"/>
+  </g>
+</svg>

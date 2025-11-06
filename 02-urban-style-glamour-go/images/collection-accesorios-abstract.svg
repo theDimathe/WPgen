@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Colección de accesorios sin rostros</title>
+  <desc id="desc">Ilustración con bolsos geométricos y joyería abstracta sin personas visibles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="jewel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="scarf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#f472b6" stroke-width="4" fill="none">
+    <circle cx="200" cy="220" r="160"/>
+    <circle cx="520" cy="200" r="140"/>
+    <circle cx="360" cy="520" r="220"/>
+  </g>
+  <g transform="translate(120 140)">
+    <path d="M100 260C100 200 150 150 210 150H330C390 150 440 200 440 260C440 320 390 370 330 370H210C150 370 100 320 100 260Z" fill="url(#bag)"/>
+    <rect x="160" y="140" width="220" height="80" rx="40" fill="#fecdd3"/>
+    <path d="M200 150C200 110 240 70 280 70C320 70 360 110 360 150" stroke="#fde68a" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <g transform="translate(320 260)">
+      <circle cx="120" cy="120" r="80" stroke="url(#jewel)" stroke-width="24" fill="none"/>
+      <circle cx="120" cy="120" r="36" fill="#fde68a"/>
+    </g>
+    <path d="M120 320C200 280 320 280 400 320" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+    <path d="M40 400C140 360 320 360 420 400" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round"/>
+    <path d="M60 220L40 80" stroke="url(#scarf)" stroke-width="18" stroke-linecap="round"/>
+  </g>
+</svg>

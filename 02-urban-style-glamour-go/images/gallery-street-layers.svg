@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Capas urbanas sin rostro</title>
+  <desc id="desc">Ilustración de prendas superpuestas sobre un maniquí abstracto sin mostrar caras.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="layer1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="layer2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="720" fill="url(#bg)"/>
+  <g opacity="0.35" stroke="#38bdf8" stroke-width="3" fill="none">
+    <circle cx="320" cy="200" r="140"/>
+    <circle cx="320" cy="520" r="220"/>
+  </g>
+  <g transform="translate(160 140)">
+    <path d="M80 220C80 160 140 100 200 100C260 100 320 160 320 220V320C320 380 260 440 200 440C140 440 80 380 80 320Z" fill="url(#layer2)"/>
+    <path d="M80 280C140 240 260 240 320 280V340C320 400 260 440 200 440C140 440 80 400 80 340Z" fill="url(#layer1)" opacity="0.85"/>
+    <path d="M200 100V40" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+    <path d="M120 240C160 230 240 230 280 240" stroke="#facc15" stroke-width="10" stroke-linecap="round"/>
+    <path d="M120 360C160 350 240 350 280 360" stroke="#fde68a" stroke-width="10" stroke-dasharray="14 16"/>
+  </g>
+</svg>

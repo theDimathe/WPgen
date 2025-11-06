@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Belleza natural sin rostro</title>
+  <desc id="desc">Frascos botánicos y hojas estilizadas sin mostrar personas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="720" fill="url(#bg)"/>
+  <g opacity="0.3" stroke="#6ee7b7" stroke-width="3" fill="none">
+    <circle cx="320" cy="220" r="150"/>
+    <circle cx="320" cy="520" r="220"/>
+  </g>
+  <g transform="translate(160 160)">
+    <rect x="80" y="200" width="280" height="220" rx="70" fill="#064e3b" opacity="0.6"/>
+    <rect x="120" y="160" width="120" height="200" rx="40" fill="url(#bottle)"/>
+    <rect x="260" y="140" width="80" height="220" rx="32" fill="#10b981"/>
+    <path d="M140 160C140 120 200 80 240 80C280 80 340 120 340 160" stroke="#bbf7d0" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <g transform="translate(40 40)">
+      <path d="M120 0C200 80 200 160 120 240C40 160 40 80 120 0Z" fill="#a7f3d0"/>
+      <path d="M120 40C150 90 150 150 120 200C90 150 90 90 120 40Z" fill="#dcfce7"/>
+    </g>
+    <g transform="translate(260 260)">
+      <path d="M0 120C0 60 60 0 120 0C180 0 240 60 240 120C240 180 180 240 120 240C60 240 0 180 0 120Z" fill="#bbf7d0" opacity="0.7"/>
+      <path d="M80 40C120 80 120 160 80 200" stroke="#22d3ee" stroke-width="12" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+</svg>

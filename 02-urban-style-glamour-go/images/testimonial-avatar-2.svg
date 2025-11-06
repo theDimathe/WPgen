@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Avatar abstracto 2</title>
+  <desc id="desc">Figura circular estilizada inspirada en moda sin rasgos faciales.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bg)"/>
+  <circle cx="120" cy="80" r="48" fill="#f8fafc" opacity="0.85"/>
+  <path d="M60 190C90 140 150 140 180 190" fill="#f8fafc" opacity="0.7"/>
+  <path d="M70 180C110 160 130 160 170 180" stroke="#fde68a" stroke-width="10" stroke-linecap="round"/>
+</svg>
