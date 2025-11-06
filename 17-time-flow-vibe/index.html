@@ -241,7 +241,7 @@
                             <span class="spec-item">Cristal Zafiro</span>
                         </div>
                         <div class="product-footer">
-                            <span class="product-price" itemprop="price">$8,500 MXN</span>
+                            <a href="#contacto-form" class="product-price price-inquiry">обращайтесь, чтобы узнать цену</a>
                             <a href="#" class="product-button">Ver Detalles</a>
                         </div>
                     </div>
@@ -269,7 +269,7 @@
                             <span class="spec-item">Cuero Italiano</span>
                         </div>
                         <div class="product-footer">
-                            <span class="product-price" itemprop="price">$6,200 MXN</span>
+                            <a href="#contacto-form" class="product-price price-inquiry">обращайтесь, чтобы узнать цену</a>
                             <a href="#" class="product-button">Ver Detalles</a>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                             <span class="spec-item">Malla Milanesa</span>
                         </div>
                         <div class="product-footer">
-                            <span class="product-price" itemprop="price">$9,800 MXN</span>
+                            <a href="#contacto-form" class="product-price price-inquiry">обращайтесь, чтобы узнать цену</a>
                             <a href="#" class="product-button">Ver Detalles</a>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
                             <span class="spec-item">Edición Limitada</span>
                         </div>
                         <div class="product-footer">
-                            <span class="product-price" itemprop="price">$15,500 MXN</span>
+                            <a href="#contacto-form" class="product-price price-inquiry">обращайтесь, чтобы узнать цену</a>
                             <a href="#" class="product-button">Ver Detalles</a>
                         </div>
                     </div>
@@ -849,6 +849,34 @@
                 <p class="tfv-footer__contact" itemprop="email">
                     Escríbenos a <a href="mailto:info@timeflowvibe.life">info@timeflowvibe.life</a>
                 </p>
+            </div>
+
+            <div class="tfv-footer__form-wrapper" itemprop="potentialAction" itemscope itemtype="https://schema.org/CommunicateAction">
+                <h3 class="tfv-footer__heading">Solicita una llamada</h3>
+                <p class="tfv-footer__text" itemprop="description">
+                    Déjanos tus datos y nuestro equipo te ayudará a elegir el reloj ideal para tu estilo de vida profesional.
+                </p>
+                <form
+                    id="contacto-form"
+                    class="tfv-footer__form"
+                    action="https://us.vsesvit.ai/en/landing/7f4b9d3a-0bb6-4d56-97f9-1b702d42cd7a/index.html?_section=contact"
+                    method="POST"
+                >
+                    <div class="tfv-footer__form-group">
+                        <label for="tfv-name" class="tfv-footer__label">Nombre</label>
+                        <input type="text" id="tfv-name" name="name" class="tfv-footer__input" placeholder="Tu nombre" required aria-required="true" />
+                    </div>
+                    <div class="tfv-footer__form-group">
+                        <label for="tfv-email" class="tfv-footer__label">Correo</label>
+                        <input type="email" id="tfv-email" name="email" class="tfv-footer__input" placeholder="tu@email.com" required aria-required="true" />
+                    </div>
+                    <div class="tfv-footer__form-group">
+                        <label for="tfv-message" class="tfv-footer__label">Mensaje</label>
+                        <textarea id="tfv-message" name="message" class="tfv-footer__textarea" rows="3" placeholder="Cuéntanos qué colección te interesa" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="tfv-footer__button">Enviar mensaje</button>
+                    <p class="tfv-footer__disclaimer">Tus datos serán utilizados solo para responder a tu consulta.</p>
+                </form>
             </div>
 
             <nav class="tfv-footer__nav" aria-label="Navegación secundaria">
