@@ -13,6 +13,7 @@ class WearFlowVibe {
         this.setupScrollAnimations();
         this.setupCarousel();
         this.setupFormValidation();
+        this.setupCookieConsent();
     }
 
     /* ============================================
@@ -291,6 +292,46 @@ class WearFlowVibe {
         if (isValid) {
             // Submit form
             form.submit();
+        }
+    }
+
+    /* ============================================
+       COOKIE CONSENT
+       ============================================ */
+
+    setupCookieConsent() {
+        const banner = document.getElementById('cookieConsentBanner');
+        const acceptBtn = document.getElementById('cookieAccept');
+        const manageLink = document.getElementById('cookieManage');
+        const storageKey = 'wearflowvibe-cookie-consent';
+
+        if (!banner || !acceptBtn) {
+            return;
+        }
+
+        const showBanner = () => {
+            banner.removeAttribute('hidden');
+            requestAnimationFrame(() => {
+                banner.classList.add('visible');
+            });
+        };
+
+        if (!localStorage.getItem(storageKey)) {
+            showBanner();
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem(storageKey, 'accepted');
+            banner.classList.remove('visible');
+            banner.setAttribute('hidden', '');
+        });
+
+        if (manageLink) {
+            manageLink.addEventListener('click', () => {
+                localStorage.setItem(storageKey, 'manage');
+                banner.classList.remove('visible');
+                banner.setAttribute('hidden', '');
+            });
         }
     }
 }

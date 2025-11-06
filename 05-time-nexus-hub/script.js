@@ -49,6 +49,7 @@ const TimeNexusApp = {
         this.setupScrollAnimations();
         this.setupLightbox();
         this.setupCarousel();
+        this.setupCookieConsent();
         console.log('TimeNexusApp initialized');
     },
 
@@ -483,7 +484,47 @@ const TimeNexusApp = {
     },
 
     // ========================================================================
-    // 11. UTILITY METHODS
+    // 11. COOKIE CONSENT
+    // ========================================================================
+
+    setupCookieConsent() {
+        const banner = document.getElementById('cookieConsentBanner');
+        const acceptBtn = document.getElementById('cookieAccept');
+        const manageLink = document.getElementById('cookieManage');
+        const storageKey = 'timenexushub-cookie-consent';
+
+        if (!banner || !acceptBtn) {
+            return;
+        }
+
+        const revealBanner = () => {
+            banner.removeAttribute('hidden');
+            requestAnimationFrame(() => {
+                banner.classList.add('visible');
+            });
+        };
+
+        if (!localStorage.getItem(storageKey)) {
+            revealBanner();
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem(storageKey, 'accepted');
+            banner.classList.remove('visible');
+            banner.setAttribute('hidden', '');
+        });
+
+        if (manageLink) {
+            manageLink.addEventListener('click', () => {
+                localStorage.setItem(storageKey, 'manage');
+                banner.classList.remove('visible');
+                banner.setAttribute('hidden', '');
+            });
+        }
+    },
+
+    // ========================================================================
+    // 12. UTILITY METHODS
     // ========================================================================
 
     log(message, data = null) {
@@ -496,7 +537,7 @@ const TimeNexusApp = {
 };
 
 // ============================================================================
-// 12. DOCUMENT READY
+// 13. DOCUMENT READY
 // ============================================================================
 
 if (document.readyState === 'loading') {
