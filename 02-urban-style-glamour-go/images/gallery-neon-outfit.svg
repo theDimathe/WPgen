@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Estilismo urbano neón sin rostro</title>
+  <desc id="desc">Maniquí abstracto con prendas geométricas iluminadas en tonos neón sin mostrar una cara.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="skirt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="720" fill="url(#bg)"/>
+  <g opacity="0.3" stroke="#38bdf8" stroke-width="4" fill="none">
+    <circle cx="320" cy="200" r="140"/>
+    <circle cx="320" cy="520" r="220"/>
+  </g>
+  <g transform="translate(160 120)">
+    <path d="M80 200C80 140 140 80 200 80C260 80 320 140 320 200V320C320 380 260 440 200 440C140 440 80 380 80 320Z" fill="url(#coat)"/>
+    <path d="M80 300C140 260 260 260 320 300V360C320 420 260 440 200 440C140 440 80 420 80 360Z" fill="url(#skirt)" opacity="0.85"/>
+    <line x1="200" y1="80" x2="200" y2="20" stroke="#f8fafc" stroke-width="14" stroke-linecap="round"/>
+    <path d="M120 220C160 210 240 210 280 220" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+    <path d="M120 360C160 340 240 340 280 360" stroke="#fde68a" stroke-width="10" stroke-dasharray="18 18"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustración de prendas urbanas superpuestas</title>
+  <desc id="desc">Arte vectorial generativo con chaquetas y capas estilizadas sin mostrar rostros humanos.</desc>
+  <defs>
+    <linearGradient id="background" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131521"/>
+      <stop offset="100%" stop-color="#2f1f3a"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8f70"/>
+      <stop offset="100%" stop-color="#ff3d81"/>
+    </linearGradient>
+    <linearGradient id="hoodie" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="pants" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="720" fill="url(#background)"/>
+  <g opacity="0.4" fill="none" stroke="#f472b6" stroke-width="4">
+    <path d="M120 160C240 120 320 200 360 320C400 440 520 500 620 440C720 380 760 220 860 260"/>
+    <path d="M60 460C180 420 240 520 280 600C320 680 440 720 540 660C640 600 700 460 820 420"/>
+  </g>
+  <g transform="translate(220 120)">
+    <path d="M120 200C120 120 180 60 260 60C340 60 400 120 400 200C400 280 360 340 300 420C260 476 220 476 180 420C120 340 120 280 120 200Z" fill="url(#coat)"/>
+    <path d="M200 140C200 110 230 80 260 80C290 80 320 110 320 140V240C320 270 300 300 260 300C220 300 200 270 200 240Z" fill="url(#hoodie)"/>
+    <path d="M180 420L220 540C240 600 280 600 320 540L360 420Z" fill="url(#pants)"/>
+    <path d="M180 230C220 260 300 260 340 230" fill="none" stroke="#fde68a" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g fill="none" stroke="#22d3ee" stroke-width="3" stroke-dasharray="8 12" opacity="0.6">
+    <path d="M160 120H760"/>
+    <path d="M140 560H720"/>
+    <circle cx="450" cy="320" r="260"/>
+  </g>
+</svg>
