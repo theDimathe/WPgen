@@ -10,6 +10,7 @@ const app = {
     scrolled: false,
     brandsCarouselIndex: 0,
     brandsCarouselItemsPerView: 1,
+    cookieConsentKey: 'glamnexushub-cookie-consent',
     
     // Initialize the application
     init() {
@@ -21,6 +22,7 @@ const app = {
         this.setupBrandsCarousel();
         this.setupProductFilters();
         this.setupGuideModals();
+        this.setupCookieBanner();
     },
     
     // Theme Management
@@ -521,7 +523,47 @@ const app = {
             }
         });
     },
-    
+
+    // Cookie Consent
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        if (!banner) return;
+
+        let savedChoice = null;
+        try {
+            savedChoice = localStorage.getItem(this.cookieConsentKey);
+        } catch (error) {
+            savedChoice = null;
+        }
+
+        if (savedChoice) {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        const acceptButton = banner.querySelector('[data-cookie-accept]');
+        const declineButton = banner.querySelector('[data-cookie-decline]');
+
+        banner.removeAttribute('hidden');
+
+        const handleChoice = (choice) => {
+            try {
+                localStorage.setItem(this.cookieConsentKey, choice);
+            } catch (error) {
+                // ignore storage errors
+            }
+            banner.setAttribute('hidden', '');
+        };
+
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => handleChoice('accepted'));
+        }
+
+        if (declineButton) {
+            declineButton.addEventListener('click', () => handleChoice('declined'));
+        }
+    },
+
     // Smooth Scroll for Anchor Links
     setupSmoothScroll() {
         document.addEventListener('click', (e) => {
