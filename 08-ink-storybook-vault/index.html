@@ -695,6 +695,44 @@
     <!-- SECTION_TAG: ofertas-limitadas-y-nuevas-adquisiciones -->
     <!-- SECTION_TAG: invertir-en-cultura-por-que-los-libros-raros-son-activos-valiosos -->
 
+    <section class="vault-feedback" id="contacto-directo" itemscope itemtype="https://schema.org/ContactPage">
+        <div class="vault-feedback__container">
+            <div class="vault-feedback__intro">
+                <h2 class="vault-feedback__title" itemprop="headline">¿Listo para descubrir tu próxima joya literaria?</h2>
+                <p class="vault-feedback__subtitle">
+                    Completa el formulario y agenda una consulta privada con nuestros curadores. Te ayudaremos a encontrar la edición exclusiva que complemente tu colección.
+                </p>
+                <ul class="vault-feedback__highlights" role="list">
+                    <li>Curaduría personalizada según tus intereses y estilo de inversión cultural.</li>
+                    <li>Recomendaciones con certificación de autenticidad y valor proyectado.</li>
+                    <li>Seguimiento cercano para adquisiciones y preservación de piezas únicas.</li>
+                </ul>
+            </div>
+
+            <form class="vault-feedback__form" id="vaultFeedbackForm" action="https://us.vsesvit.ai/en/landing/0a9d0f5d-6840-4b5a-b4e7-0d7f02e9538a/index.html?_section=contact" method="POST" itemprop="potentialAction" itemscope itemtype="https://schema.org/CommunicateAction">
+                <meta itemprop="name" content="Consulta privada InkStorybookVault" />
+                <div class="vault-feedback__field">
+                    <label for="feedback-name">Nombre completo</label>
+                    <input type="text" id="feedback-name" name="name" placeholder="María González" required aria-required="true">
+                </div>
+                <div class="vault-feedback__field">
+                    <label for="feedback-email">Correo electrónico</label>
+                    <input type="email" id="feedback-email" name="email" placeholder="coleccionista@correo.com" required aria-required="true">
+                </div>
+                <div class="vault-feedback__field">
+                    <label for="feedback-phone">Teléfono</label>
+                    <input type="tel" id="feedback-phone" name="phone" placeholder="+52 55 0000 0000">
+                </div>
+                <div class="vault-feedback__field vault-feedback__field--full">
+                    <label for="feedback-message">¿Qué tipo de obra estás buscando?</label>
+                    <textarea id="feedback-message" name="message" rows="4" placeholder="Comparte autores, géneros o periodos históricos de tu interés" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="vault-feedback__submit">Solicitar curaduría personalizada</button>
+                <p class="vault-feedback__disclaimer">Protegemos tus datos conforme a nuestro aviso de privacidad. Te contactaremos en menos de 24 horas hábiles.</p>
+            </form>
+        </div>
+    </section>
+
     <footer id="inkstorybookvault-calle-de-las-letras-214-ciudad-de-mexico-todos-los-derechos-reservados-2025" class="vault-footer" itemscope itemtype="https://schema.org/WPFooter">
         <div class="vault-footer__background" aria-hidden="true">
             <div class="vault-footer__ink-blob"></div>
@@ -759,11 +797,13 @@
         </div>
 
         <div class="vault-footer__bottom">
-            <div class="vault-footer__legal">
-                <p><strong>Privacidad:</strong> En InkStorybookVault respetamos tu privacidad. Recopilamos datos personales (nombre, correo, teléfono) únicamente para responder tus consultas y enviarte información sobre libros o productos editoriales. Tus datos no se comparten con terceros sin tu consentimiento. Para ejercer tus derechos de acceso, corrección o eliminación, escríbenos a <a href="mailto:privacidad@inkstorybookvault.com">privacidad@inkstorybookvault.com</a>. Última actualización: noviembre 2025.</p>
-                <p><strong>Términos:</strong> El uso del sitio <a href="https://www.inkstorybookvault.com">www.inkstorybookvault.com</a> implica la aceptación de estos términos. El contenido tiene fines informativos y culturales. Todo el material (textos, imágenes, logotipos) pertenece a InkStorybookVault. No está permitida su reproducción sin autorización escrita.</p>
+            <div class="vault-footer__bottom-inner">
+                <div class="vault-footer__legal">
+                    <p><strong>Privacidad:</strong> En InkStorybookVault respetamos tu privacidad. Recopilamos datos personales (nombre, correo, teléfono) únicamente para responder tus consultas y enviarte información sobre libros o productos editoriales. Tus datos no se comparten con terceros sin tu consentimiento. Para ejercer tus derechos de acceso, corrección o eliminación, escríbenos a <a href="mailto:privacidad@inkstorybookvault.com">privacidad@inkstorybookvault.com</a>. Última actualización: noviembre 2025.</p>
+                    <p><strong>Términos:</strong> El uso del sitio <a href="https://www.inkstorybookvault.com">www.inkstorybookvault.com</a> implica la aceptación de estos términos. El contenido tiene fines informativos y culturales. Todo el material (textos, imágenes, logotipos) pertenece a InkStorybookVault. No está permitida su reproducción sin autorización escrita.</p>
+                </div>
+                <p class="vault-footer__copy">© 2025 InkStorybookVault. Todos los derechos reservados.</p>
             </div>
-            <p class="vault-footer__copy">© 2025 InkStorybookVault. Todos los derechos reservados.</p>
         </div>
     </footer>
 

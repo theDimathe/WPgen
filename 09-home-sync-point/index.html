@@ -261,7 +261,7 @@
                         </div>
                         <div class="property-price">
                             <span class="price-label">Precio</span>
-                            <a href="#contacto-form" class="price-value price-inquiry">обращайтесь, чтобы узнать цену</a>
+                            <button type="button" class="price-inquiry-button" onclick="location.href='#contacto-form'">Solicita el precio</button>
                         </div>
                         <a href="#ponte-en-contacto-consulta-gratuita-con-nuestros-expertos" class="btn btn-property">Ver Detalles</a>
                     </div>
@@ -302,7 +302,7 @@
                         </div>
                         <div class="property-price">
                             <span class="price-label">Precio</span>
-                            <a href="#contacto-form" class="price-value price-inquiry">обращайтесь, чтобы узнать цену</a>
+                            <button type="button" class="price-inquiry-button" onclick="location.href='#contacto-form'">Solicita el precio</button>
                         </div>
                         <a href="#ponte-en-contacto-consulta-gratuita-con-nuestros-expertos" class="btn btn-property">Ver Detalles</a>
                     </div>
@@ -343,7 +343,7 @@
                         </div>
                         <div class="property-price">
                             <span class="price-label">Precio</span>
-                            <a href="#contacto-form" class="price-value price-inquiry">обращайтесь, чтобы узнать цену</a>
+                            <button type="button" class="price-inquiry-button" onclick="location.href='#contacto-form'">Solicita el precio</button>
                         </div>
                         <a href="#ponte-en-contacto-consulta-gratuita-con-nuestros-expertos" class="btn btn-property">Ver Detalles</a>
                     </div>
@@ -384,7 +384,7 @@
                         </div>
                         <div class="property-price">
                             <span class="price-label">Precio</span>
-                            <a href="#contacto-form" class="price-value price-inquiry">обращайтесь, чтобы узнать цену</a>
+                            <button type="button" class="price-inquiry-button" onclick="location.href='#contacto-form'">Solicita el precio</button>
                         </div>
                         <a href="#ponte-en-contacto-consulta-gratuita-con-nuestros-expertos" class="btn btn-property">Ver Detalles</a>
                     </div>
@@ -398,9 +398,7 @@
         <div class="container">
             <div class="why-choose-layout">
                 <!-- Left Image -->
-                <div class="why-choose-image">
-                    <img src="./images/325a9525563c2b2d91343f95b414fdb3.webp" alt="Experto de HomeSyncPoint en oficina moderna" class="why-choose-img" itemprop="image"/>
-                </div>
+                <div class="why-choose-image" role="img" aria-label="Mesa de trabajo digital con planos inmobiliarios iluminados"></div>
 
                 <!-- Right Features Grid -->
                 <div class="why-choose-features">
@@ -477,57 +475,54 @@
                 <p class="how-it-works-subtitle">Un proceso transparente y eficiente diseñado para tu comodidad. Desde la búsqueda hasta el cierre, te guiamos en cada etapa con expertos locales y tecnología inteligente.</p>
             </div>
 
-            <div class="how-it-works-timeline">
-                <!-- Step 1: Busca -->
-                <div class="how-it-works-step how-it-works-step-1" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="28" cy="28" r="18" stroke="currentColor" stroke-width="2"/>
-                            <path d="M42 42L54 54" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="28" cy="28" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M22 28H34M28 22V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+            <div class="how-it-works-grid">
+                <article class="how-step" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="how-step__badge">
+                        <span class="how-step__number">01</span>
+                        <div class="how-step__icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="28" cy="28" r="18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M42 42L54 54" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="28" cy="28" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M22 28H34M28 22V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="step-title" itemprop="name">Busca</h3>
-                    <p class="step-description" itemprop="text">Explora nuestro catálogo de propiedades verificadas utilizando filtros inteligentes. Nuestra plataforma utiliza inteligencia artificial para recomendarte propiedades que se ajusten a tus necesidades, presupuesto y preferencias específicas. Accede a información completa, fotos de alta calidad y detalles arquitectónicos de cada propiedad.</p>
-                </div>
+                    <h3 class="how-step__title" itemprop="name">Busca</h3>
+                    <p class="how-step__description" itemprop="text">Explora nuestro catálogo de propiedades verificadas utilizando filtros inteligentes. La plataforma emplea inteligencia artificial para recomendarte opciones alineadas con tus objetivos, presupuesto y estilo de vida. Accede a información completa, recorridos inmersivos y análisis comparativos.</p>
+                </article>
 
-                <!-- Arrow Desktop -->
-                <div class="step-arrow step-arrow-1">→</div>
-
-                <!-- Step 2: Visita -->
-                <div class="how-it-works-step how-it-works-step-2" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 32L32 8L56 32V56C56 57.0609 55.5786 58.0783 54.8284 58.8284C54.0783 59.5786 53.0609 60 52 60H12C10.9391 60 9.92172 59.5786 9.17157 58.8284C8.42143 58.0783 8 57.0609 8 56V32Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            <path d="M24 60V40H40V60" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            <rect x="28" y="44" width="8" height="8" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                <article class="how-step" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="how-step__badge">
+                        <span class="how-step__number">02</span>
+                        <div class="how-step__icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 32L32 8L56 32V56C56 57.0609 55.5786 58.0783 54.8284 58.8284C54.0783 59.5786 53.0609 60 52 60H12C10.9391 60 9.92172 59.5786 9.17157 58.8284C8.42143 58.0783 8 57.0609 8 56V32Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M24 60V40H40V60" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <rect x="28" y="44" width="8" height="8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="step-title" itemprop="name">Visita</h3>
-                    <p class="step-description" itemprop="text">Agenda una visita con nuestros expertos locales en el momento que mejor te convenga. Ofrecemos visitas presenciales y tours virtuales en 360° para tu comodidad. Nuestro equipo profesional te acompañará, responderá todas tus preguntas y te proporcionará información detallada sobre la propiedad, el vecindario y las oportunidades de inversión.</p>
-                </div>
+                    <h3 class="how-step__title" itemprop="name">Visita</h3>
+                    <p class="how-step__description" itemprop="text">Agenda visitas presenciales o tours virtuales en 360° acompañados por nuestros especialistas locales. Resolverán tus dudas sobre la propiedad, amenidades, proyecciones de renta y contexto urbano para que tomes decisiones con total certeza.</p>
+                </article>
 
-                <!-- Arrow Desktop -->
-                <div class="step-arrow step-arrow-2">→</div>
-
-                <!-- Step 3: Cierra -->
-                <div class="how-it-works-step how-it-works-step-3" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 20H52C53.0609 20 54.0783 20.4214 54.8284 21.1716C55.5786 21.9217 56 22.9391 56 24V48C56 49.0609 55.5786 50.0783 54.8284 50.8284C54.0783 51.5786 53.0609 52 52 52H12C10.9391 52 9.92172 51.5786 9.17157 50.8284C8.42143 50.0783 8 49.0609 8 48V24C8 22.9391 8.42143 21.9217 9.17157 21.1716C9.92172 20.4214 10.9391 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            <path d="M12 28H52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M16 40C16.5304 40 17.0391 39.7893 17.4142 39.4142C17.7893 39.0391 18 38.5304 18 38C18 37.4696 17.7893 36.9609 17.4142 36.5858C17.0391 36.2107 16.5304 36 16 36C15.4696 36 14.9609 36.2107 14.5858 36.5858C14.2107 36.9609 14 37.4696 14 38C14 38.5304 14.2107 39.0391 14.5858 39.4142C14.9609 39.7893 15.4696 40 16 40Z" fill="currentColor"/>
-                            <path d="M32 40C32.5304 40 33.0391 39.7893 33.4142 39.4142C33.7893 39.0391 34 38.5304 34 38C34 37.4696 33.7893 36.9609 33.4142 36.5858C33.0391 36.2107 32.5304 36 32 36C31.4696 36 30.9609 36.2107 30.5858 36.5858C30.2107 36.9609 30 37.4696 30 38C30 38.5304 30.2107 39.0391 30.5858 39.4142C30.9609 39.7893 31.4696 40 32 40Z" fill="currentColor"/>
-                            <path d="M48 40C48.5304 40 49.0391 39.7893 49.4142 39.4142C49.7893 39.0391 50 38.5304 50 38C50 37.4696 49.7893 36.9609 49.4142 36.5858C49.0391 36.2107 48.5304 36 48 36C47.4696 36 46.9609 36.2107 46.5858 36.5858C46.2107 36.9609 46 37.4696 46 38C46 38.5304 46.2107 39.0391 46.5858 39.4142C46.9609 39.7893 47.4696 40 48 40Z" fill="currentColor"/>
-                        </svg>
+                <article class="how-step" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="how-step__badge">
+                        <span class="how-step__number">03</span>
+                        <div class="how-step__icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 20H52C53.0609 20 54.0783 20.4214 54.8284 21.1716C55.5786 21.9217 56 22.9391 56 24V48C56 49.0609 55.5786 50.0783 54.8284 50.8284C54.0783 51.5786 53.0609 52 52 52H12C10.9391 52 9.92172 51.5786 9.17157 50.8284C8.42143 50.0783 8 49.0609 8 48V24C8 22.9391 8.42143 21.9217 9.17157 21.1716C9.92172 20.4214 10.9391 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M12 28H52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 40C16.5304 40 17.0391 39.7893 17.4142 39.4142C17.7893 39.0391 18 38.5304 18 38C18 37.4696 17.7893 36.9609 17.4142 36.5858C17.0391 36.2107 16.5304 36 16 36C15.4696 36 14.9609 36.2107 14.5858 36.5858C14.2107 36.9609 14 37.4696 14 38C14 38.5304 14.2107 39.0391 14.5858 39.4142C14.9609 39.7893 15.4696 40 16 40Z" fill="currentColor"/>
+                                <path d="M32 40C32.5304 40 33.0391 39.7893 33.4142 39.4142C33.7893 39.0391 34 38.5304 34 38C34 37.4696 33.7893 36.9609 33.4142 36.5858C33.0391 36.2107 32.5304 36 32 36C31.4696 36 30.9609 36.2107 30.5858 36.5858C30.2107 36.9609 30 37.4696 30 38C30 38.5304 30.2107 39.0391 30.5858 39.4142C30.9609 39.7893 31.4696 40 32 40Z" fill="currentColor"/>
+                                <path d="M48 40C48.5304 40 49.0391 39.7893 49.4142 39.4142C49.7893 39.0391 50 38.5304 50 38C50 37.4696 49.7893 36.9609 49.4142 36.5858C49.0391 36.2107 48.5304 36 48 36C47.4696 36 46.9609 36.2107 46.5858 36.5858C46.2107 36.9609 46 37.4696 46 38C46 38.5304 46.2107 39.0391 46.5858 39.4142C46.9609 39.7893 47.4696 40 48 40Z" fill="currentColor"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="step-title" itemprop="name">Cierra</h3>
-                    <p class="step-description" itemprop="text">Completa tu transacción con seguridad total mediante nuestros contratos digitales certificados. Utilizamos tecnología blockchain y firmas digitales para garantizar la integridad de todos los documentos. Nuestro equipo legal te guiará a través de cada paso, asegurando que todos los requisitos se cumplan y que tu inversión esté completamente protegida.</p>
-                </div>
+                    <h3 class="how-step__title" itemprop="name">Cierra</h3>
+                    <p class="how-step__description" itemprop="text">Cierra tu transacción con contratos digitales certificados, tecnología blockchain y firmas electrónicas avaladas. Nuestro equipo legal y financiero te acompaña hasta la entrega de llaves, garantizando cumplimiento normativo y máxima seguridad.</p>
+                </article>
             </div>
 
             <!-- Additional Information -->
@@ -713,52 +708,69 @@
         itemscope
         itemtype="https://schema.org/ContactPage"
     >
-        <div class="contact-wrapper">
-            <div class="contact-details" itemprop="description">
-                <h2>Solicita una Asesoría Personalizada</h2>
-                <p>
-                    Completa el formulario y uno de nuestros expertos inmobiliarios se comunicará contigo para compartir opciones
-                    exclusivas y guiarte durante todo el proceso de inversión.
-                </p>
+        <div class="container">
+            <div class="contact-panel">
+                <div class="contact-panel__info" itemprop="description">
+                    <h2 class="contact-panel__title">Solicita una Asesoría Personalizada</h2>
+                    <p class="contact-panel__subtitle">
+                        Completa el formulario y recibe un plan estratégico adaptado a tu inversión inmobiliaria. Nuestro equipo combinará datos de mercado y conocimiento local para recomendarte las mejores propiedades.
+                    </p>
+                    <ul class="contact-panel__highlights" role="list">
+                        <li>Agenda tu videollamada o visita presencial en menos de 24 horas.</li>
+                        <li>Recibe análisis comparativos, proyecciones de rentabilidad y documentación digital segura.</li>
+                        <li>Accede a inventario exclusivo antes de su publicación en portales abiertos.</li>
+                    </ul>
+                    <div class="contact-panel__meta">
+                        <div>
+                            <span class="contact-panel__meta-label">Horario</span>
+                            <span class="contact-panel__meta-value">Lunes a sábado, 9:00 - 19:00 h (CDMX)</span>
+                        </div>
+                        <div>
+                            <span class="contact-panel__meta-label">Respuesta promedio</span>
+                            <span class="contact-panel__meta-value">Menos de 2 horas hábiles</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form
+                    id="contacto-form"
+                    class="contact-panel__form"
+                    action="https://us.vsesvit.ai/en/landing/0a9d0f5d-6840-4b5a-b4e7-0d7f02e9538a/index.html?_section=contact"
+                    method="POST"
+                    itemprop="potentialAction"
+                    itemscope
+                    itemtype="https://schema.org/CommunicateAction"
+                >
+                    <meta itemprop="name" content="Solicitud de contacto HomeSyncPoint" />
+                    <div class="contact-field">
+                        <label for="contact-name">Nombre completo</label>
+                        <input type="text" id="contact-name" name="name" placeholder="María López" required aria-required="true" />
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-email">Correo electrónico</label>
+                        <input type="email" id="contact-email" name="email" placeholder="inversiones@correo.com" required aria-required="true" />
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-phone">Teléfono</label>
+                        <input type="tel" id="contact-phone" name="phone" placeholder="+52 55 0000 0000" />
+                    </div>
+                    <div class="contact-field contact-field--full">
+                        <label for="contact-message">Cuéntanos tus objetivos</label>
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="4"
+                            placeholder="Ejemplo: inversión en departamentos inteligentes en CDMX con ROI superior al 9%"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="contact-panel__submit">Agendar asesoría estratégica</button>
+                    <p class="contact-panel__disclaimer">
+                        HomeSyncPoint protegerá tus datos personales y los utilizará únicamente para responder a tu solicitud.
+                    </p>
+                </form>
             </div>
-            <form
-                id="contacto-form"
-                class="contact-form"
-                action="https://us.vsesvit.ai/en/landing/0a9d0f5d-6840-4b5a-b4e7-0d7f02e9538a/index.html?_section=contact"
-                method="POST"
-                itemprop="potentialAction"
-                itemscope
-                itemtype="https://schema.org/CommunicateAction"
-            >
-                <meta itemprop="name" content="Solicitud de contacto HomeSyncPoint" />
-                <div class="form-group">
-                    <label for="contact-name">Nombre Completo</label>
-                    <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required aria-required="true" />
-                </div>
-                <div class="form-group">
-                    <label for="contact-email">Correo Electrónico</label>
-                    <input type="email" id="contact-email" name="email" placeholder="tu@email.com" required aria-required="true" />
-                </div>
-                <div class="form-group">
-                    <label for="contact-phone">Teléfono</label>
-                    <input type="tel" id="contact-phone" name="phone" placeholder="+52 55 0000 0000" />
-                </div>
-                <div class="form-group">
-                    <label for="contact-message">Mensaje</label>
-                    <textarea
-                        id="contact-message"
-                        name="message"
-                        rows="4"
-                        placeholder="Cuéntanos qué tipo de propiedad estás buscando"
-                        required
-                        aria-required="true"
-                    ></textarea>
-                </div>
-                <button type="submit" class="contact-submit">Agendar una llamada</button>
-                <p class="form-disclaimer">
-                    HomeSyncPoint protegerá tus datos personales y los utilizará únicamente para responder a tu solicitud.
-                </p>
-            </form>
         </div>
     </section>
     <!-- SECTION_TAG: certificaciones-y-asociaciones-garantia-de-profesionalismo -->
