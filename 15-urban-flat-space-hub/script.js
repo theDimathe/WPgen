@@ -21,6 +21,9 @@ const App = {
         },
         statisticsSelector: '.statistic-number',
         consultationFormSelector: '#consultation-form',
+        newsletterFormSelector: '#footerNewsletter',
+        newsletterEmailSelector: '#newsletterEmail',
+        newsletterFeedbackSelector: '#footerFeedback',
     },
 
     // State
@@ -46,6 +49,8 @@ const App = {
         this.setupPropertyFilters();
         this.setupStatisticsAnimation();
         this.setupConsultationForm();
+        this.setupFooterNewsletter();
+        this.updateFooterYear();
         console.log('UrbanFlatSpaceHub App initialized');
     },
 
@@ -422,6 +427,42 @@ const App = {
         inputs.forEach((input) => {
             input.classList.remove('error');
         });
+    },
+
+    setupFooterNewsletter() {
+        const form = document.querySelector(this.config.newsletterFormSelector);
+        const emailInput = document.querySelector(this.config.newsletterEmailSelector);
+        const feedback = document.querySelector(this.config.newsletterFeedbackSelector);
+
+        if (!form || !emailInput || !feedback) return;
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            feedback.classList.remove('success', 'error');
+
+            if (!emailPattern.test(email)) {
+                feedback.textContent = 'Por favor ingresa un correo electrónico válido.';
+                feedback.classList.add('error');
+                emailInput.focus();
+                return;
+            }
+
+            feedback.textContent = '¡Gracias por suscribirte! Te enviaremos oportunidades exclusivas.';
+            feedback.classList.add('success');
+            form.reset();
+        });
+    },
+
+    updateFooterYear() {
+        const yearElement = document.getElementById('footerYear');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
     },
 
     showFormSuccess(form) {

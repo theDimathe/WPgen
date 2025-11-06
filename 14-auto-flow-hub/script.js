@@ -16,6 +16,8 @@ const App = {
         statsAnimated: false,
     },
 
+    cookieStorageKey: 'autoflowhub-cookie-consent',
+
     // Initialize application
     init() {
         this.setupTheme();
@@ -26,6 +28,8 @@ const App = {
         this.setupParallax();
         this.setupIntersectionObserver();
         this.setupStatisticsAnimation();
+        this.setupCookieBanner();
+        this.updateFooterYear();
     },
 
     // ========================================================================
@@ -294,7 +298,7 @@ const App = {
 
     animateStatistics() {
         const statNumbers = document.querySelectorAll('.stat-number');
-        
+
         statNumbers.forEach(element => {
             const targetValue = parseInt(element.getAttribute('data-count'), 10);
             const duration = 2000; // 2 seconds
@@ -314,6 +318,43 @@ const App = {
             
             animate();
         });
+    },
+
+    // ========================================================================
+    // FOOTER UTILITIES
+    // ========================================================================
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        const acceptButton = document.getElementById('cookieAccept');
+        const rejectButton = document.getElementById('cookieReject');
+
+        if (!banner || !acceptButton || !rejectButton) return;
+
+        const savedPreference = localStorage.getItem(this.cookieStorageKey);
+
+        if (!savedPreference) {
+            banner.classList.add('active');
+            banner.setAttribute('aria-hidden', 'false');
+        } else {
+            banner.setAttribute('aria-hidden', 'true');
+        }
+
+        const handlePreference = (value) => {
+            localStorage.setItem(this.cookieStorageKey, value);
+            banner.classList.remove('active');
+            banner.setAttribute('aria-hidden', 'true');
+        };
+
+        acceptButton.addEventListener('click', () => handlePreference('accepted'));
+        rejectButton.addEventListener('click', () => handlePreference('rejected'));
+    },
+
+    updateFooterYear() {
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) {
+            footerYear.textContent = new Date().getFullYear();
+        }
     },
 };
 

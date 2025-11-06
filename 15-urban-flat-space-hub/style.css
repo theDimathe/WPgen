@@ -1568,6 +1568,199 @@ body {
     }
 }
 
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.site-footer {
+    background: linear-gradient(135deg, var(--color-primary), #000c1a);
+    color: #ffffff;
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+}
+
+.footer-logo-icon {
+    color: var(--color-accent);
+}
+
+.footer-description {
+    max-width: 520px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-contact-line {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: var(--font-size-sm);
+}
+
+.footer-contact-label {
+    font-weight: 600;
+    margin-right: var(--spacing-xs);
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.footer-heading {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-links {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    color: var(--color-accent);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-form {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.footer-input {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: var(--font-size-sm);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.footer-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+}
+
+.footer-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: #00122a;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.footer-button:hover,
+.footer-button:focus {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.footer-form-feedback {
+    min-height: 20px;
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+}
+
+.footer-form-feedback.success {
+    color: var(--color-success);
+}
+
+.footer-form-feedback.error {
+    color: var(--color-error);
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: var(--spacing-2xl) auto 0;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.footer-copy {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-legal {
+    display: grid;
+    gap: var(--spacing-xs);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
+    }
+
+    .footer-columns {
+        gap: var(--spacing-xl);
+    }
+}
+
 /* Animation */
 @keyframes slideDown {
     from {
