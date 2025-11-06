@@ -21,6 +21,7 @@ const app = {
         this.setupGalleryAnimations();
         this.setupTestimonialsAnimations();
         this.setupParallax();
+        this.setupCookieBanner();
     },
 
     // ========================================================================
@@ -365,12 +366,44 @@ const app = {
                 const scrollPosition = window.scrollY;
                 const elementPosition = rect.top + scrollPosition;
                 const distance = scrollPosition - elementPosition;
-                
+
                 // Apply subtle parallax effect (20-30px range)
                 const parallaxOffset = distance * 0.15;
                 element.style.transform = `translateY(${parallaxOffset}px)`;
             });
         }, { passive: true });
+    },
+
+    // ========================================================================
+    // COOKIE CONSENT
+    // ========================================================================
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        if (!banner) return;
+
+        const acceptButton = banner.querySelector('[data-action="accept"]');
+        const rejectButton = banner.querySelector('[data-action="reject"]');
+        const storageKey = 'timeflowvibe-cookie-consent';
+        const savedConsent = localStorage.getItem(storageKey);
+
+        if (savedConsent) {
+            banner.setAttribute('aria-hidden', 'true');
+            return;
+        }
+
+        requestAnimationFrame(() => {
+            banner.classList.add('is-visible');
+            banner.setAttribute('aria-hidden', 'false');
+        });
+
+        const closeBanner = (value) => {
+            banner.classList.remove('is-visible');
+            banner.setAttribute('aria-hidden', 'true');
+            localStorage.setItem(storageKey, value);
+        };
+
+        acceptButton?.addEventListener('click', () => closeBanner('accepted'));
+        rejectButton?.addEventListener('click', () => closeBanner('rejected'));
     },
 
     // ========================================================================

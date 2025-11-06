@@ -22,6 +22,7 @@ const App = {
         this.setupMetrics();
         this.setupTestimonials();
         this.setupContactForm();
+        this.setupCookieBanner();
     },
 
     // ============================================
@@ -410,6 +411,38 @@ const App = {
                 submitBtn.disabled = false;
             }, 3000);
         });
+    },
+
+    // ============================================
+    // COOKIE CONSENT MANAGEMENT
+    // ============================================
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        if (!banner) return;
+
+        const acceptButton = banner.querySelector('[data-action="accept"]');
+        const rejectButton = banner.querySelector('[data-action="reject"]');
+        const storageKey = 'eliterentmarketpro-cookie-consent';
+        const consent = localStorage.getItem(storageKey);
+
+        if (consent) {
+            banner.setAttribute('aria-hidden', 'true');
+            return;
+        }
+
+        requestAnimationFrame(() => {
+            banner.classList.add('is-visible');
+            banner.setAttribute('aria-hidden', 'false');
+        });
+
+        const closeBanner = (value) => {
+            banner.classList.remove('is-visible');
+            banner.setAttribute('aria-hidden', 'true');
+            localStorage.setItem(storageKey, value);
+        };
+
+        acceptButton?.addEventListener('click', () => closeBanner('accepted'));
+        rejectButton?.addEventListener('click', () => closeBanner('rejected'));
     },
 
     // ============================================

@@ -1117,6 +1117,165 @@ html[data-theme="dark"] .theme-icon-dark {
 }
 
 /* ============================================
+   FOOTER STYLES
+   ============================================ */
+.site-footer {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(48, 48, 48, 0.95));
+    color: var(--color-text-light-dark);
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.footer-container {
+    display: grid;
+    gap: var(--spacing-2xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.footer-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-description {
+    color: rgba(232, 232, 232, 0.85);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.footer-contact a {
+    color: var(--color-primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-contact a:hover,
+.footer-policy-link:hover {
+    color: var(--color-primary-green);
+}
+
+.footer-heading {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.footer-list a {
+    color: rgba(232, 232, 232, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.footer-list a:hover {
+    color: var(--color-primary-gold);
+}
+
+.footer-text {
+    color: rgba(232, 232, 232, 0.75);
+    line-height: 1.7;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-policy-link {
+    color: var(--color-primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+    color: rgba(232, 232, 232, 0.7);
+    font-size: var(--font-size-sm);
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 40px);
+    max-width: 520px;
+    width: calc(100% - 32px);
+    background-color: rgba(26, 26, 26, 0.95);
+    color: var(--color-text-light-dark);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    padding: var(--spacing-lg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    z-index: 1100;
+}
+
+.cookie-banner.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+.cookie-content {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.cookie-message {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: rgba(232, 232, 232, 0.85);
+}
+
+.cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.cookie-button {
+    flex: 1 1 140px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(232, 232, 232, 0.25);
+    background: transparent;
+    color: var(--color-text-light-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.cookie-button:hover,
+.cookie-button:focus {
+    border-color: var(--color-primary-gold);
+    color: var(--color-primary-gold);
+    outline: none;
+}
+
+.cookie-button-primary {
+    background: linear-gradient(135deg, var(--color-primary-gold), var(--color-primary-green));
+    color: var(--color-text-dark);
+    border: none;
+}
+
+.cookie-button-primary:hover,
+.cookie-button-primary:focus {
+    filter: brightness(1.05);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -1313,6 +1472,16 @@ html[data-theme="dark"] .theme-icon-dark {
 
     .form-title {
         font-size: var(--font-size-lg);
+    }
+
+    .site-footer {
+        padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+    }
+
+    .cookie-banner {
+        width: calc(100% - 24px);
+        padding: var(--spacing-md);
+        bottom: 12px;
     }
 }
 
