@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Belleza natural sin modelos</title>
+  <desc id="desc">Escena realista con aceites botánicos, crema y hojas frescas sobre piedra sin presencia humana.</desc>
+  <defs>
+    <linearGradient id="gal-natural-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef5f0"/>
+      <stop offset="100%" stop-color="#ccdcca"/>
+    </linearGradient>
+    <radialGradient id="gal-natural-light" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gal-natural-oil" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd68c"/>
+      <stop offset="100%" stop-color="#d79a34"/>
+    </linearGradient>
+    <linearGradient id="gal-natural-cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7f1"/>
+      <stop offset="100%" stop-color="#dbc9bd"/>
+    </linearGradient>
+    <filter id="gal-natural-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
+      <feOffset dy="16" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#gal-natural-bg)"/>
+  <rect width="480" height="360" fill="url(#gal-natural-light)"/>
+  <g filter="url(#gal-natural-shadow)">
+    <ellipse cx="240" cy="280" rx="185" ry="46" fill="rgba(170,190,170,0.32)"/>
+  </g>
+  <g filter="url(#gal-natural-shadow)">
+    <rect x="160" y="220" width="220" height="80" rx="38" fill="#e9f1e8"/>
+    <rect x="170" y="228" width="200" height="64" rx="30" fill="#ffffff" opacity="0.85"/>
+  </g>
+  <g filter="url(#gal-natural-shadow)">
+    <rect x="190" y="160" width="60" height="150" rx="30" fill="url(#gal-natural-oil)"/>
+    <rect x="200" y="140" width="40" height="30" rx="14" fill="#ffeab7"/>
+    <rect x="206" y="130" width="28" height="18" rx="8" fill="#fff5d9"/>
+    <path d="M184 290H256C250 308 236 318 220 320C204 318 190 306 184 290Z" fill="#b67824" opacity="0.65"/>
+  </g>
+  <g filter="url(#gal-natural-shadow)">
+    <ellipse cx="300" cy="230" rx="60" ry="46" fill="url(#gal-natural-cream)"/>
+    <ellipse cx="300" cy="212" rx="48" ry="26" fill="#ffffff" opacity="0.85"/>
+    <rect x="262" y="194" width="76" height="22" rx="11" fill="#f6ebe1"/>
+    <path d="M262 240H338C330 268 314 284 300 284C286 284 270 268 262 240Z" fill="#cdbbae" opacity="0.6"/>
+  </g>
+  <g filter="url(#gal-natural-shadow)" opacity="0.85">
+    <path d="M150 250C160 230 182 210 210 198" stroke="#7bb690" stroke-width="14" stroke-linecap="round"/>
+    <path d="M330 198C352 212 370 236 380 262" stroke="#6aa982" stroke-width="16" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Accesorios urbanos sin modelos</title>
+  <desc id="desc">Fotografía estilizada con bolso, lentes y bufanda doblada sobre fondo oscuro sin personas.</desc>
+  <defs>
+    <linearGradient id="acc-ropa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181b28"/>
+      <stop offset="100%" stop-color="#2d3144"/>
+    </linearGradient>
+    <radialGradient id="acc-ropa-light" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f6cfa5" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f6cfa5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bag-accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7b878"/>
+      <stop offset="100%" stop-color="#c6723b"/>
+    </linearGradient>
+    <linearGradient id="scarf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8ea5ff"/>
+      <stop offset="100%" stop-color="#4a5bb6"/>
+    </linearGradient>
+    <linearGradient id="sunglasses" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#1f2534"/>
+    </linearGradient>
+    <filter id="acc-ropa-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+      <feOffset dy="18" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.33"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#acc-ropa-bg)"/>
+  <rect width="480" height="360" fill="url(#acc-ropa-light)"/>
+  <g filter="url(#acc-ropa-shadow)">
+    <ellipse cx="240" cy="280" rx="180" ry="45" fill="rgba(0,0,0,0.45)"/>
+  </g>
+  <g filter="url(#acc-ropa-shadow)">
+    <path d="M160 180C160 140 200 120 250 120H320C370 120 410 140 410 180V240C410 280 370 300 320 300H250C200 300 160 280 160 240Z" fill="url(#bag-accent)"/>
+    <path d="M180 170C180 150 210 140 250 140H320C360 140 390 150 390 170V200C370 210 340 216 300 216H270C230 216 200 210 180 200Z" fill="#fbd9ab" opacity="0.8"/>
+    <rect x="230" y="120" width="40" height="40" rx="16" fill="#f4d0a0"/>
+    <rect x="300" y="120" width="40" height="40" rx="16" fill="#f4d0a0"/>
+    <path d="M230 260H340C335 280 320 292 300 296H270C250 292 235 280 230 260Z" fill="#9a5525" opacity="0.8"/>
+  </g>
+  <g filter="url(#acc-ropa-shadow)">
+    <rect x="140" y="220" width="120" height="70" rx="20" fill="url(#scarf)"/>
+    <rect x="150" y="228" width="100" height="54" rx="18" fill="#6f84e0" opacity="0.7"/>
+    <rect x="160" y="236" width="80" height="12" rx="6" fill="#a4b5ff" opacity="0.8"/>
+    <rect x="160" y="256" width="80" height="12" rx="6" fill="#394a95" opacity="0.6"/>
+  </g>
+  <g filter="url(#acc-ropa-shadow)">
+    <path d="M250 230C250 210 270 190 300 190H340C370 190 390 210 390 230C390 260 360 280 320 280C280 280 250 260 250 230Z" fill="url(#sunglasses)"/>
+    <path d="M265 220H290C288 232 288 244 290 256H265C257 244 257 232 265 220Z" fill="#05070f"/>
+    <path d="M350 220H375C383 232 383 244 375 256H350C352 244 352 232 350 220Z" fill="#05070f"/>
+    <rect x="292" y="212" width="26" height="12" rx="6" fill="#1d2333"/>
+  </g>
+</svg>

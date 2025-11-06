@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Outfit neón sin modelos</title>
+  <desc id="desc">Bodegón realista con chamarra reflectante, bolso fluorescente y tenis blancos sin presencia humana.</desc>
+  <defs>
+    <linearGradient id="gal-neon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061016"/>
+      <stop offset="100%" stop-color="#182d3a"/>
+    </linearGradient>
+    <radialGradient id="gal-neon-light" cx="55%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#58f5ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#58f5ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gal-neon-jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ffd9"/>
+      <stop offset="100%" stop-color="#00a2ff"/>
+    </linearGradient>
+    <linearGradient id="gal-neon-bag" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5ff52"/>
+      <stop offset="100%" stop-color="#e4c900"/>
+    </linearGradient>
+    <linearGradient id="gal-neon-sneaker" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d7dcef"/>
+    </linearGradient>
+    <filter id="gal-neon-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="blur"/>
+      <feOffset dy="20" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#gal-neon-bg)"/>
+  <rect width="480" height="360" fill="url(#gal-neon-light)"/>
+  <g filter="url(#gal-neon-shadow)">
+    <ellipse cx="240" cy="285" rx="195" ry="50" fill="rgba(12,32,40,0.55)"/>
+  </g>
+  <g filter="url(#gal-neon-shadow)">
+    <path d="M150 170C150 130 200 100 260 100C320 100 370 130 370 170V250C370 288 320 320 260 320C200 320 150 288 150 250Z" fill="url(#gal-neon-jacket)"/>
+    <path d="M170 160C170 140 210 120 260 120C310 120 350 140 350 160V210C330 220 300 226 260 226C220 226 190 220 170 210Z" fill="#9cffef" opacity="0.6"/>
+  </g>
+  <g filter="url(#gal-neon-shadow)">
+    <rect x="220" y="240" width="140" height="60" rx="24" fill="url(#gal-neon-bag)"/>
+    <rect x="232" y="248" width="116" height="44" rx="20" fill="#fbff9e" opacity="0.85"/>
+    <rect x="248" y="228" width="24" height="28" rx="12" fill="#f9ff7d"/>
+    <rect x="300" y="228" width="24" height="28" rx="12" fill="#f9ff7d"/>
+  </g>
+  <g filter="url(#gal-neon-shadow)">
+    <path d="M150 260C150 230 192 200 240 200H260C308 200 350 230 350 260C350 300 300 320 250 320C200 320 150 300 150 260Z" fill="url(#gal-neon-sneaker)"/>
+    <rect x="180" y="250" width="24" height="40" rx="10" fill="#c0c5d8"/>
+    <rect x="236" y="250" width="24" height="40" rx="10" fill="#c0c5d8"/>
+    <rect x="208" y="236" width="28" height="18" rx="9" fill="#f4f6ff"/>
+  </g>
+</svg>

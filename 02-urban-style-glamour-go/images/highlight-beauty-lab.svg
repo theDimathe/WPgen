@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Laboratorio de belleza sin modelo</title>
+  <desc id="desc">Escena realista con frascos de skincare, brochas y bandeja de mármol iluminados suavemente sin personas.</desc>
+  <defs>
+    <linearGradient id="beauty-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f2f6"/>
+      <stop offset="100%" stop-color="#d7dbe6"/>
+    </linearGradient>
+    <radialGradient id="beauty-light" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f9c7aa"/>
+      <stop offset="100%" stop-color="#d8856d"/>
+    </linearGradient>
+    <linearGradient id="serum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c7e7f2"/>
+      <stop offset="100%" stop-color="#6bb0c7"/>
+    </linearGradient>
+    <linearGradient id="jar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4f8"/>
+      <stop offset="100%" stop-color="#d3c4d8"/>
+    </linearGradient>
+    <linearGradient id="tray" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#edeff5"/>
+      <stop offset="100%" stop-color="#c8ccd8"/>
+    </linearGradient>
+    <filter id="beauty-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feOffset dy="18" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="480" fill="url(#beauty-bg)"/>
+  <rect width="640" height="480" fill="url(#beauty-light)"/>
+  <g filter="url(#beauty-shadow)">
+    <ellipse cx="320" cy="390" rx="260" ry="60" fill="rgba(128,134,154,0.35)"/>
+  </g>
+  <g filter="url(#beauty-shadow)">
+    <rect x="170" y="250" width="340" height="90" rx="45" fill="url(#tray)"/>
+    <rect x="180" y="260" width="320" height="70" rx="35" fill="#f6f7fb" opacity="0.85"/>
+  </g>
+  <g filter="url(#beauty-shadow)">
+    <rect x="210" y="160" width="70" height="170" rx="35" fill="url(#bottle)"/>
+    <rect x="225" y="145" width="40" height="30" rx="10" fill="#fee2d3"/>
+    <rect x="228" y="135" width="34" height="20" rx="8" fill="#f9ede6" opacity="0.7"/>
+    <path d="M220 310H270V340C252 350 238 350 220 340Z" fill="#c46c50" opacity="0.8"/>
+  </g>
+  <g filter="url(#beauty-shadow)">
+    <rect x="300" y="130" width="60" height="200" rx="30" fill="url(#serum)"/>
+    <rect x="312" y="110" width="36" height="40" rx="10" fill="#dff0f6"/>
+    <rect x="318" y="105" width="24" height="18" rx="8" fill="#ffffff" opacity="0.6"/>
+    <path d="M308 310H352V338C340 344 320 346 308 338Z" fill="#4a98b1" opacity="0.6"/>
+  </g>
+  <g filter="url(#beauty-shadow)">
+    <ellipse cx="410" cy="280" rx="70" ry="60" fill="url(#jar)"/>
+    <ellipse cx="410" cy="250" rx="60" ry="35" fill="#ffffff" opacity="0.85"/>
+    <rect x="360" y="210" width="100" height="30" rx="15" fill="#f7e8f1" opacity="0.8"/>
+    <path d="M360 290H460C450 320 432 340 410 340C388 340 370 320 360 290Z" fill="#c6b4c8" opacity="0.6"/>
+  </g>
+  <g filter="url(#beauty-shadow)" opacity="0.8">
+    <rect x="180" y="320" width="120" height="14" rx="7" fill="#d9dae2"/>
+    <rect x="202" y="324" width="76" height="6" rx="3" fill="#f9f9fc"/>
+    <rect x="260" y="320" width="12" height="50" rx="6" fill="#d4b79f"/>
+    <rect x="276" y="320" width="12" height="50" rx="6" fill="#c9a383"/>
+    <rect x="292" y="320" width="12" height="50" rx="6" fill="#b79272"/>
+  </g>
+</svg>

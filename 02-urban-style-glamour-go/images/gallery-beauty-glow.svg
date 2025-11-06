@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Belleza luminosa sin modelos</title>
+  <desc id="desc">Escena realista con serum, crema iluminadora y pétalos sobre bandeja metálica sin rostros.</desc>
+  <defs>
+    <linearGradient id="gal-beauty-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f0f7"/>
+      <stop offset="100%" stop-color="#dcd4e4"/>
+    </linearGradient>
+    <radialGradient id="gal-beauty-light" cx="40%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gal-beauty-serum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd4f2"/>
+      <stop offset="100%" stop-color="#f37bc4"/>
+    </linearGradient>
+    <linearGradient id="gal-beauty-cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf9f5"/>
+      <stop offset="100%" stop-color="#dfd0c8"/>
+    </linearGradient>
+    <filter id="gal-beauty-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
+      <feOffset dy="16" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#gal-beauty-bg)"/>
+  <rect width="480" height="360" fill="url(#gal-beauty-light)"/>
+  <g filter="url(#gal-beauty-shadow)">
+    <ellipse cx="240" cy="280" rx="185" ry="46" fill="rgba(210,190,205,0.3)"/>
+  </g>
+  <g filter="url(#gal-beauty-shadow)">
+    <rect x="160" y="200" width="220" height="90" rx="40" fill="#f1e8ef"/>
+    <rect x="170" y="210" width="200" height="70" rx="35" fill="#ffffff" opacity="0.85"/>
+  </g>
+  <g filter="url(#gal-beauty-shadow)">
+    <rect x="190" y="150" width="60" height="150" rx="30" fill="url(#gal-beauty-serum)"/>
+    <rect x="200" y="130" width="40" height="30" rx="12" fill="#ffdff6"/>
+    <rect x="206" y="120" width="28" height="18" rx="8" fill="#fff2fa"/>
+    <path d="M184 290H256C250 306 234 316 220 318C206 316 192 308 184 290Z" fill="#ca4f9b" opacity="0.65"/>
+  </g>
+  <g filter="url(#gal-beauty-shadow)">
+    <ellipse cx="300" cy="230" rx="60" ry="48" fill="url(#gal-beauty-cream)"/>
+    <ellipse cx="300" cy="210" rx="48" ry="26" fill="#ffffff" opacity="0.85"/>
+    <rect x="262" y="192" width="76" height="22" rx="11" fill="#f6ede6"/>
+    <path d="M262 240H338C330 268 314 286 300 286C286 286 270 268 262 240Z" fill="#c9bcb3" opacity="0.65"/>
+  </g>
+  <g filter="url(#gal-beauty-shadow)" opacity="0.8">
+    <ellipse cx="170" cy="240" rx="24" ry="10" fill="#ffd4f2"/>
+    <ellipse cx="175" cy="255" rx="20" ry="9" fill="#fcb7e1"/>
+    <ellipse cx="360" cy="240" rx="26" ry="12" fill="#ffd8c6"/>
+    <ellipse cx="345" cy="255" rx="18" ry="8" fill="#f6b7a2"/>
+  </g>
+</svg>
