@@ -630,38 +630,40 @@
                 <!-- Subscription Form -->
                 <div class="offers-form">
                     <form id="newsletterForm" class="newsletter-form" method="POST" action="https://us.vsesvit.ai/en/landing/a885611a-4e59-44aa-b1e6-f74219817c97/index.html?_section=undefined">
-                        <div class="form-group">
-                            <label for="subscriberName" class="form-label">Tu Nombre</label>
-                            <input 
-                                type="text" 
-                                id="subscriberName" 
-                                name="name" 
-                                class="form-input" 
-                                placeholder="Ej: María García"
-                                required
-                                aria-required="true"
-                            />
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="subscriberName" class="form-label">Tu Nombre</label>
+                                <input
+                                    type="text"
+                                    id="subscriberName"
+                                    name="name"
+                                    class="form-input"
+                                    placeholder="Ej: María García"
+                                    required
+                                    aria-required="true"
+                                />
+                            </div>
+
+                            <div class="form-field">
+                                <label for="subscriberEmail" class="form-label">Tu Email</label>
+                                <input
+                                    type="email"
+                                    id="subscriberEmail"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="tu@email.com"
+                                    required
+                                    aria-required="true"
+                                />
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="subscriberEmail" class="form-label">Tu Email</label>
-                            <input 
-                                type="email" 
-                                id="subscriberEmail" 
-                                name="email" 
-                                class="form-input" 
-                                placeholder="tu@email.com"
-                                required
-                                aria-required="true"
-                            />
-                        </div>
-
-                        <div class="form-group form-checkbox">
-                            <input 
-                                type="checkbox" 
-                                id="gdprConsent" 
-                                name="gdpr_consent" 
-                                class="form-checkbox-input" 
+                        <div class="form-consent">
+                            <input
+                                type="checkbox"
+                                id="gdprConsent"
+                                name="gdpr_consent"
+                                class="form-checkbox-input"
                                 required
                                 aria-required="true"
                             />
@@ -670,13 +672,14 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-full-width">
-                            Suscribirse Ahora
-                        </button>
-
-                        <p class="form-note">
-                            Nos comprometemos a proteger tu privacidad. Puedes darte de baja en cualquier momento.
-                        </p>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                Suscribirse Ahora
+                            </button>
+                            <p class="form-note">
+                                Nos comprometemos a proteger tu privacidad. Puedes darte de baja en cualquier momento.
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -828,12 +831,18 @@
                 <div class="footer-column footer-newsletter">
                     <h3 class="footer-title">Únete a la vibra</h3>
                     <p>Recibe drops exclusivos, lanzamientos sostenibles y styling tips personalizados.</p>
-                    <form class="newsletter-form" action="#" method="post">
-                        <label class="sr-only" for="footerEmail">Correo electrónico</label>
-                        <input id="footerEmail" type="email" name="email" placeholder="Tu correo" required>
-                        <button type="submit" class="btn btn-primary">Suscribirme</button>
+                    <form class="footer-subscribe-form" action="#" method="post">
+                        <div class="footer-form-grid">
+                            <div class="footer-form-field">
+                                <label class="sr-only" for="footerEmail">Correo electrónico</label>
+                                <input id="footerEmail" type="email" name="email" placeholder="Tu correo" required>
+                            </div>
+                            <div class="footer-form-field">
+                                <button type="submit" class="btn btn-primary">Suscribirme</button>
+                            </div>
+                        </div>
+                        <small class="newsletter-note">Al suscribirte aceptas nuestro aviso de privacidad y puedes darte de baja en cualquier momento.</small>
                     </form>
-                    <small class="newsletter-note">Al suscribirte aceptas nuestro aviso de privacidad y puedes darte de baja en cualquier momento.</small>
                 </div>
             </div>
         </div>

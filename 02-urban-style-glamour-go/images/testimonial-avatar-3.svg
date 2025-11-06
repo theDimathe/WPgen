@@ -1,49 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
-  <title id="title">Rutina de skincare sin rostro</title>
-  <desc id="desc">Tarro de crema, gotas y hoja verde sobre fondo circular sin personas.</desc>
+  <title id="title">Avatar abstracto 3</title>
+  <desc id="desc">Figura circular estilizada enfocada en creatividad sin rasgos faciales.</desc>
   <defs>
-    <radialGradient id="avatar3-bg" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#eefdf6"/>
-      <stop offset="100%" stop-color="#bde6cf"/>
-    </radialGradient>
-    <linearGradient id="avatar3-jar" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#d9e5d9"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
-    <linearGradient id="avatar3-serum" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#aee5d0"/>
-      <stop offset="100%" stop-color="#6ab38f"/>
-    </linearGradient>
-    <filter id="avatar3-shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
-      <feOffset dy="10" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.35"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="240" height="240" rx="120" fill="url(#avatar3-bg)"/>
-  <g filter="url(#avatar3-shadow)">
-    <ellipse cx="120" cy="174" rx="74" ry="24" fill="rgba(130,190,150,0.3)"/>
-  </g>
-  <g filter="url(#avatar3-shadow)">
-    <ellipse cx="120" cy="150" rx="48" ry="34" fill="url(#avatar3-jar)"/>
-    <ellipse cx="120" cy="138" rx="38" ry="18" fill="#ffffff" opacity="0.85"/>
-    <rect x="94" y="130" width="52" height="12" rx="6" fill="#eff5ee"/>
-  </g>
-  <g filter="url(#avatar3-shadow)">
-    <rect x="152" y="100" width="22" height="80" rx="10" fill="url(#avatar3-serum)"/>
-    <rect x="156" y="88" width="14" height="20" rx="7" fill="#c0f1da"/>
-    <rect x="158" y="78" width="10" height="16" rx="6" fill="#def9eb"/>
-  </g>
-  <g filter="url(#avatar3-shadow)">
-    <path d="M76 156C88 138 108 126 120 122" stroke="#7bc59c" stroke-width="12" stroke-linecap="round"/>
-    <circle cx="180" cy="150" r="6" fill="#c1efd8"/>
-    <circle cx="188" cy="142" r="4" fill="#c1efd8"/>
-    <circle cx="172" cy="140" r="3" fill="#c1efd8"/>
-  </g>
+  <rect width="240" height="240" rx="120" fill="url(#bg)"/>
+  <circle cx="120" cy="80" r="50" fill="#f8fafc" opacity="0.8"/>
+  <path d="M60 190C80 140 160 140 180 190" fill="#f8fafc" opacity="0.65"/>
+  <path d="M70 178C110 158 130 158 170 178" stroke="#bbf7d0" stroke-width="12" stroke-linecap="round"/>
 </svg>

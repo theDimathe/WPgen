@@ -1,61 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
-  <title id="title">Conjunto de ropa urbana sin modelo</title>
-  <desc id="desc">Fotografía escenificada con chaqueta, camiseta y pantalones doblados sobre fondo neutro sin rostros humanos.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Colección urbana sin rostro</title>
+  <desc id="desc">Siluetas de maniquíes con prendas geométricas sin mostrar caras humanas.</desc>
   <defs>
-    <linearGradient id="ropa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#edeff4"/>
-      <stop offset="100%" stop-color="#c7ccd8"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#312e81"/>
     </linearGradient>
-    <radialGradient id="ropa-light" cx="60%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="jacket" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3e475f"/>
-      <stop offset="100%" stop-color="#1b2136"/>
+    <linearGradient id="dress" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#f97316"/>
     </linearGradient>
-    <linearGradient id="tee" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#d1d6e2"/>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    <linearGradient id="pants" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#7c879d"/>
-      <stop offset="100%" stop-color="#485064"/>
-    </linearGradient>
-    <filter id="ropa-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
-      <feOffset dy="18" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.32"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="480" height="360" fill="url(#ropa-bg)"/>
-  <rect width="480" height="360" fill="url(#ropa-light)"/>
-  <g filter="url(#ropa-shadow)">
-    <ellipse cx="240" cy="280" rx="190" ry="45" fill="rgba(90,96,114,0.3)"/>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <g opacity="0.3" stroke="#38bdf8" stroke-width="3" fill="none">
+    <circle cx="180" cy="200" r="140"/>
+    <circle cx="540" cy="220" r="160"/>
+    <circle cx="360" cy="520" r="220"/>
   </g>
-  <g filter="url(#ropa-shadow)">
-    <path d="M130 100C130 70 158 50 195 50H285C322 50 350 70 350 100V220C350 255 322 280 285 280H195C158 280 130 255 130 230Z" fill="url(#jacket)"/>
-    <path d="M150 100C150 82 168 70 195 70H285C312 70 330 82 330 100V200C330 230 312 250 285 250H195C168 250 150 230 150 210Z" fill="#252d44"/>
-    <rect x="195" y="70" width="30" height="160" rx="15" fill="#161d31"/>
-    <rect x="255" y="70" width="30" height="160" rx="15" fill="#161d31"/>
-    <ellipse cx="210" cy="210" rx="18" ry="12" fill="#0f1424"/>
-    <ellipse cx="270" cy="210" rx="18" ry="12" fill="#0f1424"/>
-  </g>
-  <g filter="url(#ropa-shadow)">
-    <rect x="170" y="140" width="140" height="80" rx="18" fill="url(#tee)"/>
-    <rect x="180" y="148" width="120" height="64" rx="16" fill="#f7f8fc" opacity="0.7"/>
-    <rect x="205" y="140" width="70" height="20" rx="10" fill="#e1e5f0"/>
-  </g>
-  <g filter="url(#ropa-shadow)">
-    <rect x="180" y="230" width="160" height="60" rx="18" fill="url(#pants)"/>
-    <rect x="190" y="236" width="140" height="48" rx="16" fill="#5a6376"/>
-    <rect x="205" y="240" width="40" height="16" rx="8" fill="#30384b"/>
-    <rect x="275" y="240" width="40" height="16" rx="8" fill="#30384b"/>
+  <g transform="translate(120 120)" fill="none" stroke-linecap="round">
+    <path d="M120 160C120 100 170 60 220 60C270 60 320 100 320 160V260C320 320 270 360 220 360C170 360 120 320 120 260Z" fill="url(#dress)" stroke="#fde68a" stroke-width="8"/>
+    <path d="M320 160C320 120 360 80 400 80C440 80 480 120 480 160V260C480 300 460 340 420 360C380 380 340 360 320 320Z" fill="url(#jacket)" stroke="#e0f2fe" stroke-width="8"/>
+    <line x1="220" y1="60" x2="220" y2="20" stroke="#e0f2fe" stroke-width="12"/>
+    <line x1="400" y1="80" x2="400" y2="20" stroke="#facc15" stroke-width="12"/>
+    <path d="M120 240C180 220 260 220 320 240" stroke="#f8fafc" stroke-width="10"/>
+    <path d="M320 260C360 240 420 240 460 260" stroke="#bae6fd" stroke-width="8"/>
   </g>
 </svg>

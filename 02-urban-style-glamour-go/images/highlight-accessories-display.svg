@@ -1,79 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
-  <title id="title">Exhibidor de accesorios sin modelos</title>
-  <desc id="desc">Escena fotográfica con gafas, reloj y joyería sobre pedestal de concreto con fondo degradado sin personas.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustración de accesorios urbanos</title>
+  <desc id="desc">Collage generativo de bolsos y joyería estilizada sin rostros humanos visibles.</desc>
   <defs>
-    <linearGradient id="acc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1b1f2d"/>
-      <stop offset="100%" stop-color="#2d3144"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#312e81"/>
     </linearGradient>
-    <radialGradient id="acc-light" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#ffe0c2" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#ffe0c2" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="pedestal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0f1f4"/>
-      <stop offset="100%" stop-color="#b1b6c2"/>
+    <linearGradient id="bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#fb7185"/>
     </linearGradient>
-    <linearGradient id="watch" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f4b27a"/>
-      <stop offset="100%" stop-color="#c77a43"/>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#f97316"/>
     </linearGradient>
-    <linearGradient id="glasses" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7ac8ff"/>
-      <stop offset="100%" stop-color="#2b8bd1"/>
+    <linearGradient id="glasses" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
-    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffe6a8"/>
-      <stop offset="100%" stop-color="#d8a957"/>
-    </linearGradient>
-    <filter id="acc-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
-      <feOffset dy="22" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.32"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="640" height="480" fill="url(#acc-bg)"/>
-  <rect width="640" height="480" fill="url(#acc-light)"/>
-  <g filter="url(#acc-shadow)">
-    <ellipse cx="320" cy="390" rx="250" ry="60" fill="rgba(0,0,0,0.45)"/>
+  <rect width="900" height="720" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#818cf8" stroke-width="4" fill="none">
+    <circle cx="220" cy="200" r="160"/>
+    <circle cx="720" cy="260" r="200"/>
+    <circle cx="460" cy="540" r="240"/>
   </g>
-  <g filter="url(#acc-shadow)">
-    <rect x="200" y="240" width="240" height="160" rx="22" fill="url(#pedestal)"/>
-    <rect x="214" y="250" width="212" height="130" rx="18" fill="#f7f8fb" opacity="0.85"/>
+  <g transform="translate(160 160)">
+    <path d="M140 260C140 200 190 150 250 150H370C430 150 480 200 480 260V360C480 420 430 470 370 470H250C190 470 140 420 140 360Z" fill="url(#bag)"/>
+    <rect x="200" y="140" width="220" height="80" rx="40" fill="#fda4af"/>
+    <path d="M240 150C240 110 280 70 320 70C360 70 400 110 400 150" fill="none" stroke="#fecdd3" stroke-width="18" stroke-linecap="round"/>
+    <g transform="translate(420 60)">
+      <circle cx="120" cy="220" r="70" stroke="url(#ring)" stroke-width="24" fill="none"/>
+      <circle cx="120" cy="220" r="30" fill="#fde68a"/>
+    </g>
+    <g transform="translate(40 320)">
+      <rect x="0" y="0" width="280" height="120" rx="60" fill="url(#glasses)" opacity="0.7"/>
+      <rect x="40" y="30" width="80" height="60" rx="30" fill="#0ea5e9"/>
+      <rect x="160" y="30" width="80" height="60" rx="30" fill="#2dd4bf"/>
+      <rect x="130" y="40" width="20" height="40" fill="#0f172a"/>
+    </g>
+    <path d="M120 340C200 300 420 300 500 340" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 20"/>
   </g>
-  <g filter="url(#acc-shadow)">
-    <rect x="230" y="180" width="70" height="150" rx="35" fill="#33394d"/>
-    <rect x="236" y="165" width="58" height="30" rx="14" fill="#4c536d"/>
-    <rect x="240" y="152" width="50" height="20" rx="10" fill="#737b95" opacity="0.7"/>
-    <circle cx="265" cy="260" r="30" fill="#151929"/>
-    <circle cx="265" cy="260" r="24" fill="#f7f2e8"/>
-    <circle cx="265" cy="260" r="8" fill="#c48449"/>
-    <path d="M245 310H285V340C270 350 260 352 245 340Z" fill="#1c2234" opacity="0.75"/>
-  </g>
-  <g filter="url(#acc-shadow)">
-    <path d="M320 280C320 260 340 240 370 240H420C450 240 470 260 470 280C470 320 430 340 395 340C360 340 320 320 320 280Z" fill="url(#glasses)"/>
-    <path d="M340 270H365C362 284 362 296 365 310H340C332 296 332 284 340 270Z" fill="#0f1a2c" opacity="0.75"/>
-    <path d="M425 270H450C458 284 458 296 450 310H425C428 296 428 284 425 270Z" fill="#0f1a2c" opacity="0.75"/>
-    <rect x="360" y="260" width="70" height="16" rx="8" fill="#a7d8ff" opacity="0.6"/>
-    <rect x="350" y="288" width="20" height="8" rx="4" fill="#b8e3ff"/>
-    <rect x="420" y="288" width="20" height="8" rx="4" fill="#b8e3ff"/>
-  </g>
-  <g filter="url(#acc-shadow)">
-    <ellipse cx="300" cy="340" rx="60" ry="24" fill="#121521" opacity="0.85"/>
-    <ellipse cx="300" cy="338" rx="48" ry="18" fill="#1e2332"/>
-    <ellipse cx="300" cy="334" rx="34" ry="12" fill="#0f111b"/>
-    <ellipse cx="300" cy="332" rx="16" ry="8" fill="#ffe8b8"/>
-    <ellipse cx="300" cy="332" rx="10" ry="5" fill="#f0cb7e"/>
-  </g>
-  <g filter="url(#acc-shadow)">
-    <rect x="420" y="210" width="16" height="90" rx="8" fill="#d2b790"/>
-    <rect x="428" y="210" width="16" height="90" rx="8" fill="#c09c6a"/>
-    <rect x="436" y="210" width="16" height="90" rx="8" fill="#a77f4b"/>
+  <g opacity="0.4" stroke="#f9a8d4" stroke-width="5" stroke-linecap="round">
+    <path d="M160 580H760"/>
+    <path d="M200 620H700"/>
   </g>
 </svg>

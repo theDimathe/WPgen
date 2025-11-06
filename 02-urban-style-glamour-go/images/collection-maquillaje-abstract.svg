@@ -1,69 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
-  <title id="title">Colección de maquillaje sin personas</title>
-  <desc id="desc">Composición realista con paleta, labiales y brochas sobre tocador luminoso sin rostros.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Colección de maquillaje sin rostros</title>
+  <desc id="desc">Disposición generativa de brochas y paletas abstractas sin presencia de personas.</desc>
   <defs>
-    <linearGradient id="makeup-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f7f0f5"/>
-      <stop offset="100%" stop-color="#dccfe0"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
     </linearGradient>
-    <radialGradient id="makeup-light" cx="40%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="palette" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f4d6b7"/>
-      <stop offset="100%" stop-color="#c89b6a"/>
+    <linearGradient id="palette" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#f472b6"/>
     </linearGradient>
-    <linearGradient id="lipstick" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f26a8c"/>
-      <stop offset="100%" stop-color="#b63b58"/>
+    <linearGradient id="brush" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
     </linearGradient>
-    <linearGradient id="brush" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d6bfa2"/>
-      <stop offset="100%" stop-color="#a6865f"/>
-    </linearGradient>
-    <filter id="makeup-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
-      <feOffset dy="18" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.3"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="480" height="360" fill="url(#makeup-bg)"/>
-  <rect width="480" height="360" fill="url(#makeup-light)"/>
-  <g filter="url(#makeup-shadow)">
-    <ellipse cx="240" cy="280" rx="190" ry="50" fill="rgba(210,178,190,0.35)"/>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#818cf8" stroke-width="4" fill="none">
+    <circle cx="200" cy="220" r="150"/>
+    <circle cx="500" cy="200" r="150"/>
+    <circle cx="360" cy="520" r="210"/>
   </g>
-  <g filter="url(#makeup-shadow)">
-    <rect x="150" y="200" width="220" height="110" rx="24" fill="url(#palette)"/>
-    <rect x="160" y="210" width="200" height="90" rx="20" fill="#fbe2ca" opacity="0.85"/>
-    <rect x="170" y="220" width="60" height="24" rx="12" fill="#f26a8c"/>
-    <rect x="170" y="250" width="60" height="24" rx="12" fill="#f4a261"/>
-    <rect x="170" y="280" width="60" height="24" rx="12" fill="#8ec5fc"/>
-    <rect x="240" y="220" width="110" height="20" rx="10" fill="#f8e8d7"/>
-    <rect x="240" y="250" width="110" height="20" rx="10" fill="#f8e8d7"/>
-    <rect x="240" y="280" width="110" height="20" rx="10" fill="#f8e8d7"/>
-  </g>
-  <g filter="url(#makeup-shadow)">
-    <rect x="110" y="170" width="36" height="150" rx="16" fill="url(#lipstick)"/>
-    <rect x="110" y="150" width="36" height="30" rx="14" fill="#f8b1c2"/>
-    <rect x="115" y="140" width="26" height="20" rx="10" fill="#fde0e8"/>
-    <path d="M110 300H146L140 320C130 326 120 326 110 320Z" fill="#8c2b44" opacity="0.7"/>
-  </g>
-  <g filter="url(#makeup-shadow)">
-    <rect x="340" y="150" width="28" height="160" rx="14" fill="#ebaf82"/>
-    <rect x="348" y="150" width="12" height="160" rx="6" fill="#c28253"/>
-    <path d="M330 296H378C374 316 358 330 354 332C348 332 334 318 330 296Z" fill="#f3d5b7" opacity="0.8"/>
-  </g>
-  <g filter="url(#makeup-shadow)">
-    <rect x="300" y="160" width="20" height="170" rx="10" fill="url(#brush)"/>
-    <rect x="296" y="144" width="28" height="30" rx="14" fill="#8c6c49"/>
-    <rect x="292" y="132" width="36" height="20" rx="10" fill="#caa580"/>
-    <path d="M288 310H332C324 330 312 342 310 342C306 342 294 330 288 310Z" fill="#fef0da" opacity="0.7"/>
+  <g transform="translate(140 140)">
+    <rect x="80" y="260" width="360" height="160" rx="50" fill="url(#palette)"/>
+    <rect x="120" y="300" width="80" height="80" rx="24" fill="#fde68a"/>
+    <rect x="240" y="300" width="80" height="80" rx="24" fill="#f9a8d4"/>
+    <rect x="360" y="300" width="80" height="80" rx="24" fill="#38bdf8"/>
+    <path d="M120 260C120 200 200 140 260 140C320 140 400 200 400 260" stroke="#c084fc" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <g transform="translate(360 20)">
+      <rect x="0" y="0" width="60" height="220" rx="24" fill="url(#brush)"/>
+      <rect x="-20" y="200" width="100" height="60" rx="30" fill="#f1f5f9"/>
+      <rect x="10" y="10" width="40" height="80" rx="16" fill="#bae6fd"/>
+    </g>
+    <g transform="translate(40 40)">
+      <rect x="0" y="0" width="70" height="240" rx="30" fill="#fb7185"/>
+      <rect x="10" y="20" width="50" height="140" rx="20" fill="#fde68a"/>
+      <rect x="-30" y="220" width="130" height="60" rx="30" fill="#0ea5e9"/>
+    </g>
+    <path d="M80 420C160 380 320 380 400 420" stroke="#fda4af" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 18"/>
   </g>
 </svg>

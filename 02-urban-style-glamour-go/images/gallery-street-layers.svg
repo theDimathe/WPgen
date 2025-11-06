@@ -1,53 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
-  <title id="title">Capas streetwear sin modelos</title>
-  <desc id="desc">Composición realista con sudadera, chaqueta utilitaria y gorra sobre fondo cemento sin personas.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Capas urbanas sin rostro</title>
+  <desc id="desc">Ilustración de prendas superpuestas sobre un maniquí abstracto sin mostrar caras.</desc>
   <defs>
-    <linearGradient id="gal-street-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#161820"/>
-      <stop offset="100%" stop-color="#2b313a"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
-    <radialGradient id="gal-street-light" cx="55%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#9bb0ff" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#9bb0ff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="gal-street-hoodie" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6d7a99"/>
-      <stop offset="100%" stop-color="#2e364d"/>
+    <linearGradient id="layer1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
     </linearGradient>
-    <linearGradient id="gal-street-jacket" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f0b078"/>
-      <stop offset="100%" stop-color="#c77632"/>
+    <linearGradient id="layer2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#2563eb"/>
     </linearGradient>
-    <filter id="gal-street-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
-      <feOffset dy="16" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.3"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="480" height="360" fill="url(#gal-street-bg)"/>
-  <rect width="480" height="360" fill="url(#gal-street-light)"/>
-  <g filter="url(#gal-street-shadow)">
-    <ellipse cx="240" cy="280" rx="185" ry="46" fill="rgba(30,34,44,0.45)"/>
+  <rect width="640" height="720" fill="url(#bg)"/>
+  <g opacity="0.35" stroke="#38bdf8" stroke-width="3" fill="none">
+    <circle cx="320" cy="200" r="140"/>
+    <circle cx="320" cy="520" r="220"/>
   </g>
-  <g filter="url(#gal-street-shadow)">
-    <path d="M160 170C160 140 190 120 230 120H320C360 120 390 140 390 170V240C390 270 360 300 320 300H230C190 300 160 270 160 240Z" fill="url(#gal-street-hoodie)"/>
-    <path d="M180 160C180 145 200 135 230 135H320C350 135 370 145 370 160V210C350 220 320 226 270 226H240C210 226 190 220 180 210Z" fill="#8895b4" opacity="0.6"/>
-  </g>
-  <g filter="url(#gal-street-shadow)">
-    <rect x="190" y="200" width="180" height="90" rx="28" fill="url(#gal-street-jacket)"/>
-    <rect x="202" y="210" width="156" height="70" rx="24" fill="#f8c998" opacity="0.85"/>
-    <rect x="214" y="188" width="28" height="30" rx="12" fill="#f4ba87"/>
-    <rect x="318" y="188" width="28" height="30" rx="12" fill="#f4ba87"/>
-  </g>
-  <g filter="url(#gal-street-shadow)">
-    <ellipse cx="170" cy="240" rx="50" ry="30" fill="#202736"/>
-    <ellipse cx="170" cy="232" rx="40" ry="18" fill="#121723"/>
-    <ellipse cx="170" cy="228" rx="24" ry="10" fill="#3c465a"/>
+  <g transform="translate(160 140)">
+    <path d="M80 220C80 160 140 100 200 100C260 100 320 160 320 220V320C320 380 260 440 200 440C140 440 80 380 80 320Z" fill="url(#layer2)"/>
+    <path d="M80 280C140 240 260 240 320 280V340C320 400 260 440 200 440C140 440 80 400 80 340Z" fill="url(#layer1)" opacity="0.85"/>
+    <path d="M200 100V40" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+    <path d="M120 240C160 230 240 230 280 240" stroke="#facc15" stroke-width="10" stroke-linecap="round"/>
+    <path d="M120 360C160 350 240 350 280 360" stroke="#fde68a" stroke-width="10" stroke-dasharray="14 16"/>
   </g>
 </svg>

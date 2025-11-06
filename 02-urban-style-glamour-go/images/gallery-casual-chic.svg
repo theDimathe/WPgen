@@ -1,53 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
-  <title id="title">Casual chic sin modelos</title>
-  <desc id="desc">Composición realista con blazer beige, jeans doblados y bolso nude sobre fondo suave sin personas.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Casual chic sin rostro</title>
+  <desc id="desc">Maniquí abstracto con prendas relajadas y accesorios sin mostrar caras humanas.</desc>
   <defs>
-    <linearGradient id="gal-casual-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ede8e2"/>
-      <stop offset="100%" stop-color="#d2c6bc"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
-    <radialGradient id="gal-casual-light" cx="55%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="gal-casual-blazer" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f7e3c5"/>
-      <stop offset="100%" stop-color="#cba379"/>
+    <linearGradient id="top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
     </linearGradient>
-    <linearGradient id="gal-casual-jeans" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#7ea4c3"/>
-      <stop offset="100%" stop-color="#395372"/>
+    <linearGradient id="pants" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
     </linearGradient>
-    <filter id="gal-casual-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
-      <feOffset dy="16" result="offset"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.28"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="offset"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="480" height="360" fill="url(#gal-casual-bg)"/>
-  <rect width="480" height="360" fill="url(#gal-casual-light)"/>
-  <g filter="url(#gal-casual-shadow)">
-    <ellipse cx="240" cy="280" rx="190" ry="46" fill="rgba(150,130,110,0.3)"/>
+  <rect width="640" height="720" fill="url(#bg)"/>
+  <g opacity="0.3" stroke="#38bdf8" stroke-width="4" fill="none">
+    <circle cx="320" cy="200" r="140"/>
+    <circle cx="320" cy="520" r="220"/>
   </g>
-  <g filter="url(#gal-casual-shadow)">
-    <path d="M150 170C150 140 182 120 220 120H300C338 120 370 140 370 170V240C370 270 338 300 300 300H220C182 300 150 270 150 240Z" fill="url(#gal-casual-blazer)"/>
-    <path d="M170 160C170 144 190 132 220 132H300C330 132 350 144 350 160V210C330 218 304 222 260 222H220C190 222 170 214 170 198Z" fill="#fef2df" opacity="0.7"/>
-  </g>
-  <g filter="url(#gal-casual-shadow)">
-    <rect x="190" y="220" width="160" height="60" rx="22" fill="#f1d9bf"/>
-    <rect x="200" y="228" width="140" height="44" rx="18" fill="#fee8d0" opacity="0.8"/>
-    <rect x="212" y="208" width="24" height="28" rx="12" fill="#f9ddc3"/>
-    <rect x="304" y="208" width="24" height="28" rx="12" fill="#f9ddc3"/>
-  </g>
-  <g filter="url(#gal-casual-shadow)">
-    <rect x="150" y="240" width="120" height="60" rx="20" fill="url(#gal-casual-jeans)"/>
-    <rect x="160" y="248" width="100" height="44" rx="16" fill="#4f6c8c"/>
-    <rect x="168" y="236" width="84" height="12" rx="6" fill="#90b3ce" opacity="0.7"/>
+  <g transform="translate(160 140)">
+    <path d="M80 200C80 140 140 80 200 80C260 80 320 140 320 200V280C320 340 260 400 200 400C140 400 80 340 80 280Z" fill="url(#top)"/>
+    <path d="M80 320C120 300 280 300 320 320V400C320 460 260 500 200 500C140 500 80 460 80 400Z" fill="url(#pants)"/>
+    <path d="M200 80V20" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+    <path d="M120 240C160 230 240 230 280 240" stroke="#facc15" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="200" cy="340" r="36" fill="#fbbf24" opacity="0.7"/>
   </g>
 </svg>
