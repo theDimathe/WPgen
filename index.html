@@ -43,6 +43,42 @@
         color: #555;
       }
 
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: 32px;
+      }
+
+      .filter-button {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(42, 122, 226, 0.4);
+        background: rgba(42, 122, 226, 0.1);
+        color: #1f4f8f;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .filter-button:hover,
+      .filter-button:focus {
+        background: rgba(42, 122, 226, 0.18);
+        border-color: rgba(42, 122, 226, 0.65);
+        box-shadow: 0 4px 12px rgba(42, 122, 226, 0.2);
+        outline: none;
+      }
+
+      .filter-button.active {
+        background: #2a7ae2;
+        color: #fff;
+        border-color: #2a7ae2;
+        box-shadow: 0 6px 16px rgba(42, 122, 226, 0.35);
+      }
+
       ul {
         list-style: none;
         padding: 0;
@@ -51,8 +87,14 @@
         gap: 16px;
       }
 
+      .card-item.is-hidden {
+        display: none;
+      }
+
       a.card {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         padding: 20px 24px;
         background: #ffffff;
         border-radius: 12px;
@@ -68,8 +110,36 @@
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
       }
 
-      small {
+      .card-top {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .card-number {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2a7ae2;
+      }
+
+      .card-title {
+        font-size: 1.05rem;
+      }
+
+      .card-domain {
         color: #777;
+        letter-spacing: 0.02em;
+      }
+
+      .card-meta {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      .card-meta span {
+        font-weight: 600;
       }
 
       @media (max-width: 480px) {
@@ -87,128 +157,291 @@
     <main>
       <h1>Выберите сайт</h1>
       <p>Оба проекта доступны на GitHub Pages. Выберите нужный, чтобы продолжить.</p>
+      <div class="filter-bar" data-js-filter-bar></div>
       <ul>
-        <li>
-          <a class="card" href="01-eco-wood-material-plus/index.html">
-            <strong>01. Eco Wood Material Plus</strong><br />
-            <small>01-eco-wood-material-plus/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="01-eco-wood-material-plus/index.html">
+            <div class="card-top">
+              <span class="card-number">01</span>
+              <strong class="card-title">Eco Wood Material Plus</strong>
+            </div>
+            <small class="card-domain">ecowoodmaterialplus.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="02-urban-style-glamour-go/index.html">
-            <strong>02. Urban Style Glamour Go</strong><br />
-            <small>02-urban-style-glamour-go/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="02-urban-style-glamour-go/index.html">
+            <div class="card-top">
+              <span class="card-number">02</span>
+              <strong class="card-title">Urban Style Glamour Go</strong>
+            </div>
+            <small class="card-domain">urbanstyleglamourgo.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="03-wear-nexus-hub/index.html">
-            <strong>03. Wear Nexus Hub</strong><br />
-            <small>03-wear-nexus-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="03-wear-nexus-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">03</span>
+              <strong class="card-title">Wear Nexus Hub</strong>
+            </div>
+            <small class="card-domain">wearnexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="04-wear-flow-vibe/index.html">
-            <strong>04. Wear Flow Vibe</strong><br />
-            <small>04-wear-flow-vibe/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="04-wear-flow-vibe/index.html">
+            <div class="card-top">
+              <span class="card-number">04</span>
+              <strong class="card-title">Wear Flow Vibe</strong>
+            </div>
+            <small class="card-domain">wearflowvibe.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="05-time-nexus-hub/index.html">
-            <strong>05. Time Nexus Hub</strong><br />
-            <small>05-time-nexus-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="05-time-nexus-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">05</span>
+              <strong class="card-title">Time Nexus Hub</strong>
+            </div>
+            <small class="card-domain">timenexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="06-prime-wear-style-box/index.html">
-            <strong>06. Prime Wear Style Box</strong><br />
-            <small>06-prime-wear-style-box/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="06-prime-wear-style-box/index.html">
+            <div class="card-top">
+              <span class="card-number">06</span>
+              <strong class="card-title">Prime Wear Style Box</strong>
+            </div>
+            <small class="card-domain">primewearstylebox.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="07-nextcar-drive-master/index.html">
-            <strong>07. Nextcar Drive Master</strong><br />
-            <small>07-nextcar-drive-master/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="07-nextcar-drive-master/index.html">
+            <div class="card-top">
+              <span class="card-number">07</span>
+              <strong class="card-title">Nextcar Drive Master</strong>
+            </div>
+            <small class="card-domain">nextcardrivemaster.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="08-ink-storybook-vault/index.html">
-            <strong>08. Ink Storybook Vault</strong><br />
-            <small>08-ink-storybook-vault/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="08-ink-storybook-vault/index.html">
+            <div class="card-top">
+              <span class="card-number">08</span>
+              <strong class="card-title">Ink Storybook Vault</strong>
+            </div>
+            <small class="card-domain">inkstorybookvault.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="09-home-sync-point/index.html">
-            <strong>09. Home Sync Point</strong><br />
-            <small>09-home-sync-point/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="09-home-sync-point/index.html">
+            <div class="card-top">
+              <span class="card-number">09</span>
+              <strong class="card-title">Home Sync Point</strong>
+            </div>
+            <small class="card-domain">homesyncpoint.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="10-home-axis-top/index.html">
-            <strong>10. Home Axis Top</strong><br />
-            <small>10-home-axis-top/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="10-home-axis-top/index.html">
+            <div class="card-top">
+              <span class="card-number">10</span>
+              <strong class="card-title">Home Axis Top</strong>
+            </div>
+            <small class="card-domain">homeaxistop.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="11-glam-nexus-hub/index.html">
-            <strong>11. Glam Nexus Hub</strong><br />
-            <small>11-glam-nexus-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="11-glam-nexus-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">11</span>
+              <strong class="card-title">Glam Nexus Hub</strong>
+            </div>
+            <small class="card-domain">glamnexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="12-build-flow-hub/index.html">
-            <strong>12. Build Flow Hub</strong><br />
-            <small>12-build-flow-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="12-build-flow-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">12</span>
+              <strong class="card-title">Build Flow Hub</strong>
+            </div>
+            <small class="card-domain">buildflowhub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="13-book-nexus-hub/index.html">
-            <strong>13. Book Nexus Hub</strong><br />
-            <small>13-book-nexus-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="13-book-nexus-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">13</span>
+              <strong class="card-title">Book Nexus Hub</strong>
+            </div>
+            <small class="card-domain">booknexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="14-auto-flow-hub/index.html">
-            <strong>14. Auto Flow Hub</strong><br />
-            <small>14-auto-flow-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="14-auto-flow-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">14</span>
+              <strong class="card-title">Auto Flow Hub</strong>
+            </div>
+            <small class="card-domain">autoflowhub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="15-urban-flat-space-hub/index.html">
-            <strong>15. Urban Flat Space Hub</strong><br />
-            <small>15-urban-flat-space-hub/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="15-urban-flat-space-hub/index.html">
+            <div class="card-top">
+              <span class="card-number">15</span>
+              <strong class="card-title">Urban Flat Space Hub</strong>
+            </div>
+            <small class="card-domain">urbanflatspacehub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="16-elite-rent-market-pro/index.html">
-            <strong>16. Elite Rent Market Pro</strong><br />
-            <small>16-elite-rent-market-pro/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="16-elite-rent-market-pro/index.html">
+            <div class="card-top">
+              <span class="card-number">16</span>
+              <strong class="card-title">Elite Rent Market Pro</strong>
+            </div>
+            <small class="card-domain">eliterentmarketpro.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
-        <li>
-          <a class="card" href="17-time-flow-vibe/index.html">
-            <strong>17. Time Flow Vibe</strong><br />
-            <small>17-time-flow-vibe/index.html</small>
+        <li class="card-item">
+          <a class="card" data-geo="MX" href="17-time-flow-vibe/index.html">
+            <div class="card-top">
+              <span class="card-number">17</span>
+              <strong class="card-title">Time Flow Vibe</strong>
+            </div>
+            <small class="card-domain">timeflowvibe.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
 
       </ul>
     </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterBar = document.querySelector('[data-js-filter-bar]');
+        const cards = Array.from(document.querySelectorAll('.card'));
+        const items = cards.map((card) => card.closest('.card-item'));
+        const geos = Array.from(new Set(cards.map((card) => card.dataset.geo))).sort();
+        const buttons = [];
+
+        function applyFilter(value) {
+          cards.forEach((card, index) => {
+            const matches = value === 'all' || card.dataset.geo === value;
+            items[index].classList.toggle('is-hidden', !matches);
+          });
+        }
+
+        function setActive(value) {
+          buttons.forEach((button) => {
+            button.classList.toggle('active', button.dataset.filterValue === value);
+          });
+        }
+
+        function createButton(label, value) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'filter-button';
+          button.textContent = label;
+          button.dataset.filterValue = value;
+          button.addEventListener('click', () => {
+            setActive(value);
+            applyFilter(value);
+          });
+          buttons.push(button);
+          filterBar.appendChild(button);
+        }
+
+        if (filterBar && cards.length) {
+          createButton('Все', 'all');
+          geos.forEach((geo) => createButton(geo, geo));
+          setActive('all');
+          applyFilter('all');
+        }
+      });
+    </script>
   </body>
 </html>
