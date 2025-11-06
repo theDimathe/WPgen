@@ -13,6 +13,7 @@ const BookNexusApp = {
         themeStorageKey: 'booknexushub-theme',
         prefersDarkScheme: window.matchMedia('(prefers-color-scheme: dark)'),
         carouselScrollAmount: 320,
+        cookieStorageKey: 'booknexushub-cookie-consent',
     },
 
     // Initialize the application
@@ -26,6 +27,8 @@ const BookNexusApp = {
         this.setupCarousel();
         this.setupReviewsAnimations();
         this.setupCommunityAnimations();
+        this.setupCookieBanner();
+        this.updateFooterYear();
     },
 
     // ========================================================================
@@ -338,6 +341,43 @@ const BookNexusApp = {
         skipLink.textContent = 'Saltar al contenido principal';
         skipLink.className = 'skip-link';
         document.body.insertBefore(skipLink, document.body.firstChild);
+    },
+
+    // ========================================================================
+    // FOOTER ENHANCEMENTS
+    // ========================================================================
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('cookieAccept');
+        const rejectBtn = document.getElementById('cookieReject');
+
+        if (!banner || !acceptBtn || !rejectBtn) return;
+
+        const savedPreference = localStorage.getItem(this.config.cookieStorageKey);
+
+        if (!savedPreference) {
+            banner.classList.add('active');
+            banner.setAttribute('aria-hidden', 'false');
+        } else {
+            banner.setAttribute('aria-hidden', 'true');
+        }
+
+        const hideBanner = (preference) => {
+            localStorage.setItem(this.config.cookieStorageKey, preference);
+            banner.classList.remove('active');
+            banner.setAttribute('aria-hidden', 'true');
+        };
+
+        acceptBtn.addEventListener('click', () => hideBanner('accepted'));
+        rejectBtn.addEventListener('click', () => hideBanner('rejected'));
+    },
+
+    updateFooterYear() {
+        const yearElement = document.getElementById('footerYear');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
     },
 };
 
