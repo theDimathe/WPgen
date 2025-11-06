@@ -13,6 +13,7 @@ const InkStorybookApp = {
         mobileBreakpoint: 768,
         darkModeKey: 'inkstorybookvault-dark-mode',
         mobileMenuKey: 'inkstorybookvault-mobile-menu-open',
+        cookieConsentKey: 'inkstorybookvault-cookie-consent',
     },
 
     // State
@@ -29,6 +30,7 @@ const InkStorybookApp = {
         this.setupEventListeners();
         this.initTheme();
         this.handleResize();
+        this.setupCookieConsent();
         console.log('InkStorybookApp initialized');
     },
 
@@ -50,6 +52,8 @@ const InkStorybookApp = {
             testimonialsCarousel: document.getElementById('testimonialsCarousel'),
             carouselPrev: document.getElementById('carouselPrev'),
             carouselNext: document.getElementById('carouselNext'),
+            cookieBanner: document.getElementById('cookieBanner'),
+            cookieAccept: document.getElementById('cookieAccept'),
         };
     },
 
@@ -369,6 +373,29 @@ const InkStorybookApp = {
         this.elements.testimonialsCarousel.scrollBy({
             left: scrollAmount,
             behavior: 'smooth',
+        });
+    },
+
+    setupCookieConsent() {
+        const { cookieBanner, cookieAccept } = this.elements;
+
+        if (!cookieBanner || !cookieAccept) return;
+
+        const consent = localStorage.getItem(this.config.cookieConsentKey);
+        if (consent === 'accepted') {
+            cookieBanner.remove();
+            return;
+        }
+
+        cookieBanner.removeAttribute('hidden');
+        requestAnimationFrame(() => {
+            cookieBanner.classList.add('is-visible');
+        });
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem(this.config.cookieConsentKey, 'accepted');
+            cookieBanner.classList.remove('is-visible');
+            setTimeout(() => cookieBanner.remove(), 400);
         });
     },
 };

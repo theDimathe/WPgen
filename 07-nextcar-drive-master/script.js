@@ -11,6 +11,7 @@ const App = {
     // Configuration
     config: {
         themeStorageKey: 'nextcardrivemaster-theme',
+        cookieStorageKey: 'nextcardrivemaster-cookie-consent',
         prefersDarkScheme: window.matchMedia('(prefers-color-scheme: dark)'),
     },
 
@@ -22,6 +23,7 @@ const App = {
         this.setupEventListeners();
         this.setupParallax();
         this.setupScrollAnimations();
+        this.setupCookieBanner();
     },
 
     /**
@@ -212,6 +214,31 @@ const App = {
                 console.log('Search functionality to be implemented');
             });
         }
+    },
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('cookie-accept');
+
+        if (!banner || !acceptButton) return;
+
+        const consent = localStorage.getItem(this.config.cookieStorageKey);
+        if (consent === 'accepted') {
+            banner.remove();
+            return;
+        }
+
+        banner.removeAttribute('hidden');
+
+        requestAnimationFrame(() => {
+            banner.classList.add('is-visible');
+        });
+
+        acceptButton.addEventListener('click', () => {
+            localStorage.setItem(this.config.cookieStorageKey, 'accepted');
+            banner.classList.remove('is-visible');
+            setTimeout(() => banner.remove(), 400);
+        });
     },
 };
 

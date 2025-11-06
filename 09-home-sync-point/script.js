@@ -5,6 +5,7 @@
 
 class HomeSyncPointApp {
     constructor() {
+        this.cookieConsentKey = 'homesyncpoint-cookie-consent';
         this.init();
     }
 
@@ -16,6 +17,7 @@ class HomeSyncPointApp {
         this.setupParallax();
         this.setupIntersectionObserver();
         this.setupPropertyFilters();
+        this.setupCookieBanner();
     }
 
     // ========================================================================
@@ -286,6 +288,34 @@ class HomeSyncPointApp {
             card.style.transition = 'opacity 0.3s ease-in-out';
             card.style.opacity = '1';
         });
+    }
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('cookie-accept');
+        const rejectButton = document.getElementById('cookie-reject');
+
+        if (!banner || !acceptButton) return;
+
+        const consent = localStorage.getItem(this.cookieConsentKey);
+        if (consent === 'accepted' || consent === 'rejected') {
+            banner.remove();
+            return;
+        }
+
+        banner.removeAttribute('hidden');
+        requestAnimationFrame(() => {
+            banner.classList.add('is-visible');
+        });
+
+        const closeBanner = (status) => {
+            localStorage.setItem(this.cookieConsentKey, status);
+            banner.classList.remove('is-visible');
+            setTimeout(() => banner.remove(), 400);
+        };
+
+        acceptButton.addEventListener('click', () => closeBanner('accepted'));
+        rejectButton?.addEventListener('click', () => closeBanner('rejected'));
     }
 }
 
