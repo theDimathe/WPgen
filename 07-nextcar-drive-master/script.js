@@ -214,6 +214,26 @@ const App = {
                 console.log('Search functionality to be implemented');
             });
         }
+
+        // Price inquiry buttons scroll to contact form
+        const inquiryButtons = document.querySelectorAll('.price-inquiry-button');
+        inquiryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const targetSelector = button.getAttribute('data-target');
+                if (!targetSelector) return;
+
+                const target = document.querySelector(targetSelector);
+                if (!target) return;
+
+                const headerHeight = document.querySelector('.site-header')?.offsetHeight || 70;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth',
+                });
+            });
+        });
     },
 
     setupCookieBanner() {
