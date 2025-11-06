@@ -12,6 +12,7 @@ const App = {
     config: {
         themeStorageKey: 'buildflowhu b-theme',
         prefersDarkScheme: window.matchMedia('(prefers-color-scheme: dark)'),
+        cookieConsentKey: 'buildflowhub-cookie-consent',
     },
 
     // Initialize the application
@@ -25,6 +26,7 @@ const App = {
         this.setupAdvantagesAnimation();
         this.setupGalleryAnimation();
         this.setupTestimonialsCarousel();
+        this.setupCookieBanner();
     },
 
     // ========================================================================
@@ -326,7 +328,7 @@ const App = {
 
     updateDots(index, dotsContainer) {
         if (!dotsContainer) return;
-        
+
         const dots = dotsContainer.querySelectorAll('.carousel-dot');
         dots.forEach((dot, i) => {
             if (i === index) {
@@ -335,6 +337,49 @@ const App = {
                 dot.classList.remove('active');
             }
         });
+    },
+
+    // ========================================================================
+    // COOKIE CONSENT BANNER
+    // ========================================================================
+
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        if (!banner) return;
+
+        let storedChoice = null;
+        try {
+            storedChoice = localStorage.getItem(this.config.cookieConsentKey);
+        } catch (error) {
+            storedChoice = null;
+        }
+
+        if (storedChoice) {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        const acceptButton = banner.querySelector('[data-cookie-accept]');
+        const declineButton = banner.querySelector('[data-cookie-decline]');
+
+        banner.removeAttribute('hidden');
+
+        const persistChoice = (choice) => {
+            try {
+                localStorage.setItem(this.config.cookieConsentKey, choice);
+            } catch (error) {
+                // Ignore storage errors
+            }
+            banner.setAttribute('hidden', '');
+        };
+
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => persistChoice('accepted'));
+        }
+
+        if (declineButton) {
+            declineButton.addEventListener('click', () => persistChoice('declined'));
+        }
     },
 
     animateCounter(element) {

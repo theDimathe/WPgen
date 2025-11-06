@@ -6,6 +6,7 @@
 class HomeAxisTopApp {
     constructor() {
         this.currentTheme = this.getStoredTheme() || this.getSystemTheme();
+        this.cookieConsentKey = 'homeaxistop-cookie-consent';
         this.init();
     }
 
@@ -17,6 +18,7 @@ class HomeAxisTopApp {
         this.setupHeroAnimations();
         this.setupScrollAnimations();
         this.setupPropertyFilters();
+        this.setupCookieBanner();
     }
 
     // ========================================================================
@@ -162,7 +164,7 @@ class HomeAxisTopApp {
             e.preventDefault();
 
             // Close mobile menu if open
-            const menuToggle = document.getElementById('mobileMenuTog gle');
+            const menuToggle = document.getElementById('mobileMenuToggle');
             const mobileNav = document.getElementById('mobileNav');
             if (menuToggle && mobileNav && menuToggle.classList.contains('active')) {
                 this.closeMobileMenu(menuToggle, mobileNav);
@@ -177,6 +179,49 @@ class HomeAxisTopApp {
                 behavior: 'smooth'
             });
         });
+    }
+
+    // ========================================================================
+    // COOKIE CONSENT
+    // ========================================================================
+
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        if (!banner) return;
+
+        let savedChoice = null;
+        try {
+            savedChoice = localStorage.getItem(this.cookieConsentKey);
+        } catch (error) {
+            savedChoice = null;
+        }
+
+        if (savedChoice) {
+            banner.setAttribute('hidden', '');
+            return;
+        }
+
+        const acceptButton = banner.querySelector('[data-cookie-accept]');
+        const declineButton = banner.querySelector('[data-cookie-decline]');
+
+        banner.removeAttribute('hidden');
+
+        const storeChoice = (choice) => {
+            try {
+                localStorage.setItem(this.cookieConsentKey, choice);
+            } catch (error) {
+                // Ignore storage errors
+            }
+            banner.setAttribute('hidden', '');
+        };
+
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => storeChoice('accepted'));
+        }
+
+        if (declineButton) {
+            declineButton.addEventListener('click', () => storeChoice('declined'));
+        }
     }
 
     // ========================================================================
