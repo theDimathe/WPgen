@@ -52,7 +52,9 @@
       }
 
       a.card {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         padding: 20px 24px;
         background: #ffffff;
         border-radius: 12px;
@@ -68,8 +70,36 @@
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
       }
 
-      small {
+      .card-top {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .card-number {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2a7ae2;
+      }
+
+      .card-title {
+        font-size: 1.05rem;
+      }
+
+      .card-domain {
         color: #777;
+        letter-spacing: 0.02em;
+      }
+
+      .card-meta {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      .card-meta span {
+        font-weight: 600;
       }
 
       @media (max-width: 480px) {
@@ -90,120 +120,239 @@
       <ul>
         <li>
           <a class="card" href="01-eco-wood-material-plus/index.html">
-            <strong>01. Eco Wood Material Plus</strong><br />
-            <small>01-eco-wood-material-plus/index.html</small>
+            <div class="card-top">
+              <span class="card-number">01</span>
+              <strong class="card-title">Eco Wood Material Plus</strong>
+            </div>
+            <small class="card-domain">ecowoodmaterialplus.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="02-urban-style-glamour-go/index.html">
-            <strong>02. Urban Style Glamour Go</strong><br />
-            <small>02-urban-style-glamour-go/index.html</small>
+            <div class="card-top">
+              <span class="card-number">02</span>
+              <strong class="card-title">Urban Style Glamour Go</strong>
+            </div>
+            <small class="card-domain">urbanstyleglamourgo.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="03-wear-nexus-hub/index.html">
-            <strong>03. Wear Nexus Hub</strong><br />
-            <small>03-wear-nexus-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">03</span>
+              <strong class="card-title">Wear Nexus Hub</strong>
+            </div>
+            <small class="card-domain">wearnexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="04-wear-flow-vibe/index.html">
-            <strong>04. Wear Flow Vibe</strong><br />
-            <small>04-wear-flow-vibe/index.html</small>
+            <div class="card-top">
+              <span class="card-number">04</span>
+              <strong class="card-title">Wear Flow Vibe</strong>
+            </div>
+            <small class="card-domain">wearflowvibe.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="05-time-nexus-hub/index.html">
-            <strong>05. Time Nexus Hub</strong><br />
-            <small>05-time-nexus-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">05</span>
+              <strong class="card-title">Time Nexus Hub</strong>
+            </div>
+            <small class="card-domain">timenexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="06-prime-wear-style-box/index.html">
-            <strong>06. Prime Wear Style Box</strong><br />
-            <small>06-prime-wear-style-box/index.html</small>
+            <div class="card-top">
+              <span class="card-number">06</span>
+              <strong class="card-title">Prime Wear Style Box</strong>
+            </div>
+            <small class="card-domain">primewearstylebox.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="07-nextcar-drive-master/index.html">
-            <strong>07. Nextcar Drive Master</strong><br />
-            <small>07-nextcar-drive-master/index.html</small>
+            <div class="card-top">
+              <span class="card-number">07</span>
+              <strong class="card-title">Nextcar Drive Master</strong>
+            </div>
+            <small class="card-domain">nextcardrivemaster.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="08-ink-storybook-vault/index.html">
-            <strong>08. Ink Storybook Vault</strong><br />
-            <small>08-ink-storybook-vault/index.html</small>
+            <div class="card-top">
+              <span class="card-number">08</span>
+              <strong class="card-title">Ink Storybook Vault</strong>
+            </div>
+            <small class="card-domain">inkstorybookvault.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="09-home-sync-point/index.html">
-            <strong>09. Home Sync Point</strong><br />
-            <small>09-home-sync-point/index.html</small>
+            <div class="card-top">
+              <span class="card-number">09</span>
+              <strong class="card-title">Home Sync Point</strong>
+            </div>
+            <small class="card-domain">homesyncpoint.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="10-home-axis-top/index.html">
-            <strong>10. Home Axis Top</strong><br />
-            <small>10-home-axis-top/index.html</small>
+            <div class="card-top">
+              <span class="card-number">10</span>
+              <strong class="card-title">Home Axis Top</strong>
+            </div>
+            <small class="card-domain">homeaxistop.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="11-glam-nexus-hub/index.html">
-            <strong>11. Glam Nexus Hub</strong><br />
-            <small>11-glam-nexus-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">11</span>
+              <strong class="card-title">Glam Nexus Hub</strong>
+            </div>
+            <small class="card-domain">glamnexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="12-build-flow-hub/index.html">
-            <strong>12. Build Flow Hub</strong><br />
-            <small>12-build-flow-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">12</span>
+              <strong class="card-title">Build Flow Hub</strong>
+            </div>
+            <small class="card-domain">buildflowhub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="13-book-nexus-hub/index.html">
-            <strong>13. Book Nexus Hub</strong><br />
-            <small>13-book-nexus-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">13</span>
+              <strong class="card-title">Book Nexus Hub</strong>
+            </div>
+            <small class="card-domain">booknexushub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="14-auto-flow-hub/index.html">
-            <strong>14. Auto Flow Hub</strong><br />
-            <small>14-auto-flow-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">14</span>
+              <strong class="card-title">Auto Flow Hub</strong>
+            </div>
+            <small class="card-domain">autoflowhub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="15-urban-flat-space-hub/index.html">
-            <strong>15. Urban Flat Space Hub</strong><br />
-            <small>15-urban-flat-space-hub/index.html</small>
+            <div class="card-top">
+              <span class="card-number">15</span>
+              <strong class="card-title">Urban Flat Space Hub</strong>
+            </div>
+            <small class="card-domain">urbanflatspacehub.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="16-elite-rent-market-pro/index.html">
-            <strong>16. Elite Rent Market Pro</strong><br />
-            <small>16-elite-rent-market-pro/index.html</small>
+            <div class="card-top">
+              <span class="card-number">16</span>
+              <strong class="card-title">Elite Rent Market Pro</strong>
+            </div>
+            <small class="card-domain">eliterentmarketpro.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
         <li>
           <a class="card" href="17-time-flow-vibe/index.html">
-            <strong>17. Time Flow Vibe</strong><br />
-            <small>17-time-flow-vibe/index.html</small>
+            <div class="card-top">
+              <span class="card-number">17</span>
+              <strong class="card-title">Time Flow Vibe</strong>
+            </div>
+            <small class="card-domain">timeflowvibe.mx</small>
+            <div class="card-meta">
+              <span>GEO: MX</span>
+              <span>LANG: ES</span>
+            </div>
           </a>
         </li>
 
