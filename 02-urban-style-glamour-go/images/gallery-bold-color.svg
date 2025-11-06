@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Moda de colores intensos sin modelos</title>
+  <desc id="desc">Bodegón realista con chaqueta color bloque, bolso naranja y botas vibrantes sin presencia humana.</desc>
+  <defs>
+    <linearGradient id="gal-bold-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b0f2a"/>
+      <stop offset="100%" stop-color="#38164a"/>
+    </linearGradient>
+    <radialGradient id="gal-bold-light" cx="55%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff7fab" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff7fab" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gal-bold-jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbe360"/>
+      <stop offset="100%" stop-color="#f45a8b"/>
+    </linearGradient>
+    <linearGradient id="gal-bold-boot" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7be3ff"/>
+      <stop offset="100%" stop-color="#3f73ff"/>
+    </linearGradient>
+    <linearGradient id="gal-bold-bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb067"/>
+      <stop offset="100%" stop-color="#e3641c"/>
+    </linearGradient>
+    <filter id="gal-bold-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="blur"/>
+      <feOffset dy="20" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#gal-bold-bg)"/>
+  <rect width="480" height="360" fill="url(#gal-bold-light)"/>
+  <g filter="url(#gal-bold-shadow)">
+    <ellipse cx="240" cy="285" rx="195" ry="48" fill="rgba(40,20,60,0.5)"/>
+  </g>
+  <g filter="url(#gal-bold-shadow)">
+    <path d="M150 180C150 140 190 110 240 110H300C350 110 390 140 390 180V250C390 290 350 320 300 320H240C190 320 150 290 150 250Z" fill="url(#gal-bold-jacket)"/>
+    <path d="M170 170C170 150 200 140 240 140H300C340 140 370 150 370 170V210C350 220 320 226 270 226H240C210 226 180 220 170 210Z" fill="#feec93" opacity="0.6"/>
+  </g>
+  <g filter="url(#gal-bold-shadow)">
+    <rect x="220" y="240" width="140" height="60" rx="24" fill="url(#gal-bold-bag)"/>
+    <rect x="232" y="248" width="116" height="44" rx="20" fill="#ffd4a6" opacity="0.8"/>
+    <rect x="250" y="228" width="28" height="28" rx="12" fill="#ffc48a"/>
+    <rect x="302" y="228" width="28" height="28" rx="12" fill="#ffc48a"/>
+  </g>
+  <g filter="url(#gal-bold-shadow)">
+    <path d="M150 260C150 240 172 220 210 220H230C268 220 290 240 290 260C290 290 250 310 210 310C170 310 150 290 150 260Z" fill="url(#gal-bold-boot)"/>
+    <rect x="162" y="250" width="18" height="40" rx="8" fill="#2240a8" opacity="0.8"/>
+    <rect x="208" y="250" width="18" height="40" rx="8" fill="#2240a8" opacity="0.8"/>
+    <rect x="188" y="236" width="22" height="18" rx="9" fill="#8ad6ff"/>
+  </g>
+</svg>

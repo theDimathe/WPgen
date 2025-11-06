@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Bodegón de perfume sin rostro</title>
+  <desc id="desc">Frasco de perfume y flor suave sobre fondo circular degradado sin figuras humanas.</desc>
+  <defs>
+    <radialGradient id="avatar1-bg" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fdf2f8"/>
+      <stop offset="100%" stop-color="#f5c6d8"/>
+    </radialGradient>
+    <linearGradient id="avatar1-bottle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbc8a1"/>
+      <stop offset="100%" stop-color="#d27a4c"/>
+    </linearGradient>
+    <filter id="avatar1-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset dy="10" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#avatar1-bg)"/>
+  <g filter="url(#avatar1-shadow)">
+    <ellipse cx="120" cy="170" rx="70" ry="24" fill="rgba(210,160,150,0.35)"/>
+  </g>
+  <g filter="url(#avatar1-shadow)">
+    <rect x="90" y="90" width="60" height="90" rx="26" fill="url(#avatar1-bottle)"/>
+    <rect x="102" y="76" width="36" height="28" rx="12" fill="#fde3cd"/>
+    <rect x="108" y="66" width="24" height="18" rx="8" fill="#fff4ec"/>
+    <path d="M86 170H154C148 186 132 194 120 196C108 194 94 186 86 170Z" fill="#b4633a" opacity="0.6"/>
+  </g>
+  <g filter="url(#avatar1-shadow)">
+    <ellipse cx="70" cy="150" rx="26" ry="18" fill="#fde6f0"/>
+    <ellipse cx="74" cy="146" rx="18" ry="10" fill="#fbd0e3"/>
+    <ellipse cx="170" cy="150" rx="28" ry="20" fill="#ffe8d4"/>
+    <ellipse cx="164" cy="146" rx="16" ry="9" fill="#ffcfaa"/>
+  </g>
+</svg>

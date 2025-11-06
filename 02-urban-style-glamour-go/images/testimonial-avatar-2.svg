@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Mini vitrina de accesorios sin rostro</title>
+  <desc id="desc">Bolso pequeño y zapatilla sobre plataforma circular sin presencia humana.</desc>
+  <defs>
+    <radialGradient id="avatar2-bg" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f1f5ff"/>
+      <stop offset="100%" stop-color="#cbd8ff"/>
+    </radialGradient>
+    <linearGradient id="avatar2-bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffcf82"/>
+      <stop offset="100%" stop-color="#df8a32"/>
+    </linearGradient>
+    <linearGradient id="avatar2-shoe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d6dcef"/>
+    </linearGradient>
+    <filter id="avatar2-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset dy="10" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#avatar2-bg)"/>
+  <g filter="url(#avatar2-shadow)">
+    <ellipse cx="120" cy="174" rx="74" ry="26" fill="rgba(120,140,200,0.3)"/>
+  </g>
+  <g filter="url(#avatar2-shadow)">
+    <rect x="94" y="110" width="60" height="60" rx="20" fill="url(#avatar2-bag)"/>
+    <rect x="104" y="120" width="40" height="40" rx="16" fill="#ffe1b2" opacity="0.85"/>
+    <rect x="110" y="100" width="28" height="22" rx="10" fill="#ffd59a"/>
+  </g>
+  <g filter="url(#avatar2-shadow)">
+    <path d="M70 160C70 140 94 122 120 122H134C160 122 184 140 184 160C184 186 154 198 126 198C98 198 70 186 70 160Z" fill="url(#avatar2-shoe)"/>
+    <rect x="92" y="154" width="20" height="30" rx="9" fill="#c4c9dd"/>
+    <rect x="132" y="154" width="20" height="30" rx="9" fill="#c4c9dd"/>
+  </g>
+</svg>

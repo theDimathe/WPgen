@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Bodegón de accesorios sin modelos</title>
+  <desc id="desc">Escena realista con bolso mini, pulsera y gafas sobre superficie reflectante sin presencia humana.</desc>
+  <defs>
+    <linearGradient id="gal-acc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161825"/>
+      <stop offset="100%" stop-color="#2b2f42"/>
+    </linearGradient>
+    <radialGradient id="gal-acc-light" cx="55%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffd3a8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd3a8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gal-acc-bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6b57d"/>
+      <stop offset="100%" stop-color="#c47a41"/>
+    </linearGradient>
+    <linearGradient id="gal-acc-glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8fd5ff"/>
+      <stop offset="100%" stop-color="#2c7fd1"/>
+    </linearGradient>
+    <filter id="gal-acc-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
+      <feOffset dy="18" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#gal-acc-bg)"/>
+  <rect width="480" height="360" fill="url(#gal-acc-light)"/>
+  <g filter="url(#gal-acc-shadow)">
+    <ellipse cx="240" cy="280" rx="190" ry="48" fill="rgba(0,0,0,0.45)"/>
+  </g>
+  <g filter="url(#gal-acc-shadow)">
+    <rect x="170" y="190" width="180" height="110" rx="24" fill="url(#gal-acc-bag)"/>
+    <rect x="180" y="200" width="160" height="90" rx="20" fill="#fbd8af" opacity="0.85"/>
+    <rect x="190" y="180" width="60" height="40" rx="18" fill="#f4cca0"/>
+    <rect x="270" y="180" width="60" height="40" rx="18" fill="#f4cca0"/>
+    <path d="M200 260H320C316 280 300 294 290 298H230C218 294 204 280 200 260Z" fill="#9d5d2d" opacity="0.7"/>
+  </g>
+  <g filter="url(#gal-acc-shadow)">
+    <path d="M220 240C220 220 240 200 270 200H310C340 200 360 220 360 240C360 270 330 290 290 290C250 290 220 270 220 240Z" fill="url(#gal-acc-glass)"/>
+    <rect x="238" y="230" width="24" height="12" rx="6" fill="#123654" opacity="0.8"/>
+    <rect x="328" y="230" width="24" height="12" rx="6" fill="#123654" opacity="0.8"/>
+    <rect x="265" y="220" width="48" height="16" rx="8" fill="#bde7ff" opacity="0.7"/>
+  </g>
+  <g filter="url(#gal-acc-shadow)">
+    <ellipse cx="180" cy="250" rx="45" ry="24" fill="#ffe2c6"/>
+    <ellipse cx="180" cy="246" rx="34" ry="16" fill="#ffd0a4"/>
+    <ellipse cx="180" cy="244" rx="22" ry="8" fill="#fff1e0"/>
+  </g>
+</svg>

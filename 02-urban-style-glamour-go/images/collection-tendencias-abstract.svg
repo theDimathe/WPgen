@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Selección de tendencias sin modelos</title>
+  <desc id="desc">Composición realista con accesorios neón, bolso metálico y zapatilla futurista sobre fondo degradado sin personas.</desc>
+  <defs>
+    <linearGradient id="trend-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f101d"/>
+      <stop offset="100%" stop-color="#2a1f3a"/>
+    </linearGradient>
+    <radialGradient id="trend-light" cx="60%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#b67bff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#b67bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trend-bag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4f3ff"/>
+      <stop offset="100%" stop-color="#bab5e3"/>
+    </linearGradient>
+    <linearGradient id="trend-shoe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7ce2f8"/>
+      <stop offset="100%" stop-color="#3e7ae3"/>
+    </linearGradient>
+    <linearGradient id="trend-acc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb1d6"/>
+      <stop offset="100%" stop-color="#f76ca7"/>
+    </linearGradient>
+    <filter id="trend-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feOffset dy="20" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="480" height="360" fill="url(#trend-bg)"/>
+  <rect width="480" height="360" fill="url(#trend-light)"/>
+  <g filter="url(#trend-shadow)">
+    <ellipse cx="240" cy="280" rx="190" ry="50" fill="rgba(50,40,80,0.45)"/>
+  </g>
+  <g filter="url(#trend-shadow)">
+    <rect x="150" y="210" width="220" height="100" rx="30" fill="#1b1f30" opacity="0.9"/>
+    <rect x="160" y="220" width="200" height="80" rx="26" fill="#272d44"/>
+  </g>
+  <g filter="url(#trend-shadow)">
+    <rect x="280" y="150" width="70" height="140" rx="35" fill="url(#trend-bag)"/>
+    <rect x="292" y="140" width="46" height="30" rx="14" fill="#ffffff" opacity="0.6"/>
+    <rect x="296" y="130" width="38" height="20" rx="10" fill="#e9e7ff"/>
+    <path d="M270 260H360C354 288 330 306 320 308C308 306 286 288 270 260Z" fill="#8d86c6" opacity="0.8"/>
+  </g>
+  <g filter="url(#trend-shadow)">
+    <path d="M150 240C150 210 190 180 240 180H280C330 180 370 210 370 240C370 280 320 310 260 310C200 310 150 280 150 240Z" fill="url(#trend-shoe)"/>
+    <path d="M170 232H210C208 246 208 262 210 278H170C160 262 160 246 170 232Z" fill="#1e2a47" opacity="0.75"/>
+    <path d="M310 232H350C360 246 360 262 350 278H310C312 262 312 246 310 232Z" fill="#1e2a47" opacity="0.75"/>
+    <rect x="210" y="200" width="80" height="24" rx="12" fill="#a3e2fb"/>
+    <rect x="220" y="230" width="60" height="16" rx="8" fill="#8cd0f7"/>
+  </g>
+  <g filter="url(#trend-shadow)">
+    <ellipse cx="200" cy="200" rx="40" ry="36" fill="url(#trend-acc)"/>
+    <ellipse cx="200" cy="190" rx="30" ry="16" fill="#ffd6eb" opacity="0.75"/>
+    <rect x="182" y="180" width="36" height="40" rx="18" fill="#ff94c4" opacity="0.7"/>
+  </g>
+</svg>

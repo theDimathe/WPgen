@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Look urbano en capas sin modelo</title>
+  <desc id="desc">Fotografía escenificada de sudadera, gabardina ligera y accesorios sobre un fondo de concreto suave sin presencia humana.</desc>
+  <defs>
+    <linearGradient id="hl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1f29"/>
+      <stop offset="100%" stop-color="#2c3144"/>
+    </linearGradient>
+    <radialGradient id="hl-light" cx="55%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#f1f2f6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f1f2f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d0d3df"/>
+      <stop offset="100%" stop-color="#8b8fa0"/>
+    </linearGradient>
+    <linearGradient id="sweater" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50587a"/>
+      <stop offset="100%" stop-color="#272d40"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5b668"/>
+      <stop offset="100%" stop-color="#bf7f32"/>
+    </linearGradient>
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+      <feOffset dy="20" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="480" fill="url(#hl-bg)"/>
+  <rect width="640" height="480" fill="url(#hl-light)"/>
+  <g filter="url(#soft)">
+    <ellipse cx="320" cy="380" rx="260" ry="60" fill="rgba(0,0,0,0.45)"/>
+  </g>
+  <g filter="url(#soft)">
+    <path d="M170 140C170 110 200 90 240 90H400C440 90 470 110 470 140V320C470 360 440 390 400 390H240C200 390 170 360 170 330Z" fill="url(#coat)"/>
+    <path d="M210 140C210 120 230 110 260 110H380C410 110 430 120 430 140V280C430 320 410 350 380 350H260C230 350 210 320 210 300Z" fill="url(#sweater)"/>
+    <rect x="240" y="130" width="40" height="180" rx="20" fill="#2a3147" opacity="0.9"/>
+    <rect x="360" y="130" width="40" height="180" rx="20" fill="#2a3147" opacity="0.9"/>
+    <ellipse cx="290" cy="310" rx="22" ry="16" fill="#1e2436"/>
+    <ellipse cx="350" cy="310" rx="22" ry="16" fill="#1e2436"/>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="380" y="250" width="120" height="110" rx="30" fill="url(#bag)"/>
+    <path d="M400 250C400 230 420 220 450 220H470C500 220 520 230 520 250V270C500 280 470 284 450 284C430 284 410 280 400 270Z" fill="#ffd6a0" opacity="0.7"/>
+    <rect x="420" y="240" width="60" height="25" rx="12" fill="#f8d9a2" opacity="0.85"/>
+    <path d="M410 305H510L500 340C488 352 470 360 452 360C432 360 414 352 402 340Z" fill="#a7642a" opacity="0.7"/>
+  </g>
+  <g filter="url(#soft)">
+    <path d="M160 320C160 300 190 280 230 280H280C320 280 350 300 350 320C350 350 310 370 260 370C210 370 160 350 160 320Z" fill="#f0f1f5"/>
+    <path d="M180 340H320C320 360 300 378 260 378C220 378 190 362 180 340Z" fill="#c7cad6"/>
+  </g>
+</svg>
