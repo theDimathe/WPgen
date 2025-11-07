@@ -8,6 +8,7 @@ const App = {
     config: {
         themeStorageKey: 'nextappdevtoolkit-theme',
         prefersDarkScheme: window.matchMedia('(prefers-color-scheme: dark)'),
+        cookieStorageKey: 'nextappdevtoolkit-cookie-consent',
     },
 
     // Initialize the application
@@ -18,6 +19,8 @@ const App = {
         this.setupEventListeners();
         this.setupHeroParallax();
         this.setupFrameworksDiagram();
+        this.setupMetricsCounters();
+        this.setupCookieBanner();
     },
 
     // ============================================
@@ -201,6 +204,80 @@ const App = {
 
         // Update header on scroll
         window.addEventListener('scroll', () => this.updateHeaderOnScroll());
+    },
+
+    // ============================================
+    // METRICS COUNTERS
+    // ============================================
+
+    setupMetricsCounters() {
+        const metricValues = document.querySelectorAll('.metric-value');
+        if (!metricValues.length) return;
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    this.animateMetricValue(element);
+                    observerInstance.unobserve(element);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        metricValues.forEach(value => observer.observe(value));
+    },
+
+    animateMetricValue(element) {
+        const target = parseFloat(element.dataset.target);
+        if (Number.isNaN(target)) return;
+
+        const suffix = element.dataset.suffix || '';
+        const duration = 1600;
+        const startTime = performance.now();
+
+        const decimals = target % 1 !== 0 ? 1 : 0;
+
+        const step = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentValue = target * progress;
+            element.textContent = `${currentValue.toFixed(decimals)}${suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        };
+
+        requestAnimationFrame(step);
+    },
+
+    // ============================================
+    // COOKIE BANNER
+    // ============================================
+
+    setupCookieBanner() {
+        const banner = document.querySelector('.cookie-banner');
+        const acceptButton = document.getElementById('acceptCookies');
+
+        if (!banner || !acceptButton) return;
+
+        const consent = localStorage.getItem(this.config.cookieStorageKey);
+        if (!consent) {
+            setTimeout(() => {
+                banner.classList.add('show');
+                banner.setAttribute('aria-hidden', 'false');
+            }, 500);
+        }
+
+        acceptButton.addEventListener('click', () => {
+            this.acceptCookies(banner);
+        });
+    },
+
+    acceptCookies(banner) {
+        localStorage.setItem(this.config.cookieStorageKey, 'accepted');
+        banner.classList.remove('show');
+        banner.setAttribute('aria-hidden', 'true');
     },
 
     updateHeaderOnScroll() {
