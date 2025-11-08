@@ -608,23 +608,26 @@ img {
 }
 
 .footer-link {
-    background: transparent;
+    background-color: var(--footer-button-bg, var(--modal-text, #ffffff));
     border-radius: 999px;
-    border: 1px solid var(--footer-border-color, rgba(15, 23, 42, 0.15));
-    color: var(--modal-text, currentColor);
+    border: 1px solid var(--footer-button-border, rgba(15, 23, 42, 0.35));
+    color: var(--footer-button-text, var(--color-bg, #0f172a));
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 0.03em;
     padding: 0.6rem 1.4rem;
     cursor: pointer;
     transition: 0.3s ease;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.3);
 }
 
 .footer-link:hover,
 .footer-link:focus {
-    background-color: var(--footer-hover-bg, rgba(15, 23, 42, 0.08));
-    color: var(--color-accent, var(--accent, var(--modal-text, currentColor)));
-    outline: none;
+    background-color: var(--footer-button-hover-bg, var(--color-accent, var(--accent, #58a3ff)));
+    border-color: var(--footer-button-hover-bg, var(--color-accent, var(--accent, #58a3ff)));
+    color: var(--footer-button-hover-text, var(--color-bg, #0f172a));
+    outline: 2px solid var(--footer-button-hover-bg, var(--color-accent, var(--accent, #58a3ff)));
+    outline-offset: 2px;
 }
 
 body.modal-open {
