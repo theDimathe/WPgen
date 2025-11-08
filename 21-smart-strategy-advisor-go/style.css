@@ -219,7 +219,7 @@ a:focus {
 .hero-parallax {
     position: absolute;
     inset: -10%;
-    background: url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-modern-dashboard.jpg') center/cover no-repeat;
     transform: translateZ(0);
 }
 
@@ -445,15 +445,15 @@ a:focus {
 }
 
 .case-image {
-    background-image: url('https://images.unsplash.com/photo-1529429617124-aee711a2a7a5?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-tech-workspace.jpg');
 }
 
 .case-image-alt {
-    background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-office-setup.jpg');
 }
 
 .case-image-accent {
-    background-image: url('https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-scene-man-office.jpg');
 }
 
 .case-content {
@@ -501,11 +501,11 @@ a:focus {
 
 .philosophy-image {
     min-height: 200px;
-    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-scene-man-meeting.jpg') center/cover no-repeat;
 }
 
 .philosophy-image-alt {
-    background-image: url('https://images.unsplash.com/photo-1487611459768-bd414656ea10?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-scene-man-presenting.jpg');
 }
 
 .philosophy-card p {

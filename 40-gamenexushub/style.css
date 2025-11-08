@@ -193,7 +193,7 @@ img {
   inset: 10% 0 0;
   border-radius: var(--radius-lg);
   background: linear-gradient(145deg, rgba(21, 30, 66, 0.9), rgba(11, 18, 38, 0.6)),
-    url("https://images.unsplash.com/photo-1614680376573-df3480f0c6f9?auto=format&fit=crop&w=1100&q=80") center/cover;
+    url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved11.jpg") center/cover;
   border: 1px solid rgba(96, 91, 255, 0.4);
   box-shadow: var(--shadow-soft);
 }

@@ -240,7 +240,7 @@ main {
 .hero-visual {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved10.jpg') center/cover no-repeat;
     filter: brightness(0.85);
     opacity: 0.55;
 }
@@ -361,15 +361,15 @@ main {
 }
 
 .program-leadership {
-    background-image: url('https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved11.jpg');
 }
 
 .program-team {
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved12.jpg');
 }
 
 .program-decision {
-    background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved13.jpg');
 }
 
 .program-content {

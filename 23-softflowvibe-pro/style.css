@@ -230,7 +230,7 @@ img {
     position: absolute;
     inset: -10% -20% auto;
     height: 115%;
-    background: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-tech-workspace.jpg') center/cover no-repeat;
     filter: saturate(0.6) brightness(0.85);
     transform: skewY(-4deg);
 }
@@ -382,19 +382,19 @@ img {
 
 .portfolio-image {
     height: 180px;
-    background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80') center/cover;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-modern-dashboard.jpg') center/cover;
 }
 
 .portfolio-image.analytics {
-    background-image: url('https://images.unsplash.com/photo-1531498860502-7c67cf02f77b?auto=format&fit=crop&w=900&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved0.jpg');
 }
 
 .portfolio-image.mobile {
-    background-image: url('https://images.unsplash.com/photo-1551650992-ee4fd47df41d?auto=format&fit=crop&w=900&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved1.jpg');
 }
 
 .portfolio-image.workspace {
-    background-image: url('https://images.unsplash.com/photo-1580894897200-0ad5daac5ebb?auto=format&fit=crop&w=900&q=80');
+    background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard/assets/img/curved-images/curved2.jpg');
 }
 
 .portfolio-card figcaption {

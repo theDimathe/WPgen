@@ -224,7 +224,7 @@ main {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80');
+  background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ira-design/real-life/real-life-background-modern-dashboard.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.18;
