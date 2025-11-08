@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GameNexusHub is the neon gateway to gaming culture with reviews, news, gear guides, and live events for US players." />
+    <meta name="geo.region" content="US" />
+    <title>GameNexusHub — The Heartbeat of Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero" id="hero">
+      <div class="container hero__content">
+        <span class="badge">GEO: United States · Language: English</span>
+        <h1>GameNexusHub — The Heartbeat of Gaming</h1>
+        <p class="lead">
+          Dive into reviews, trends, and next-gen experiences pulsing across the global gaming universe. Curated for US gamers craving energy, depth, and neon-lit discovery.
+        </p>
+        <div class="cta-group">
+          <a class="btn primary" href="#latest-games">Explore Now</a>
+          <a class="btn ghost" href="#community">Join the Community</a>
+        </div>
+        <ul class="hero__metrics">
+          <li><span class="metric">230+</span><span class="label">Indie spotlights cataloged</span></li>
+          <li><span class="metric">120</span><span class="label">Hardware tweaks tested</span></li>
+          <li><span class="metric">24/7</span><span class="label">Stream coverage</span></li>
+        </ul>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="orb"></div>
+        <div class="hero__image" role="presentation"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section pulse" id="pulse">
+        <div class="container">
+          <h2>Pulse of the Nexus</h2>
+          <p class="section-intro">Stay synced with the momentum of the US gaming scene—from market shifts to underground sensations.</p>
+          <div class="pulse__grid">
+            <article>
+              <h3>Velocity Trends</h3>
+              <p>Track weekly surges in player counts, co-op adoption, and cross-platform releases lighting up the charts.</p>
+              <div class="sparkline" data-values="60,78,82,91,88,94,100"></div>
+            </article>
+            <article>
+              <h3>Community Heat</h3>
+              <p>Our sentiment scanners surface the loudest conversations across forums, Discord servers, and live chat.</p>
+              <div class="sparkline" data-values="38,45,59,80,76,89,92"></div>
+            </article>
+            <article>
+              <h3>Launch Radar</h3>
+              <p>Never miss a premiere—see which genres, mechanics, and studios are setting the pace for the next quarter.</p>
+              <div class="sparkline" data-values="50,53,60,72,84,90,97"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section latest" id="latest-games">
+        <div class="container">
+          <h2>Latest Games</h2>
+          <p class="section-intro">Fresh releases and sleeper hits, curated with fast takes and visual energy.</p>
+          <div class="card-grid">
+            <article class="game-card">
+              <div class="cover" style="--bg:url('https://images.unsplash.com/photo-1587202372775-98927b1f7b72?auto=format&fit=crop&w=800&q=80')"></div>
+              <div class="game-card__body">
+                <h3>Neon Rift: Aurora Core</h3>
+                <span class="rating" aria-label="Rating: 5 out of 5">★★★★★</span>
+                <p>Hyperloop racers drift through cosmic tunnels in a synth-fueled sprint.</p>
+              </div>
+            </article>
+            <article class="game-card">
+              <div class="cover" style="--bg:url('https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=800&q=80')"></div>
+              <div class="game-card__body">
+                <h3>Blackstar Requiem</h3>
+                <span class="rating" aria-label="Rating: 4.5 out of 5">★★★★☆</span>
+                <p>Tactical squads descend onto derelict space hulks armed with reactive drones.</p>
+              </div>
+            </article>
+            <article class="game-card">
+              <div class="cover" style="--bg:url('https://images.unsplash.com/photo-1520697222869-7f55e0982ba1?auto=format&fit=crop&w=800&q=80')"></div>
+              <div class="game-card__body">
+                <h3>Mythic Pulse: Echoes</h3>
+                <span class="rating" aria-label="Rating: 4 out of 5">★★★★☆</span>
+                <p>Rogue mages loop timelines to unravel a neon-drenched arcane mystery.</p>
+              </div>
+            </article>
+            <article class="game-card">
+              <div class="cover" style="--bg:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80')"></div>
+              <div class="game-card__body">
+                <h3>Quantum Drift Circuit</h3>
+                <span class="rating" aria-label="Rating: 5 out of 5">★★★★★</span>
+                <p>Procedural circuits morph mid-race, challenging reflexes and split-second strategy.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews" id="reviews">
+        <div class="container">
+          <h2>Quick Reviews</h2>
+          <p class="section-intro">Snapshot verdicts with genre cues, highlights, and honest trade-offs.</p>
+          <div class="reviews__grid">
+            <article class="review-card">
+              <div class="review-card__head">
+                <h3>Solarwake Syndicate</h3>
+                <span class="genre">Genre: Co-op Action</span>
+              </div>
+              <ul class="review-points">
+                <li class="pro">Ultra-responsive team synergy systems</li>
+                <li class="con">Steep learning curve in endgame raids</li>
+              </ul>
+              <div class="progress-group">
+                <div class="progress" data-label="Graphics" data-value="90"></div>
+                <div class="progress" data-label="Story" data-value="76"></div>
+                <div class="progress" data-label="Gameplay" data-value="88"></div>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="review-card__head">
+                <h3>Hollow Range Protocol</h3>
+                <span class="genre">Genre: Tactical Shooter</span>
+              </div>
+              <ul class="review-points">
+                <li class="pro">Adaptive AI flanks based on voice-queue intel</li>
+                <li class="con">Matchmaking waits spike at peak hours</li>
+              </ul>
+              <div class="progress-group">
+                <div class="progress" data-label="Graphics" data-value="84"></div>
+                <div class="progress" data-label="Story" data-value="69"></div>
+                <div class="progress" data-label="Gameplay" data-value="91"></div>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="review-card__head">
+                <h3>Verdant Axis</h3>
+                <span class="genre">Genre: Strategy RPG</span>
+              </div>
+              <ul class="review-points">
+                <li class="pro">Branching diplomacy arcs reshape entire regions</li>
+                <li class="con">UI density overwhelms new commanders</li>
+              </ul>
+              <div class="progress-group">
+                <div class="progress" data-label="Graphics" data-value="78"></div>
+                <div class="progress" data-label="Story" data-value="88"></div>
+                <div class="progress" data-label="Gameplay" data-value="82"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section spotlights" id="spotlights">
+        <div class="container">
+          <h2>Immersion Spotlights</h2>
+          <p class="section-intro">Explore editorials dissecting world-building, audio design, and multiplayer dynamics.</p>
+          <div class="spotlights__list">
+            <article>
+              <h3>Chronicles of the Cosmic Underground</h3>
+              <p>We map the lore pipelines for expanding universes and hidden narrative branches.</p>
+            </article>
+            <article>
+              <h3>Soundscapes of Velocity</h3>
+              <p>A breakdown of adaptive synthwave scores that react to real-time physics.</p>
+            </article>
+            <article>
+              <h3>Designing Persistent Rivalries</h3>
+              <p>How asynchronous leaderboards keep tension high for weeks after launch.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section hardware" id="hardware">
+        <div class="container">
+          <h2>Hardware &amp; Tech Guides</h2>
+          <p class="section-intro">Optimize every frame, voltage, and lighting channel with our tested configurations.</p>
+          <div class="hardware__grid">
+            <article class="hardware-card">
+              <div class="hardware-card__image" style="--bg:url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="hardware-card__body">
+                <h3>FPS Boost Playbook</h3>
+                <p>Dial in driver-level upscaling, per-title shader caches, and Windows 11 game mode tuning.</p>
+              </div>
+            </article>
+            <article class="hardware-card">
+              <div class="hardware-card__image" style="--bg:url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92eee?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="hardware-card__body">
+                <h3>GPU Market Matrix</h3>
+                <p>Compare ray tracing throughput, VRAM bandwidth, and power draw for current-gen cards.</p>
+              </div>
+            </article>
+            <article class="hardware-card">
+              <div class="hardware-card__image" style="--bg:url('https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="hardware-card__body">
+                <h3>Stream Studio Essentials</h3>
+                <p>Build a crisp broadcast kit with low-latency capture, dynamic lighting, and audio routing.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section optimization" id="playbooks">
+        <div class="container">
+          <h2>Optimization Playbooks</h2>
+          <p class="section-intro">Step-by-step guides tailor-made for competitive squads and solo creators.</p>
+          <div class="timeline">
+            <div class="timeline__item">
+              <span class="timeline__tag">Build</span>
+              <h3>Latency Layering</h3>
+              <p>Stack wired network prioritization with router QoS presets tuned for low jitter.</p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__tag">Deploy</span>
+              <h3>Stream Scene Automation</h3>
+              <p>Trigger overlays, stingers, and alerts via MIDI decks for effortless transitions.</p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__tag">Enhance</span>
+              <h3>Cooling &amp; Silence</h3>
+              <p>Balance liquid loops with acoustically damped cases to keep thermals in the green.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section events" id="events">
+        <div class="container">
+          <h2>Events &amp; Streams</h2>
+          <p class="section-intro">Bookmark the calendar and jump into live arenas as they ignite.</p>
+          <div class="events__schedule">
+            <article>
+              <h3>NeoPulse Arena Finals</h3>
+              <p>June 22 · 7:00 PM ET · Hybrid battle royale invitational broadcast nationwide.</p>
+              <button class="btn secondary">Join Live</button>
+            </article>
+            <article>
+              <h3>Velocity Circuit Time Trials</h3>
+              <p>June 29 · 5:00 PM ET · Weekly leaderboard chase with realtime telemetry dashboards.</p>
+              <button class="btn secondary">Join Live</button>
+            </article>
+            <article>
+              <h3>Creator Sync Summit</h3>
+              <p>July 4 · 8:30 PM ET · Roundtable stream for modders, casters, and esports analysts.</p>
+              <button class="btn secondary">Join Live</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section streams" id="streams">
+        <div class="container">
+          <h2>Live Stream Lineup</h2>
+          <p class="section-intro">Hand-picked streamers delivering high-energy showcases and deep-dive builds.</p>
+          <div class="streams__grid">
+            <article>
+              <h3>NovaLynx</h3>
+              <p>Nightly roguelike runs with tactical overlays and annotated build paths.</p>
+            </article>
+            <article>
+              <h3>EchoShift</h3>
+              <p>Co-op VR expeditions featuring volumetric capture of the action.</p>
+            </article>
+            <article>
+              <h3>PixelForge</h3>
+              <p>Custom controller crafting streamed from a neon-lit workshop.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section community" id="community">
+        <div class="container">
+          <h2>GameNexusHub Community Core</h2>
+          <p class="section-intro">Thousands of players, builders, and analysts converge to keep the conversation electric.</p>
+          <div class="community__grid">
+            <article>
+              <h3>Forum Pulse</h3>
+              <p>Discuss balance patches, share walkthroughs, and swap controller configs with veteran moderators.</p>
+            </article>
+            <article>
+              <h3>Discord Nexus</h3>
+              <p>Join channels for scrim recruiting, LAN meetups across the US, and creative collaborations.</p>
+            </article>
+            <article>
+              <h3>Support &amp; Boost</h3>
+              <p>Tap our concierge team for tech triage, accessibility audits, and creator amplification.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter" id="newsletter">
+        <div class="container">
+          <h2>Nexus Insider Bulletin</h2>
+          <p class="section-intro">Weekly dispatches with curated news, exclusive interviews, and behind-the-scenes intel.</p>
+          <form class="subscribe-form">
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn primary">Subscribe</button>
+          </form>
+          <p class="disclaimer">We respect your inbox—unsubscribe anytime with one click.</p>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="container">
+          <h2>Quick Answers</h2>
+          <div class="faq__list">
+            <article>
+              <h3>How often do you publish reviews?</h3>
+              <p>New quick takes drop every Tuesday and Friday with immediate alerts in our Discord.</p>
+            </article>
+            <article>
+              <h3>Can I submit my indie title?</h3>
+              <p>Yes! Send your press kit through the creator portal and our editors will respond within 72 hours.</p>
+            </article>
+            <article>
+              <h3>Do you cover console and PC builds?</h3>
+              <p>We balance coverage across PC, console, handheld, and cloud platforms with specialized loadouts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer__grid">
+        <div class="footer__about">
+          <h2>GameNexusHub</h2>
+          <p>Uniting the gaming multiverse with neon clarity, actionable insight, and community-first values.</p>
+        </div>
+        <div class="footer__links">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#hardware">Hardware Guides</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#community">Community</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:contact@gamenexushub.click">contact@gamenexushub.click</a></li>
+            <li>Brooklyn, NY</li>
+            <li><a href="_privacy.html">Privacy Policy</a></li>
+            <li><a href="_terms.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <h3>Social</h3>
+          <ul class="social-list">
+            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+            <li><a href="#" aria-label="Twitch">Twitch</a></li>
+            <li><a href="#" aria-label="YouTube">YouTube</a></li>
+            <li><a href="#" aria-label="Discord">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> GameNexusHub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
