@@ -1,4 +1,10 @@
 :root {
+  --modal-surface: #ffffff;
+  --modal-text: var(--color-text, var(--text-primary, var(--color-heading, var(--color-foreground, #0f172a))));
+  --modal-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+  --footer-border-color: rgba(15, 23, 42, 0.15);
+  --footer-hover-bg: rgba(15, 23, 42, 0.08);
+
   --color-bg: #f6f8fb;
   --color-surface: #ffffff;
   --color-navy: #0f1b3d;
@@ -702,4 +708,150 @@ img {
 
 .legal ul {
   padding-left: 20px;
+}
+
+.site-footer {
+    padding: 2.5rem 1.5rem 3rem;
+    border-top: 1px solid var(--footer-border-color, rgba(15, 23, 42, 0.12));
+    font-size: 0.95rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-inner {
+    width: min(var(--max-width, var(--container-width, 1120px)), 92vw);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-inner .footer-actions {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.footer-link {
+    background: transparent;
+    border-radius: 999px;
+    border: 1px solid var(--footer-border-color, rgba(15, 23, 42, 0.15));
+    color: var(--modal-text, currentColor);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    background-color: var(--footer-hover-bg, rgba(15, 23, 42, 0.08));
+    color: var(--color-accent, var(--accent, var(--modal-text, currentColor)));
+    outline: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1200;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 15, 23, 0.7);
+}
+
+.modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(720px, 92vw);
+    margin: 6vh auto;
+    background: var(--modal-surface, #ffffff);
+    color: var(--modal-text, #0f172a);
+    border-radius: 22px;
+    box-shadow: var(--modal-shadow, 0 28px 70px rgba(15, 23, 42, 0.18));
+    padding: 2.5rem 2.25rem;
+    max-height: 88vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--footer-border-color, rgba(15, 23, 42, 0.15));
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.modal-body {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    color: inherit;
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+.modal-body a {
+    color: var(--color-accent, var(--accent, currentColor));
+    text-decoration: underline;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1.75rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@media (max-width: 720px) {
+    .footer-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-actions {
+        justify-content: center;
+    }
+
+    .modal-dialog {
+        margin: 8vh auto;
+        padding: 2rem 1.5rem;
+    }
 }

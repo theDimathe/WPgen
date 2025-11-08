@@ -289,7 +289,7 @@
                 <input type="email" id="email" name="email" placeholder="Enter your email" required />
                 <button type="submit" class="btn primary">Subscribe</button>
             </form>
-            <p class="newsletter-note">By subscribing, you agree to our <a href="_privacy.html">Privacy Policy</a> and <a href="_terms.html">Terms</a>.</p>
+            <p class="newsletter-note">By subscribing, you agree to our and .</p>
         </section>
     </main>
 
@@ -313,8 +313,8 @@
                 <div>
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="_terms.html">Terms &amp; Conditions</a></li>
-                        <li><a href="_privacy.html">Privacy Policy</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="#retreats">Retreat Calendar</a></li>
                         <li><a href="#community">Community Clubs</a></li>
                         <li><a href="mailto:flow@fishflowvibe.pro">flow@fishflowvibe.pro</a></li>
                     </ul>
@@ -334,9 +334,33 @@
                 <p>Join FishFlowVibe and keep the waters alive. Follow our eco missions, attend retreats, and share your flow.</p>
                 <a class="btn primary" href="#newsletter">Join the Newsletter</a>
             </div>
+            <div class="footer-actions" role="group" aria-label="Legal and policy links">
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Privacy Policy" data-modal-src="_privacy.html">Privacy Policy</button>
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Terms &amp; Conditions" data-modal-src="_terms.html">Terms &amp; Conditions</button>
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Returns &amp; Refunds" data-modal-template="returnsTemplate">Returns &amp; Refunds</button>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <div class="modal" id="policyModal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+            <div class="modal-header">
+                <h2 id="policyModalTitle"></h2>
+                <button type="button" class="modal-close" aria-label="Close dialog" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body" data-modal-body>
+                <p>Loading…</p>
+            </div>
+        </div>
+    </div>
+
+    <template id="returnsTemplate">
+        <p>We stand behind each engagement and want every client to feel confident. If a deliverable falls short of the documented scope, notify us within 14 days so we can investigate.</p>
+        <p>We will collaborate on a corrective plan, provide additional sessions, or arrange a proportional refund that follows the terms agreed in your services contract.</p>
+        <p>To begin a return or refund request, contact us through the form on this page. Our team responds within two business days with the next steps.</p>
+    </template>
 </body>
 </html>
