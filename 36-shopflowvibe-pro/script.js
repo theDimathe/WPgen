@@ -24,9 +24,7 @@ window.addEventListener('scroll', () => {
     parallaxElements.forEach((el) => {
         el.style.transform = `translateY(${offset * 0.12}px)`;
     });
-}, { passive: true 
-
-});
+}, { passive: true });
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('policyModal');
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const response = await fetch(src, { credentials: 'same-origin' });
         if (!response.ok) {
-            throw new Error(`Failed to load modal content: ${response.status}`);
+            throw new Error(`No se pudo cargar el contenido del modal: ${response.status}`);
         }
 
         const text = await response.text();
@@ -81,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 content = await loadContentFromSrc(src);
             }
         } catch (error) {
-            console.error('Modal content error', error);
-            content = '<p>We\'re unable to load this content right now. Please try again later.</p>';
+            console.error('Error de contenido del modal', error);
+            content = '<p>No podemos cargar este contenido en este momento. Intenta nuevamente más tarde.</p>';
         }
 
         modalTitle.textContent = title || '';
-        modalBody.innerHTML = content || '<p>Content coming soon.</p>';
+        modalBody.innerHTML = content || '<p>Contenido disponible próximamente.</p>';
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
