@@ -449,8 +449,8 @@
                 <ul>
                     <li><a href="#why">Why Choose Us</a></li>
                     <li><a href="#contact">Concierge</a></li>
-                    <li><a href="_privacy.html">Privacy Policy</a></li>
-                    <li><a href="_terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="#testimonials">Client Stories</a></li>
+                    <li><a href="#showroom">Showroom Visits</a></li>
                 </ul>
             </div>
             <div class="footer-newsletter">
@@ -466,6 +466,30 @@
         <div class="footer-bottom">
             <p>&copy; 2025 EliteMarketBuyZoom. All rights reserved.</p>
         </div>
-    </footer>
+            <div class="footer-actions" role="group" aria-label="Legal and policy links">
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Privacy Policy" data-modal-src="_privacy.html">Privacy Policy</button>
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Terms &amp; Conditions" data-modal-src="_terms.html">Terms &amp; Conditions</button>
+                <button type="button" class="footer-link" data-modal-target="policyModal" data-modal-title="Returns &amp; Refunds" data-modal-template="returnsTemplate">Returns &amp; Refunds</button>
+            </div>
+</footer>
+
+    <div class="modal" id="policyModal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+            <div class="modal-header">
+                <h2 id="policyModalTitle"></h2>
+                <button type="button" class="modal-close" aria-label="Close dialog" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body" data-modal-body>
+                <p>Loading…</p>
+            </div>
+        </div>
+    </div>
+
+    <template id="returnsTemplate">
+        <p>We stand behind each engagement and want every client to feel confident. If a deliverable falls short of the documented scope, notify us within 14 days so we can investigate.</p>
+        <p>We will collaborate on a corrective plan, provide additional sessions, or arrange a proportional refund that follows the terms agreed in your services contract.</p>
+        <p>To begin a return or refund request, contact us through the form on this page. Our team responds within two business days with the next steps.</p>
+    </template>
 </body>
 </html>
