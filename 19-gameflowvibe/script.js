@@ -14,6 +14,10 @@ class GameFlowVibe {
         this.setupHeroAnimations();
         this.setupIntersectionObserver();
         this.setupParallaxEffects();
+        this.setupCounters();
+        this.setupProgressIndicators();
+        this.setupEventFilters();
+        this.setupCookieBanner();
     }
 
     /* ========================================================================
@@ -310,6 +314,196 @@ class GameFlowVibe {
             highlightsContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(highlightsContent);
         }
+
+        const statCards = document.querySelectorAll('[data-observe="counter"]');
+        statCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        const progressItems = document.querySelectorAll('[data-observe="progress"]');
+        progressItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        const additionalCards = document.querySelectorAll('[data-observe="card"], .integration-card, .lab-card, .merch-card, .merch-logo-panel, .join-form, .join-pill');
+        additionalCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    }
+
+    /* ========================================================================
+       COUNTERS & PROGRESS
+       ======================================================================== */
+
+    setupCounters() {
+        const statCards = document.querySelectorAll('[data-observe="counter"]');
+        if (!statCards.length) return;
+
+        const formatNumber = (value) => {
+            return Math.round(value).toLocaleString('es-MX');
+        };
+
+        const animateCounter = (counter) => {
+            const target = Number(counter.dataset.target || 0);
+            if (!target) return;
+
+            const duration = 2200;
+            const startTime = performance.now();
+
+            const step = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const value = target * easedProgress;
+                counter.textContent = formatNumber(value);
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    counter.textContent = formatNumber(target);
+                }
+            };
+
+            requestAnimationFrame(step);
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (!counter.dataset.animated) {
+                            animateCounter(counter);
+                            counter.dataset.animated = 'true';
+                        }
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statCards.forEach(card => observer.observe(card));
+    }
+
+    setupProgressIndicators() {
+        const progressItems = document.querySelectorAll('[data-observe="progress"]');
+        if (!progressItems.length) return;
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const valueElement = entry.target.querySelector('.progress-value');
+                    const fillElement = entry.target.querySelector('.progress-fill');
+
+                    if (valueElement && fillElement && !entry.target.dataset.animated) {
+                        const target = Number(valueElement.dataset.progressTarget || 0);
+                        const duration = 1800;
+                        const startTime = performance.now();
+
+                        const step = (currentTime) => {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const value = Math.round(target * eased);
+                            valueElement.textContent = `${value}%`;
+                            fillElement.style.width = `${value}%`;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(step);
+                            } else {
+                                valueElement.textContent = `${target}%`;
+                                fillElement.style.width = `${target}%`;
+                            }
+                        };
+
+                        requestAnimationFrame(step);
+                        entry.target.dataset.animated = 'true';
+                    }
+
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        progressItems.forEach(item => observer.observe(item));
+    }
+
+    /* ========================================================================
+       EVENTS FILTERS
+       ======================================================================== */
+
+    setupEventFilters() {
+        const filterButtons = document.querySelectorAll('.events-filter');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        if (!filterButtons.length || !eventCards.length) return;
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.filter;
+
+                filterButtons.forEach(btn => {
+                    const isActive = btn === button;
+                    btn.classList.toggle('is-active', isActive);
+                    btn.setAttribute('aria-selected', String(isActive));
+                });
+
+                eventCards.forEach(card => {
+                    const matches = category === 'todos' || card.dataset.category === category;
+                    card.classList.toggle('is-hidden', !matches);
+                });
+            });
+        });
+    }
+
+    /* ========================================================================
+       COOKIE BANNER
+       ======================================================================== */
+
+    setupCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        const acceptButton = document.getElementById('cookieAccept');
+
+        if (!banner || !acceptButton) return;
+
+        const storageKey = 'gfv-cookie-consent';
+
+        try {
+            const consent = localStorage.getItem(storageKey);
+            if (consent === 'accepted') {
+                return;
+            }
+        } catch (e) {
+            // Ignore storage errors and continue showing banner
+        }
+
+        const showBanner = () => {
+            banner.classList.add('is-visible');
+        };
+
+        const hideBanner = () => {
+            banner.classList.remove('is-visible');
+        };
+
+        setTimeout(showBanner, 800);
+
+        acceptButton.addEventListener('click', () => {
+            hideBanner();
+            try {
+                localStorage.setItem(storageKey, 'accepted');
+            } catch (e) {
+                // ignore
+            }
+        });
     }
 }
 
