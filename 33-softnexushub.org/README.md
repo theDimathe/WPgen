@@ -1,14 +1,12 @@
-# SoftNexusHub Landing Page
+# Landing SoftNexusHub
 
-Landing page number 33 for SoftNexusHub (softnexushub.org). The site targets US-based audiences and presents a Chilean
-software development studio with 12 sections, responsive navigation, and legal pages.
+Landing page número 33 para SoftNexusHub (softnexushub.org). El sitio presenta un estudio chileno de desarrollo de software dirigido a audiencias de Estados Unidos, con 12 secciones, navegación responsiva y páginas legales en español.
 
-## Structure
-- `index.html` — main landing page with sections for hero, about, metrics, approach, services, experience, case studies,
-  process, technologies, benefits, insights, and contact.
-- `style.css` — global styles with responsive layout, gradients, and interactive elements.
-- `script.js` — navigation toggle and lightweight parallax interaction.
-- `_privacy.html` & `_terms.html` — legal documents linked from the footer.
+## Estructura
+- `index.html` — página principal con secciones de hero, sobre nosotros, métricas, enfoque, servicios, experiencia, casos de éxito, proceso, tecnologías, beneficios, ideas y contacto.
+- `style.css` — estilos globales con diseño responsivo, gradientes e interacción visual.
+- `script.js` — control del menú, parallax ligero y gestión de modales para políticas.
+- `_privacy.html` y `_terms.html` — documentos legales enlazados desde el pie del sitio.
 
-## Running
-Open `index.html` in a web browser. All assets load from CDN sources; no build step is required.
+## Ejecución
+Abre `index.html` en un navegador web. Todos los recursos se cargan desde CDNs; no se requiere build.

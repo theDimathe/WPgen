@@ -1,18 +1,12 @@
-# PhoneNexusHub Landing Page
+# PhoneNexusHub
 
-Static landing page for **PhoneNexusHub**, a U.S.-focused mobile technology review portal. The layout highlights
-smartphone reviews, comparisons, guides, and contact information across eleven sections.
+Landing page número 34 para PhoneNexusHub. El sitio entrega reseñas, comparativas y recursos móviles en español con foco en Chile.
 
-## Structure
-- `index.html` — Main landing page markup.
-- `style.css` — Stylesheet with a modern, high-contrast layout using light neutrals and a sky-blue accent.
-- `script.js` — Handles the responsive navigation toggle.
+## Contenido
+- `index.html` — página principal con secciones de hero, nosotros, misión, reseñas, comparativas, guías, tendencias, innovación, insights, recursos y contacto.
+- `style.css` — estilos globales y componentes responsivos.
+- `script.js` — control del menú móvil y del modal para documentos legales.
+- `_privacy.html` y `_terms.html` — páginas legales en español.
 
-## Development
-Open `index.html` in your browser or use a simple static server:
-
-```bash
-npx serve
-```
-
-No build step is required.
+## Uso
+Abre `index.html` en tu navegador preferido. No se requieren dependencias adicionales.

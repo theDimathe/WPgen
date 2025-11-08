@@ -1,12 +1,12 @@
-# ShopFlowVibe Landing Page
+# ShopFlowVibe
 
-Lightweight marketing site for ShopFlowVibe, a U.S.-based lifestyle, home, and gadget e-commerce concept.
+Landing page número 36 para ShopFlowVibe adaptada a Chile y en español.
 
-## Structure
-- `index.html` — main landing page
-- `style.css` — global styles and responsive layout
-- `script.js` — navigation interactions and subtle parallax effect
-- `_privacy.html`, `_terms.html` — legal pages
+## Archivos
+- `index.html` — página principal con secciones de hero, historia, colecciones, tendencias, ofertas, beneficios, inspiración, tips, gadgets, experiencia, testimonios y contacto.
+- `style.css` — estilos globales y componentes responsivos.
+- `script.js` — navegación móvil, efecto parallax y modal para políticas.
+- `_privacy.html` y `_terms.html` — documentos legales en español.
 
-## Development
-Open `index.html` in a modern browser. No build step is required.
+## Uso
+Abre `index.html` en un navegador moderno para revisar el sitio. No requiere dependencias adicionales.

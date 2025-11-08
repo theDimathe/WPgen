@@ -1,14 +1,12 @@
-# FishNexusHub Landing
+# FishNexusHub
 
-Immersive, conservation-focused landing page for **FishNexusHub**, highlighting responsible fishing experiences in Chile for
-US-based adventurers. Created as part of the WPgen collection of static marketing pages.
+Landing page número 35 dedicada a la pesca responsable en Chile.
 
-## Structure
-- `index.html` — primary landing page with eleven editorial sections spanning mission, guides, gear, community, and contact.
-- `style.css` — natural palette inspired by forest greens, deep blues, and sandy neutrals.
-- `script.js` — mobile navigation toggle and hero parallax interaction.
-- `_privacy.html` — placeholder privacy notice.
-- `_terms.html` — placeholder terms of use.
+## Archivos
+- `index.html` — página principal con secciones de hero, nosotros, misión, guías, aguas, equipamiento, comunidad, educación, investigación, eventos y contacto.
+- `style.css` — estilos base y componentes responsivos.
+- `script.js` — control del menú, efecto parallax y modal de políticas.
+- `_privacy.html` y `_terms.html` — documentos legales traducidos al español.
 
-## Local preview
-Open `index.html` directly in your browser or serve the directory with any static site server.
+## Uso
+Abre `index.html` en un navegador moderno para visualizar el sitio. No requiere dependencias adicionales.
