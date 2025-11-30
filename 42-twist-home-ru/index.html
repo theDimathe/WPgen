@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twist — асинхронная работа без шума</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --accent: #14b8a6;
+      --border: #e5e7eb;
+      --shadow: 0 20px 70px rgba(31, 41, 55, 0.12);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.08), transparent 30%),
+        var(--bg);
+    }
+
+    header {
+      padding: 32px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--primary);
+    }
+
+    .logo span {
+      display: inline-flex;
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 12px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: rgba(79, 70, 229, 0.08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(79, 70, 229, 0.28);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: rgba(79, 70, 229, 0.08);
+      color: var(--primary);
+    }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 96px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      align-items: center;
+      padding: 40px;
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 { margin: 0 0 18px; font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.02em; }
+    .hero p { margin: 0 0 28px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(20, 184, 166, 0.12);
+      color: #0f766e;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .hero-visual {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(20, 184, 166, 0.1));
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 16px;
+      border: 1px dashed rgba(79, 70, 229, 0.25);
+      pointer-events: none;
+    }
+
+    .hero-widget {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 40px rgba(31, 41, 55, 0.12);
+      max-width: 420px;
+      position: absolute;
+      bottom: 26px;
+      right: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .widget-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .widget-row:last-child { margin-bottom: 0; }
+
+    .pill {
+      background: rgba(79, 70, 229, 0.08);
+      color: var(--primary);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .meter {
+      flex: 1;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--bg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .meter span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: var(--value, 70%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .section-title {
+      margin: 80px 0 20px;
+      text-align: center;
+    }
+
+    .section-title h2 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 38px); }
+    .section-title p { margin: 0; color: var(--muted); font-size: 18px; }
+
+    .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+      display: grid;
+      gap: 12px;
+    }
+
+    .card .icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: rgba(79, 70, 229, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .card h3 { margin: 0; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 32px; }
+
+    .feature {
+      padding: 24px;
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+    }
+
+    .feature h4 { margin: 0 0 10px; }
+    .feature p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .cta-block {
+      margin-top: 64px;
+      padding: 32px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(20, 184, 166, 0.12));
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      align-items: center;
+      border: 1px solid var(--border);
+    }
+
+    .cta-block h3 { margin: 0 0 12px; font-size: 24px; }
+    .cta-block p { margin: 0; color: var(--muted); }
+
+    footer { text-align: center; padding: 32px 24px 64px; color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      header { flex-direction: column; gap: 14px; }
+      nav { justify-content: center; }
+      .hero { padding: 28px; }
+      .hero-visual { min-height: 260px; }
+      .hero-widget { position: static; margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span></span>Twist</div>
+    <nav>
+      <a href="#benefits">Преимущества</a>
+      <a href="#features">Возможности</a>
+      <a href="#cta">Тарифы</a>
+      <a href="#cta">Вход</a>
+      <a class="btn btn-ghost" href="#cta">Попробовать</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Асинхронная коммуникация без бесконечных чатов</div>
+        <h1>Команда работает глубже, спокойнее и быстрее с Twist</h1>
+        <p>Twist помогает строить работу без постоянного шума: структурированные обсуждения, чёткие решения и возможность сосредоточиться в удобном темпе.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="#cta">Начать бесплатно</a>
+          <a class="btn btn-ghost" href="#benefits">Посмотреть как это работает</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-widget">
+          <div class="widget-row">
+            <div class="pill">Фокус</div>
+            <div class="meter" aria-label="70% глубокая работа"><span style="--value:72%"></span></div>
+          </div>
+          <div class="widget-row">
+            <div class="pill" style="background: rgba(20,184,166,0.12); color:#0f766e;">Упорядочено</div>
+            <div class="meter" aria-label="82% упорядоченных дискуссий"><span style="--value:82%; background: linear-gradient(90deg, var(--accent), var(--primary));"></span></div>
+          </div>
+          <div class="widget-row">
+            <div class="pill" style="background: rgba(79,70,229,0.16); color:#312e81;">Без спама</div>
+            <div class="meter" aria-label="90% меньше отвлечений"><span style="--value:90%; background: linear-gradient(90deg, #22c55e, var(--primary));"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="benefits" class="section-title">
+      <h2>Почему команды выбирают Twist</h2>
+      <p>Создан для асинхронной работы: меньше срочности, больше результата и прозрачности.</p>
+    </div>
+
+    <section class="benefits">
+      <article class="card">
+        <div class="icon">1</div>
+        <h3>Глубокая работа без спешки</h3>
+        <p>Темп общения задаётся командой: отвечайте, когда готовы, без навязчивых уведомлений и FOMO. Twist сохраняет контекст и помогает думать качественно.</p>
+      </article>
+      <article class="card">
+        <div class="icon">2</div>
+        <h3>Структурированные темы</h3>
+        <p>Каждая дискуссия — отдельная тема с ветками. Ничто не теряется в ленте сообщений, решение легко найти и пересмотреть.</p>
+      </article>
+      <article class="card">
+        <div class="icon">3</div>
+        <h3>Поиск по всей истории</h3>
+        <p>Найдите нужное обсуждение, решение или файл за секунды. Вся информация индексируется, нет хаоса из бесконечных каналов.</p>
+      </article>
+    </section>
+
+    <div id="features" class="section-title">
+      <h2>Всё для ясной и спокойной работы</h2>
+      <p>Инструменты Twist убирают срочность и помогают фиксировать знания команды.</p>
+    </div>
+
+    <section class="feature-grid">
+      <article class="feature">
+        <h4>Гибкая навигация по темам</h4>
+        <p>Разделы, каналы и теги поддерживают порядок. Новые коллеги быстро погружаются в контекст без суеты.</p>
+      </article>
+      <article class="feature">
+        <h4>Комментирование и подытоживание</h4>
+        <p>Ветки комментариев группируют идеи, а закреплённые резюме собирают ключевые решения и действия.</p>
+      </article>
+      <article class="feature">
+        <h4>Интеграции для единых процессов</h4>
+        <p>Подключайте таск-трекеры, документы и автоматизации. Всё, что нужно команде, видно в одном рабочем пространстве.</p>
+      </article>
+    </section>
+
+    <section id="cta" class="cta-block">
+      <div>
+        <h3>Попробуйте Twist и верните фокус команде</h3>
+        <p>14 дней бесплатно. Без банковской карты и без ограничений на участников.</p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end;">
+        <a class="btn btn-primary" href="#">Зарегистрироваться</a>
+        <a class="btn btn-ghost" href="#">Запланировать демо</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Twist · Асинхронная командная работа без шума · 2024</footer>
+</body>
+</html>
