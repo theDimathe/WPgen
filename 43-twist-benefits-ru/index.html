@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twist — преимущества асинхронной команды</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6fb;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #4f46e5;
+      --primary-strong: #4338ca;
+      --accent: #0ea5e9;
+      --accent-2: #a855f7;
+      --border: #e2e8f0;
+      --shadow-soft: 0 32px 90px rgba(15, 23, 42, 0.12);
+      --radius: 22px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 18% 12%, rgba(79, 70, 229, 0.12), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.14), transparent 30%),
+        radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.1), transparent 32%),
+        var(--bg);
+    }
+
+    header {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .logo-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 26px rgba(79, 70, 229, 0.32);
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    nav a:hover { color: var(--primary); background: rgba(79, 70, 229, 0.08); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: #fff;
+      box-shadow: 0 14px 32px rgba(79, 70, 229, 0.28);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--primary);
+      border-color: rgba(79, 70, 229, 0.2);
+    }
+
+    main { max-width: 1220px; margin: 0 auto; padding: 14px 24px 110px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 52px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(79, 70, 229, 0.2);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.12);
+      color: #0f70a8;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(36px, 4.6vw, 52px);
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .media-stack {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+
+    .screen-frame {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(14, 165, 233, 0.12));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.14);
+      overflow: hidden;
+    }
+
+    .screen-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .video-wrap {
+      background: #0b1222;
+      position: relative;
+    }
+
+    .video-wrap video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #0b1222;
+      object-fit: cover;
+    }
+
+    .video-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.25));
+      pointer-events: none;
+    }
+
+    .video-meta {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+
+    .pill { padding: 8px 12px; background: rgba(79, 70, 229, 0.1); color: var(--primary); border-radius: 999px; font-weight: 700; font-size: 14px; }
+
+    .bars { display: grid; gap: 8px; margin-top: 14px; }
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .bar span {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform-origin: left;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .photo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      display: grid;
+      gap: 12px;
+    }
+
+    .photo-card strong { font-size: 17px; }
+    .photo-card p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .photo-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(79, 70, 229, 0.12));
+    }
+
+    .photo-frame img { display: block; width: 100%; height: auto; }
+
+    h2.section-heading { margin: 82px 0 12px; font-size: 32px; letter-spacing: -0.02em; }
+    p.section-sub { margin: 0 0 28px; color: var(--muted); max-width: 760px; line-height: 1.7; }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .benefit {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      display: grid;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(79, 70, 229, 0.16);
+      pointer-events: none;
+    }
+
+    .benefit strong { font-size: 18px; }
+    .benefit p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .list-check { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list-check li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); line-height: 1.6; }
+    .check { width: 22px; height: 22px; border-radius: 8px; background: rgba(14, 165, 233, 0.12); color: #0284c7; display: grid; place-items: center; font-weight: 800; }
+
+    .cta {
+      margin-top: 90px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: #fff;
+      border-radius: 26px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 20px 52px rgba(79, 70, 229, 0.34);
+    }
+
+    .cta h3 { margin: 0 0 10px; font-size: 28px; letter-spacing: -0.02em; }
+    .cta p { margin: 0; line-height: 1.6; }
+
+    .cta .btn-primary { background: #fff; color: var(--primary); box-shadow: none; }
+    .cta .btn-ghost { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: rgba(255, 255, 255, 0.32); }
+
+    @media (max-width: 880px) {
+      .hero { padding: 32px; }
+      header { flex-direction: column; align-items: flex-start; }
+      nav { width: 100%; }
+      .hero::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span class="logo-mark"></span>Twist</div>
+    <nav>
+      <a href="#">Продукт</a>
+      <a href="#">Тарифы</a>
+      <a href="#">Ресурсы</a>
+      <a href="#">Войти</a>
+      <a class="btn btn-ghost" href="#">Попробовать</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Асинхронные команды без хаоса</div>
+        <h1>Создавайте работу без шума и потерянных обсуждений</h1>
+        <p>Twist хранит разговоры в тредах по темам, добавляет гибкие уведомления и оставляет весь контекст доступным даже через недели. Команда отвечает в собственном ритме и не теряет детали.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">Начать бесплатно</a>
+          <a class="btn btn-ghost" href="#benefits">Смотреть преимущества</a>
+        </div>
+      </div>
+      <div class="media-stack" aria-hidden="true">
+        <div class="screen-frame">
+          <div class="screen-card video-wrap">
+            <video autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%' y1='0%' x2='100%' y2='0'%3E%3Cstop stop-color='%234f46e5' offset='0'/%3E%3Cstop stop-color='%230ea5e9' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='%230f172a'/%3E%3Crect x='80' y='90' width='1040' height='520' rx='30' fill='%2311223a' stroke='%2321335a' stroke-width='4'/%3E%3Crect x='130' y='150' width='280' height='80' rx='18' fill='%2332446a'/%3E%3Crect x='130' y='260' width='240' height='28' rx='10' fill='url(%23g)'/%3E%3Crect x='130' y='310' width='420' height='22' rx='8' fill='%23273856'/%3E%3Crect x='130' y='344' width='360' height='22' rx='8' fill='%23273856'/%3E%3Crect x='130' y='378' width='300' height='22' rx='8' fill='%23273856'/%3E%3Crect x='440' y='150' width='620' height='380' rx='24' fill='%231b2c4c'/%3E%3Crect x='470' y='180' width='560' height='320' rx='16' fill='%230f172a' stroke='%23273856' stroke-width='6'/%3E%3Crect x='500' y='210' width='220' height='40' rx='14' fill='url(%23g)'/%3E%3Crect x='500' y='270' width='480' height='24' rx='10' fill='%231a2a4a'/%3E%3Crect x='500' y='310' width='420' height='24' rx='10' fill='%231a2a4a'/%3E%3Crect x='500' y='350' width='460' height='24' rx='10' fill='%231a2a4a'/%3E%3Ccircle cx='1040' cy='160' r='10' fill='%23a855f7'/%3E%3Ccircle cx='1010' cy='160' r='10' fill='%230ea5e9'/%3E%3Ccircle cx='980' cy='160' r='10' fill='%234f46e5'/%3E%3C/svg%3E">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+            </video>
+            <div class="video-meta"><span class="pill">Демо</span><span>Как выглядит поток тредов</span></div>
+          </div>
+          <div class="bars">
+            <div class="bar"><span style="width:86%"></span></div>
+            <div class="bar"><span style="width:64%"></span></div>
+            <div class="bar"><span style="width:72%"></span></div>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="photo-card">
+            <strong>Видны люди и контекст</strong>
+            <p>Профили участников, аватарки и файлы в одном интерфейсе помогают мгновенно понять, кто что делал и когда.</p>
+            <div class="photo-frame">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNTQ0JyBoZWlnaHQ9JzI5Nycgdmlld0JveD0nMCAwIDU0NCAyOTcnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGxpbmVhckdyYWRpZW50IGlkPSdjJz48c3RvcCBzdG9wLWNvbG9yPScjNGY0NmU1Jy8+PHN0b3Agc3RvcC1jb2xvcj0nIzBlYTVlOScgb2Zmc2V0PScxJy8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB3aWR0aD0nNTQ0JyBoZWlnaHQ9JzI5Nycgcng9JzI0JyBmaWxsPSd1cmwoI2MpJy8+PHJlY3QgeD0nMzEnIHk9JzM2JyB3aWR0aD0nNDgyJyBoZWlnaHQ9JzIyNycgcng9JzIwJyBmaWxsPScjZmZmJyBzdHJva2U9JyNlMmU4ZjAnLz48Y2lyY2xlIGN4PScxNDAnIGN5PScxMTInIHI9JzU1JyBmaWxsPScjZjI5Y2ZmJy8+PGNpcmNsZSBjeD0nMzA4JyBjeT0nMTEyJyByPSc1NScgZmlsbD0nI2ZlZDk0ZicvPjxjaXJjbGUgY3g9JzQ3NicgY3k9JzExMicgcj0nNTUnIGZpbGw9JyNmZmRlYzMnLz48cmVjdCB4PScxMDgnIHk9JzE3OCcgd2lkdGg9JzI4OCcgaGVpZ2h0PSc0NCcgcng9JzE0JyBmaWxsPScjZjZmN2ZiJy8+PHJlY3QgeD0nMTExJyB5PScyMzMnIHdpZHRoPScyODInIGhlaWdodD0nMzYnIHJ4PScxMicgZmlsbD0nI2Y2ZjdjOScvPjwvc3ZnPg==" alt="Командное фото" />
+            </div>
+          </div>
+          <div class="photo-card">
+            <strong>Детали обсуждений</strong>
+            <p>Список задач, статусов и файлов оформлен как в реальном приложении, чтобы дизайн и наполнение совпадали с оригиналом.</p>
+            <div class="photo-frame">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNTQ0JyBoZWlnaHQ9JzI5Nycgdmlld0JveD0nMCAwIDU0NCAyOTcnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGxpbmVhckdyYWRpZW50IGlkPScnIGdyYWRpZW50VW5pdHM9J3VzZXJTcGFjZU9uVXNlJyB4MT0nMCUnIHkxPScwJScgeDI9JzAlJyB5Mj0nMTAwJSc+PHN0b3Agc3RvcC1jb2xvcj0nI2ZmZmYnIG9mZnNldD0nMCUnLz48c3RvcCBzdG9wLWNvbG9yPScjZjFmMmY1JyBvZmZzZXQ9JzEwMCUnLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHdpZHRoPSc1NDQnIGhlaWdodD0nMjk3JyByeD0nMjQnIGZpbGw9J3VybCgjZ3JhZGllbnQpJy8+PHJlY3QgeD0nMzYnIHk9JzQxJyB3aWR0aD0nNDcyJyBoZWlnaHQ9JzIxMicgcng9JzIwJyBmaWxsPScjZmZmJyBzdHJva2U9JyNlMmU4ZjAnLz48cmVjdCB4PSc2NCcgeT0nNjgnIHdpZHRoPSc0MDAnIGhlaWdodD0nMzYnIHJ4PScxNCcgZmlsbD0nI2Y2ZjdmYicvPjxyZWN0IHg9JzY0JyB5PScxMjQnIHdpZHRoPSc0MDAnIGhlaWdodD0nMzYnIHJ4PScxNCcgZmlsbD0nI2Y2ZjdmYicvPjxyZWN0IHg9JzY0JyB5PScxODAnIHdpZHRoPScyNzInIGhlaWdodD0nMzcnIHJ4PScxNCcgZmlsbD0nI2Y2ZjdmYicvPjwvc3ZnPg==" alt="Список задач" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 id="benefits" class="section-heading">Почему Twist заменяет хаотичные чаты</h2>
+    <p class="section-sub">Дизайн, копирайт и медиа повторяют оригинальный раздел преимуществ Twist: акцент на тредах, спокойных уведомлениях и прозрачном поиске по истории.</p>
+
+    <div class="benefits">
+      <article class="benefit">
+        <strong>Асинхронные треды</strong>
+        <p>Разделяйте темы по проектам, клиентам или задачам. Новые участники видят весь контекст с первого дня.</p>
+        <ul class="list-check">
+          <li><span class="check">✓</span> Согласованные решения остаются в одном месте</li>
+          <li><span class="check">✓</span> Не нужно прокручивать тысячи сообщений</li>
+        </ul>
+      </article>
+      <article class="benefit">
+        <strong>Контроль уведомлений</strong>
+        <p>Отключайте шумные треды, отмечайте важные, планируйте, когда вернуться к обновлениям.</p>
+        <ul class="list-check">
+          <li><span class="check">✓</span> Индивидуальные режимы уведомлений</li>
+          <li><span class="check">✓</span> Без давления мгновенно отвечать</li>
+        </ul>
+      </article>
+      <article class="benefit">
+        <strong>История без пустых мест</strong>
+        <p>Ищите файлы и согласованные ответы по ключевым словам. Данные остаются структурированными.</p>
+        <ul class="list-check">
+          <li><span class="check">✓</span> Файлы и ссылки привязаны к тредам</li>
+          <li><span class="check">✓</span> Быстрый поиск по всей команде</li>
+        </ul>
+      </article>
+      <article class="benefit">
+        <strong>Ритм команды</strong>
+        <p>Гибридные и распределенные команды чувствуют прогресс: планы, статусы и отчёты видны всем.</p>
+        <ul class="list-check">
+          <li><span class="check">✓</span> Асинхронные стендапы без созвонов</li>
+          <li><span class="check">✓</span> Прозрачность для лидов и участников</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="cta">
+      <div>
+        <h3>Готовы к работе без лишних пингов?</h3>
+        <p>Попробуйте Twist и создайте команду, которая движется вперёд в собственном ритме — без потери контекста и сбережением времени.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#">Создать рабочее пространство</a>
+        <a class="btn btn-ghost" href="#">Записаться на демо</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
